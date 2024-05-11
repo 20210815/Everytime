@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 상세</title>
+</head>
+<body>
+
+  <h1>{{ post.title }}</h1> <br>
+  <h2>{{ post.content }} </h2> <br>
+  <h2>{{ post.created_at }}</h2>
+  {% if post.anonymity == True %}익명
+  {% else %}
+    <h5>{{ post.user }}</h5>
+  {% endif %}
+  {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
+  {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}
+</body>
+</html>

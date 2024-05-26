@@ -7,12 +7,12 @@ from django.db.models import F, ExpressionWrapper, fields
 from django.utils import timezone
 from django.views.generic import ListView
 # Create your views here.
-def list(request):
-  posts = Post.objects.all().order_by('-id')
+# def list(request):
+#   posts = Post.objects.all().order_by('-id')
   
-  # print(request.user.post_user.all())
-  #posts = Post.objects.annotate(comment_count=Count('comment')).order_by('-id')
-  return render(request, 'post/list.html', {'posts': posts})
+#   # print(request.user.post_user.all())
+#   #posts = Post.objects.annotate(comment_count=Count('comment')).order_by('-id')
+#   return render(request, 'post/home.html', {'posts': posts})
 
 
 def detail(request, id):
@@ -38,8 +38,8 @@ def create(request, slug):
     new_post.save()
     #return redirect ("post:list")
     return redirect("post:category_post_list", slug)
-  else:
-    return render(request, "post/list.html", {'slug':slug} )
+  # else:
+  #   return render(request, "post/category_post_list.html", {'slug':slug} )
 
 
 @login_required

@@ -6,6 +6,7 @@
   <title>글 상세</title>
 </head>
 <body>
+  <a href="{% url 'post:category_post_list' post.category.slug%}"> 뒤로가기 </a>
 
   <h1>{{ post.title }}</h1> <br>
   <h2>{{ post.content }} </h2> <br>
@@ -16,5 +17,51 @@
   {% endif %}
   {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
   {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}
+
+
+  <p>공감 {{post.post_like.all.count }}개</p>
+  <p>스크랩 {{post.scrap_users.count }}개</p>
+  <form action="{% url 'post:post_like' post.id %}" method="post">
+    {% csrf_token %}
+    <button>공감</button>
+  </form>
+  
+
+  <form action="{% url 'post:post_scrap' post.id %}" method="post">
+    {% csrf_token %}
+    <button>스크랩</button>
+  </form>
+
+  <hr>
+  <h4>댓글</h4>
+  {% if comments.exists %} 
+      {% for comment in comments %}
+      <p>
+      <br>
+        {{ comment.content }} -   
+        {% if comment.anonymity == True %}익명
+
+        {% else %}
+          {{ comment.user }}
+        {% endif %}
+        - {{ comment.created_at }}
+        <br>
+        {% if request.user == comment.user %} <a href="{% url 'post:com_delete' com_id=comment.id post_id=post.id %}">삭제하기</a> {% endif %}
+      </p>
+        {% endfor %}
+  
+  {% else %}
+  댓글이 없습니다.
+  {% endif %}
+  <hr>
+  <form action="{% url 'post:com_create' post.id %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="content">
+    <input type="submit" value="작성">
+    <input type="checkbox" name="anonymity" value="annoymity_true" checked>익명
+
+  </form>
+
+
 </body>
 </html>

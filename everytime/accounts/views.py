@@ -40,19 +40,19 @@ def logout_view(request):
     logout(request)
   return redirect("post:list")
 
-# def mypage(request):
-#   return render(request, 'accounts/mypage.html')
+def mypage(request):
+  return render(request, 'accounts/mypage.html')
 
 
-# def write_list(request):
-#   posts = request.user.post_user.all()
-#   return render(request, 'accounts/write_list.html', {'posts': posts})
+def write_list(request):
+  posts = request.user.post_user.all()
+  return render(request, 'accounts/write_list.html', {'posts': posts})
 
 
-# def scrap_list(request):
-#   posts = request.user.scrap_users.all()
-#   # scrap_post가 post를 fk로 갖고 있어서
-#   print(posts)
-#   #posts = Post.post_user.scrap_post.all()
-#   #posts = Post.scrap_post.filter(user = request.user)
-#   return render(request, 'accounts/scrap_list.html', {'posts': posts})
+def scrap_list(request):
+  posts = request.user.scrap_users.all()
+  # scrap_post가 post를 fk로 갖고 있어서
+  print(posts)
+  #posts = Post.post_user.scrap_post.all()
+  #posts = Post.scrap_post.filter(user = request.user)
+  return render(request, 'accounts/scrap_list.html', {'posts': posts})

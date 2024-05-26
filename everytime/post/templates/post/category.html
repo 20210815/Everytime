@@ -45,14 +45,8 @@
           <h4> {{ post.content }}</h4>
 
           <!-- {{ post.time.total_seconds }} -->
-          {% if post.time.total_seconds >= 86400 %} <!--1시간 이상이면 시간으로 알려주고-->
-          <h4> {{ post.created_at| date:"m/d" }}</h4><br>
-          {% elif post.time.total_seconds >= 3600 %}
-          <h4> {{ post.created_at| time:"H:i" }}</h4>
-          {% else %}
-          <h4> {{ post.created_at|naturaltime }}</h4>
 
-          {% endif %}
+          <h4> {{ post.created_at|naturaltime }}</h4>
           <!-- <h4> {{ post.time }}</h4> -->
       
           <!-- <h4> 댓글 {{ post.comment_count }}개</h4> -->

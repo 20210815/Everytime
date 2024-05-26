@@ -31,7 +31,7 @@ def login_view(request):
 
   if form.is_valid():
     login(request, form.user_cache)
-    return redirect("post:list")
+    return redirect("post:home")
   return render(request, 'accounts/login.html', {'form': form})
 
 

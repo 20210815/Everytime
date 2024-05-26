@@ -8,12 +8,12 @@
 <body>
   <a href="{% url 'post:category_post_list' post.category.slug%}"> 뒤로가기 </a>
 
-  <h1>{{ post.title }}</h1> <br>
-  <h2>{{ post.content }} </h2> <br>
-  <h2>{{ post.created_at }}</h2>
+  <h1>{{ post.title }}</h1> 
+  <h2>{{ post.content }} </h2> 
+  <h2>{{ post.created_at }}</h2> <br><br>
   {% if post.anonymity == True %}익명
   {% else %}
-    <h5>{{ post.user }}</h5>
+    <h5>{{ post.user.username }}</h5>
   {% endif %}
   {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
   {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}

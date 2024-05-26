@@ -15,8 +15,8 @@
       {% if posts.exists %}
         {% for post in posts %}
         <a href="{% url 'post:detail' post.pk %}"><h1>{{ post.title }}</h1></a>
-          <br>
-          <h4> {{ post.content }}</h4> <br>
+        
+          <h4> {{ post.content }}</h4> <br><br>
 
           <!-- {{ post.time.total_seconds }} -->
           {% if post.time.total_seconds >= 86400 %} <!--1시간 이상이면 시간으로 알려주고-->

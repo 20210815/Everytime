@@ -24,14 +24,14 @@
     <a href="{% url 'accounts:signup' %}">회원가입</a>
     <a href="{% url 'accounts:login' %}">로그인</a>
     {% endif %}
-    <br>
+    <br><br>
     <form action="{% url 'post:create' category.slug %}" method="post">
       {% csrf_token %}
-      <input type="text" name="title">
-      <hr>
+      <input type="text" placeholder="제목 입력" name="title">
+     
       <br>
-      <textarea name="content"></textarea>
-      <input type="checkbox" name="anonymity" value="annoymity_true" checked>익명
+      <textarea name="content" placeholder="본문 입력"></textarea>
+      <input type="checkbox" name="anonymity" value="annoymity_true" >익명
       <!-- <input type="hidden" name="anonymity" value="annoymity_false" checked> -->
       <input type="submit" value="작성 완료">
     </form>
@@ -39,8 +39,8 @@
       {% if posts.exists %}
         {% for post in posts %}
         <a href="{% url 'post:detail' post.pk %}"><h1>{{ post.title }}</h1></a>
-          <br>
-          <h4> {{ post.content }}</h4> <br>
+      
+          <h4> {{ post.content }}</h4>
 
           <!-- {{ post.time.total_seconds }} -->
           {% if post.time.total_seconds >= 86400 %} <!--1시간 이상이면 시간으로 알려주고-->

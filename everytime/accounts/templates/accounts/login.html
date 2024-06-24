@@ -1,16 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
-  </head>
-  <body>
-    <h2>로그인</h2>
-    <form method="post">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">login</button>
-    </form>
-    <p><a href="{% url 'accounts:signup' %}">회원가입하기</a></p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style_login.css'%}"></link>
+    <title>로그인</title>
+</head>
+<body>
+    <div class="container">
+        <a href = "{% url 'post:home' %}">
+        <div class="logo"><img src="{% static 'img/logo.png'%}"></div></a>
+            <form method="post">
+                <div class="form">
+                    <input id = "id_username" name="id" type="text" maxlength="20" placeholder="아이디">
+                    <input id = "id_password" name="password" type="password" maxlength="20" placeholder="비밀번호">
+                    <input id="login" type="submit" value="에브리타임 로그인">
+                </div>
+                <div class="optoins">
+                    <label class="check">
+                        <input type="checkbox">
+                        <input type="hidden" name="keep" value="false">로그인 유지
+                    </label>
+                    <a>아이디/비밀번호 찾기</a>
+                </div>
+                <a href = "{% url 'accounts:signup' %}">
+                <p class="register">회원가입</p></a>
+                <footer>
+                    <p>이용약관</p>
+                    <p style="font-weight: bold;">개인정보처리방침</p>
+                    <p>문의하기</p>
+                    <p style="font-weight: bold;">ⓒ 에브리타임</p>
+                </footer>
+            </form>
+    </div>
+    <script src="{% static './js/login.js' %}"></script>
+</body>
 </html>

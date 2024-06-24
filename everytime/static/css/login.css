@@ -1,0 +1,84 @@
+body,
+html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /*세로로 정렬*/
+}
+
+/*form*/
+.login-form {
+  border-radius: 5px;
+  /*img 가운데 정렬 위해서*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form img {
+  width: 250px;
+  margin-bottom: 30px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  margin: 5px 0px;
+  background-color: rgba(225, 225, 225, 0.5);
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 25rem;
+  font-size: 14px;
+}
+
+.login-form button {
+  color: white;
+  background-color: gray;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 26rem;
+  font-size: 14px;
+}
+
+.signup {
+  margin: 60px 0px 80px 0px;
+  font-size: 14px;
+}
+
+.signup a {
+  color: gray;
+}
+
+.additional-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 12px;
+}
+
+.text,
+.text-g {
+  margin-left: 2em;
+}
+
+.text-g {
+  color: gray;
+}
+
+@media (max-width: 780px) {
+  body {
+    justify-content: flex-start;
+    margin: 48px 24px;
+  }
+
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: 40em;
+  }
+
+  .login-form button {
+    width: 41.5em;
+  }
+}

@@ -1,4 +1,4 @@
-from asyncio.windows_events import NULL
+# from asyncio.windows_events import NULL
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, Category, Scrap, PostLike, Comment
 from django.contrib.auth.decorators import login_required

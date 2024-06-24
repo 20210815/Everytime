@@ -1,0 +1,92 @@
+/*전체*/
+a:link,
+a:visited {
+  color: #737373;
+}
+
+body {
+  height: 97vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*로고*/
+.logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/*로그인*/
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_form input {
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 5px;
+}
+
+.login_information {
+  background-color: #f2f2f2;
+  padding-left: 15px;
+  width: 340px;
+  height: 44px;
+  font-size: 16px;
+}
+
+.login_submit {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  width: 358px;
+  height: 44px;
+}
+
+/*회원가입*/
+.login p {
+  font-size: 14px;
+  width: 56px;
+  margin: 40px auto;
+}
+
+/*footer*/
+.page_detail {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 60px;
+  justify-content: center;
+}
+
+.page_detail a {
+  text-decoration: none;
+  font-size: 12px;
+  margin-left: 15px;
+}
+
+.detail_first a {
+  margin: 0;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+@media all and (max-width: 780px) {
+  .login_information {
+    width: 90vw;
+  }
+
+  .login_submit {
+    padding-left: 15px;
+    width: 93.5vw; /*아이디, 비밀번호 입력창과 버튼 너비를 코드에서 같게 설정하면 실행했을 때 안 맞음*/
+  }
+}

@@ -1,0 +1,466 @@
+/* 에브리타임 로그인 페이지*/
+body {
+  font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+
+@media all and (min-width: 780px) {
+  input.idbox {
+    margin-top: 55px;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 20px;
+    background-color: rgb(235, 235, 235);
+    width: 680px;
+    height: 70px;
+    font-size: 25px;
+    padding-left: 20px;
+    color: gray;
+    margin-bottom: 7px;
+  }
+
+  input.passwordbox {
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 20px;
+    background-color: rgb(235, 235, 235);
+    width: 680px;
+    height: 70px;
+    font-size: 25px;
+    padding-left: 20px;
+    color: gray;
+    margin-top: 0px;
+    margin-bottom: 7px;
+  }
+
+  input.signupbox {
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: gray;
+    width: 705px;
+    height: 70px;
+    font-size: 30px;
+    font-weight: 500;
+    padding-right: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 7px;
+  }
+
+  img.logoimg {
+    margin-top: 75px;
+    width: 500px;
+    padding-top: 0px;
+  }
+
+  div.img {
+    display: flex;
+    justify-content: center;
+  }
+
+  div.clik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p.signup {
+    text-decoration: underline;
+    color: gray;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 130px;
+  }
+
+  a:link {
+    color: gray;
+  }
+
+  a:visited {
+    color: gray;
+  }
+
+  div.spanclass {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 190px;
+    width: 705px;
+    margin: auto;
+  }
+
+  span.lightgraytxt {
+    color: rgb(182, 182, 182);
+  }
+
+  span.graytxt {
+    color: gray;
+  }
+}
+
+@media all and (max-width: 780px) {
+  div.clik {
+    width: 80%;
+    margin: auto;
+  }
+
+  input.idbox {
+    background-color: rgb(235, 235, 235);
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 20px;
+    color: gray;
+    font-size: 25px;
+    padding-left: 20px;
+    margin-top: 55px;
+    margin-bottom: 7px;
+    width: 100%;
+    height: 70px;
+  }
+
+  input.passwordbox {
+    background-color: rgb(235, 235, 235);
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 20px;
+    color: gray;
+    font-size: 25px;
+    padding-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 7px;
+    width: 100%;
+    height: 70px;
+  }
+
+  input.signupbox {
+    background-color: gray;
+    border: 1px solid gray;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 7px;
+    width: 103%;
+    height: 70px;
+  }
+
+  img.logoimg {
+    margin-top: 75px;
+    width: 60vw;
+    padding-top: 0px;
+  }
+
+  div.img {
+    display: flex;
+    justify-content: center;
+  }
+
+  div.clik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p.signup {
+    text-decoration: underline;
+    color: gray;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 130px;
+  }
+
+  a:link {
+    color: gray;
+  }
+
+  a:visited {
+    color: gray;
+  }
+  /*
+  div.spanclass {
+    display: none;
+  } */
+
+  div.spanclass {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 190px;
+    width: 80%;
+    margin: auto;
+  }
+
+  span.lightgraytxt {
+    color: rgb(182, 182, 182);
+  }
+
+  span.graytxt {
+    color: gray;
+  }
+}
+
+/*에브리타임 회원가입 페이지*/
+
+@media all and (min-width: 1100px) {
+  div.img_post {
+    width: 90vw;
+  }
+}
+div.everyborder {
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  width: 700px;
+  height: 880px;
+  margin-top: 40px;
+  margin-left: 30vw;
+  padding-left: 30px;
+}
+
+p.post {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+p.txt_one {
+  color: gray;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+span.blackfont {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+p.txt_two {
+  color: gray;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 45px;
+}
+
+div.boxes {
+  color: gray;
+}
+
+.grayfont {
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+
+.graybox {
+  border: 1px solid rgb(235, 235, 235);
+  border-radius: 15px;
+  background-color: rgb(235, 235, 235);
+  width: 645px;
+  height: 47px;
+  margin-left: 3px;
+  padding-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+input.postbox {
+  display: flex;
+  justify-content: center;
+  border: 1px solid gray;
+  border-radius: 15px;
+  background-color: gray;
+  width: 670px;
+  height: 47px;
+  padding-left: 20px;
+  margin-top: 50px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+@media all and (max-width: 1100px) {
+  div.everyborder {
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    margin-left: 10vw;
+    width: 80%;
+    height: 880px;
+    margin-top: 5vw;
+  }
+
+  div.boxes {
+    color: gray;
+  }
+
+  .graybox {
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 15px;
+    background-color: rgb(235, 235, 235);
+    width: 93%;
+    height: 47px;
+    margin-left: 3px;
+    padding-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  input.postbox {
+    display: flex;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background-color: gray;
+    width: 97%;
+    height: 47px;
+    padding-left: 20px;
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 780px) {
+  div.img_post {
+    width: 90vw;
+  }
+
+  div.everyborder {
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    margin-left: 7vw;
+    width: 80%;
+    height: 880px;
+    margin-top: 5vw;
+  }
+
+  div.boxes {
+    color: gray;
+  }
+
+  .graybox {
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 15px;
+    background-color: rgb(235, 235, 235);
+    width: 90%;
+    height: 47px;
+    margin-left: 3px;
+    padding-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  input.postbox {
+    display: flex;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background-color: gray;
+    width: 95%;
+    height: 47px;
+    padding-left: 20px;
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
+
+/*글 작성 페이지 구현*/
+
+input.sorry_1 {
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+  width: 90vw;
+  height: 60px;
+  border: 2px solid lightgray;
+  border-bottom: 0px;
+  font-size: 30px;
+}
+
+textarea.sorry_2 {
+  margin-left: 30px;
+  margin-right: 30px;
+  width: 90vw;
+  height: 600px;
+  display: flex;
+  border: 2px solid lightgray;
+  color: rgb(66, 66, 66);
+}
+
+div.img_post {
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+  border-left: 2px solid lightgray;
+  border-right: 2px solid lightgray;
+  border-bottom: 2px solid lightgray;
+  justify-content: space-between;
+}
+
+img.shrap {
+  width: 60px;
+  height: 50px;
+}
+
+img.clip {
+  width: 60px;
+  height: 50px;
+}
+
+div.checkboxandtext {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+input.checkbox_1 {
+}
+
+span.secret_1 {
+  margin-left: 5px;
+  color: rgb(155, 155, 155);
+}
+
+input.checkbox_2 {
+  margin-left: 5px;
+}
+
+span.secret_2 {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: rgb(155, 155, 155);
+}
+
+div.write {
+  border: 1px solid rgb(224, 62, 62);
+  background-color: rgb(224, 62, 62);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  float: right;
+}
+
+div.infodiv {
+  margin-left: 30px;
+  margin-right: 30px;
+  width: 90vw;
+  display: flex;
+  border: 2px solid lightgray;
+  border-top: 0px;
+  color: rgb(49, 100, 109);
+  justify-content: center;
+  display: none;
+}
+
+p.info {
+  background-color: rgb(188, 241, 250);
+  border-radius: 10px;
+  font-size: 10px;
+  padding: 10px;
+}

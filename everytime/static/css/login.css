@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 360px;
+}
+.box_evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+.box_contents {
+  width: 364px;
+
+  padding: 0;
+  margin: 0;
+}
+
+/* logo */
+.box_img_logo {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 0 58px 0;
+}
+.img_logo {
+  width: 210px;
+  height: 56px;
+}
+
+/* input */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input_box {
+  box-sizing: border-box;
+  width: 360px;
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  margin: 2px;
+  outline: none;
+}
+.input_text {
+  font-size: 1rem;
+
+  padding: 10px;
+}
+.input_box_color {
+  background-color: #f2f2f2;
+}
+
+.input_button_text {
+  font-size: 1rem;
+  font-weight: 900;
+
+  color: #ffffff;
+  padding: 10px;
+}
+.input_button_color {
+  background-color: #cecece;
+}
+.input_button_color.on {
+  background-color: #f91f15;
+}
+
+/* signup */
+.text_signup {
+  padding: 4px;
+  margin: 16px 0 72px 0;
+
+  font-size: 0.9rem;
+  color: #888888;
+  text-decoration: underline;
+}
+
+/* footer */
+.box_center {
+  display: flex;
+  justify-content: center;
+}
+.text_footer_normal {
+  padding: 4px;
+  margin: 4px;
+
+  font-size: 0.8rem;
+  color: #888888;
+}
+.text_footer_bold {
+  padding: 4px;
+  margin: 4px;
+
+  font-size: 0.8rem;
+  color: #888888;
+  font-weight: 900;
+}
+
+/* 반응형 - 780px */
+@media (max-width: 780px) {
+  body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    margin: 0;
+  }
+  .box_contents {
+    width: 100vw;
+    margin: 48px 24px;
+  }
+  .input_box {
+    width: 94vw;
+  }
+}

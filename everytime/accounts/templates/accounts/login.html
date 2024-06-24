@@ -1,16 +1,51 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <title>에브리타임</title>
   </head>
   <body>
-    <h2>로그인</h2>
-    <form method="post">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">login</button>
-    </form>
-    <p><a href="{% url 'accounts:signup' %}">회원가입하기</a></p>
+    <div class="box_contents">
+      <!-- logo -->
+      <div class="box_img_logo">
+        <a href="{% url 'post:home' %}">
+          <img class="img_logo" src="{% static 'img/logo.png' %}" alt="로고" />
+        </a>
+      </div>
+      <!-- form -->
+      <div>
+        <form>
+          {% csrf_token %}
+          <!-- {{ form.as_p }} -->
+          <input id="id_username" class="input_box input_text input_box_color" type="text" placeholder="아이디" />
+          <!-- form_id -->
+          <input id="id_password" class="input_box input_text input_box_color" type="password" placeholder="비밀번호" />
+          <!-- form_password -->
+          <input
+            id="form_submit"
+            class="input_box input_button_text input_button_color"
+            type="submit"
+            value="에브리타임 로그인"
+          />
+        </form>
+      </div>
+      <!-- signup -->
+      <div class="box_evenly">
+        <p class="text_signup"><a href="{% url 'accounts:signup' %}">회원가입</a></p>
+      </div>
+      <!-- footer -->
+      <div class="box_center">
+        <p class="text_footer_normal">이용약관</p>
+        <p class="text_footer_bold">개인정보처리방침</p>
+        <p class="text_footer_normal">문의하기</p>
+        <p class="text_footer_bold">ⓒ 에브리타임</p>
+      </div>
+    </div>
+
+    <script src="{% static 'js/login.js' %}"></script>
   </body>
 </html>

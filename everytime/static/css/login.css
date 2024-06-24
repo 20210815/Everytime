@@ -1,0 +1,113 @@
+/* 기초 세팅 */
+img {
+  width: auto;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  font-family: "Apple SD Gothic Neo", "맑은 고딕", "돋움", sans-serif;
+}
+
+.login-pg {
+  box-sizing: border-box;
+  padding: 48px 24px;
+  width: 100%;
+}
+
+@media (width >= 780px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-pg {
+    padding: 0;
+    width: 360px;
+    height: 446px;
+  }
+}
+
+.logo {
+  margin: 0 auto 40px;
+  width: 210px;
+  height: 56px;
+  background-image: url(../img/logo.png);
+  background-size: cover;
+}
+
+.input-box,
+.input-sub,
+.input-sub-not {
+  display: block;
+  box-sizing: border-box;
+  margin-top: 4px;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  width: 100%;
+  line-height: 24px;
+  color: #292929;
+  font-size: 16px;
+  background-color: #f2f2f2;
+}
+
+.input-sub,
+.input-sub-not {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f91f15;
+  cursor: pointer;
+}
+
+.input-sub-not {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.signup-link > a {
+  color: #737373;
+  font-size: 14px;
+  text-decoration-line: underline;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 96px;
+  gap: 16px;
+}
+
+.footer-text > a,
+.footer-text-b > a {
+  line-height: 18px;
+  color: #737373;
+  font-size: 12px;
+}
+
+.footer-text-b > a {
+  font-weight: bold;
+}

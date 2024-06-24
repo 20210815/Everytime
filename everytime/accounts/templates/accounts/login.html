@@ -1,16 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css'%}" />
+    <title>로그인 - 에브리타임</title>
   </head>
   <body>
-    <h2>로그인</h2>
-    <form method="post">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">login</button>
-    </form>
-    <p><a href="{% url 'accounts:signup' %}">회원가입하기</a></p>
+    <div class="login-pg">
+      <a href="{% url 'post:home' %}"> <div class="logo"></div></a>
+      <form action="/" method="POST" class="form">
+        {% csrf_token %}
+        <input id="id_username" class="input-box" type="text" name="username" placeholder="아이디" required />
+        <input id="id_password" class="input-box" type="password" name="password" placeholder="비밀번호" required />
+        <input id="submitButton" class="input-sub" type="submit" value="에브리타임 로그인" />
+      </form>
+      <div class="signup-link"><a href="{% url 'accounts:signup' %}">회원가입</a></div>
+      <footer class="footer">
+        <div class="footer-text"><a href="https://everytime.kr/page/serviceagreement">이용약관</a></div>
+        <div class="footer-text-b"><a href="https://everytime.kr/page/privacy">개인정보처리방침</a></div>
+        <div class="footer-text"><a href="https://everytime.kr/page/faq">문의하기</a></div>
+        <div class="footer-text-b"><a href="https://everytime.kr">© 에브리타임</a></div>
+      </footer>
+    </div>
+    <script src="{% static 'js/login.js'%}"></script>
   </body>
 </html>

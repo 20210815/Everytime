@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7vw;
+}
+
+img {
+  width: 20vw;
+  margin-bottom: 2vw;
+}
+
+#id_username,
+#id_password,
+#loginBtn {
+  width: 27vw;
+  height: 35px;
+  border: 0;
+  border-radius: 0.7vw;
+  outline: none;
+  margin-bottom: 0.7vw;
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: #f0f0f0;
+  text-align: left;
+  padding-left: 1vw;
+}
+
+input[type="submit"] {
+  /* background-color: #f91f15; */
+  background-color: #8e8b8b;
+  color: white;
+  font-weight: bold;
+  font-size: 1vw;
+}
+
+a {
+  text-decoration: underline;
+  color: #8e8b8b;
+}
+
+p {
+  margin: 5vw;
+}
+
+.list ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+}
+
+.list ul li {
+  margin: 0.7vw;
+}
+
+.boldUl {
+  font-weight: bold;
+  color: #8e8b8b;
+}
+
+.ul {
+  color: #a09e9e;
+}
+
+@media all and (min-width: 780px) {
+  /* 화면 너비가 780px 이상인 경우에만 적용되는 스타일 */
+  #id_username,
+  #id_password,
+  #loginBtn {
+    width: 50vw;
+  }
+}

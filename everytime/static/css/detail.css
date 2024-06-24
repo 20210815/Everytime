@@ -1,0 +1,603 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+/* 헤더 css 코드 */
+header {
+  border-color: gray;
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  height: 75px;
+  gap: 10vw;
+
+  margin: 0 20px;
+}
+
+.check {
+  color: rgb(230, 60, 60);
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  width: 180px;
+}
+
+.appname {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  white-space: nowrap;
+}
+
+.everytime {
+  font-size: 12px;
+  font-weight: 600;
+  color: red;
+}
+
+.schname {
+  font-size: 23px;
+}
+
+.bigcate {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+li:hover {
+  color: red;
+  overflow: hidden;
+}
+
+.anofunc {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.eachfunc {
+  border: solid 1px rgb(205, 205, 205);
+  border-radius: 25%;
+  padding: 6px;
+}
+
+.headhid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10vw;
+}
+
+.boardcate {
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(88, 88, 88);
+  font-size: 14px;
+
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 200px;
+
+  border-top: solid 1px rgb(213, 213, 213);
+  border-bottom: solid 1px rgb(213, 213, 213);
+}
+
+nav {
+  margin-bottom: 10px;
+}
+.b {
+  display: flex;
+  flex-direction: row;
+}
+
+.kindofboard {
+  margin-right: 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding-left: 20px;
+  border-left: solid 1px rgb(205, 205, 205);
+}
+
+/* .kindofboard > div {
+padding-top: 6px;
+} */
+
+.b0 {
+  padding-right: 40px;
+  border-right: solid 1px rgb(205, 205, 205);
+}
+
+.b1 {
+  padding-right: 35px;
+  padding-left: 15px;
+  border-right: solid 1px rgb(205, 205, 205);
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.b2 {
+  padding-right: 35px;
+  padding-left: 15px;
+  border-right: solid 1px rgb(205, 205, 205);
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.b3 {
+  padding-right: 35px;
+  padding-left: 15px;
+  border-right: solid 1px rgb(205, 205, 205);
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.b4 {
+  padding-right: 35px;
+  padding-left: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.b5 {
+  padding-left: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding-right: 25px;
+  border-right: solid 1px rgb(205, 205, 205);
+}
+
+.seemore {
+  color: rgb(230, 60, 60);
+}
+
+/* detail- section */
+section {
+  width: 780px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.secretboard {
+  border: solid 1px rgb(205, 205, 205);
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 600;
+
+  margin-bottom: 5px;
+}
+
+.let_big {
+  width: 780px;
+
+  border: solid 1px rgb(230, 230, 230);
+}
+
+.real_let {
+  padding: 15px;
+}
+
+.write_info {
+  display: flex;
+  flex-direction: row;
+}
+
+.writer_img {
+  border-radius: 20%;
+
+  margin-right: 10px;
+
+  position: relative;
+  bottom: 3px;
+}
+
+.writer_name {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.write_time {
+  color: rgb(170, 170, 170);
+  font-size: 13px;
+}
+
+.sub_func {
+  color: rgb(170, 170, 170);
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  font-size: 12px;
+}
+
+.let_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.detail_title {
+  font-size: 23px;
+  font-weight: 600;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.detail_content {
+  font-size: 15px;
+}
+
+.detail_img {
+  display: flex;
+  gap: 5px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.let_sth {
+  display: flex;
+  flex-direction: row;
+
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.let_good {
+  display: flex;
+  flex-direction: row;
+
+  padding: 5px 8px;
+
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+}
+
+.let_good,
+.let_scrap:hover {
+  cursor: pointer;
+}
+
+.let_scrap {
+  display: flex;
+  flex-direction: row;
+
+  padding: 5px 8px;
+
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+}
+
+.let_let {
+  display: flex;
+  align-items: center;
+
+  color: rgb(110, 110, 110);
+  font-size: 11px;
+  font-weight: 700;
+
+  margin-left: 3px;
+}
+
+.let_img {
+  width: 15px;
+  height: 15px;
+}
+
+.real_comment {
+  border-top: solid 1px rgb(230, 230, 230);
+
+  padding: 15px;
+}
+
+.com_w_img {
+  width: 25px;
+  height: 25px;
+
+  margin-right: 5px;
+
+  border-radius: 5px;
+}
+
+.co_wrinfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.co_name {
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.co_sub {
+  color: rgb(170, 170, 170);
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  font-size: 12px;
+}
+
+.co_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.co_content {
+  margin-top: 5px;
+  margin-bottom: 8px;
+
+  font-size: 13px;
+}
+
+.cotime {
+  color: rgb(139, 139, 139);
+  font-size: 13px;
+}
+
+.let_com input {
+  border: 0;
+  outline: none;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  padding-top: 12px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+
+  background-color: rgb(240, 240, 240);
+}
+
+.newcom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  background-color: rgb(240, 240, 240);
+
+  border-top: solid 1px rgb(230, 230, 230);
+}
+
+.let_submit {
+  display: flex;
+  flex-direction: row;
+}
+
+.ano_check {
+  font-size: 14px;
+  color: #8b8b8b;
+
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+
+  accent-color: red;
+}
+
+.newcom button {
+  background-color: red;
+
+  border: 0;
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+}
+
+.letlist {
+  width: 70px;
+  height: 25px;
+  color: red;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 5px;
+
+  border: solid 1px red;
+  border-radius: 5px;
+
+  margin-top: 5px;
+}
+
+/* aside */
+
+.sideset {
+  display: flex;
+  justify-content: center;
+}
+
+aside {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.asicate1 {
+  color: rgb(57, 57, 223);
+  font-weight: 600;
+
+  border: solid 1px rgb(230, 230, 230);
+  background-color: rgb(250, 250, 250);
+  padding: 10px;
+}
+
+.popletter {
+  border: solid 1px rgb(230, 230, 230);
+  background-color: rgb(250, 250, 250);
+  padding: 10px;
+}
+
+.poptitle {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(70, 70, 70);
+}
+
+.popcontent {
+  font-size: 14px;
+  color: rgb(90, 90, 90);
+
+  margin-top: 3px;
+}
+
+.popboardcate {
+  font-size: 13px;
+  color: rgb(90, 90, 90);
+
+  margin-right: 5px;
+  margin-top: 1px;
+}
+
+.asicate2 {
+  color: rgb(57, 57, 223);
+  font-weight: 600;
+}
+
+.asi_hottitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border: solid 1px rgb(230, 230, 230);
+  background-color: rgb(250, 250, 250);
+  padding: 10px;
+
+  margin-top: 5px;
+}
+
+.seemore2 {
+  color: gray;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.hotcontent {
+  color: grey;
+  font-size: 15px;
+}
+
+.hotinfo {
+  color: grey;
+  font-size: 12px;
+}
+
+.asi_hotletter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border: solid 1px rgb(230, 230, 230);
+  background-color: rgb(250, 250, 250);
+  padding: 10px;
+}
+
+.infointerest {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.interest {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 2px;
+}
+
+.goodimg {
+  width: 11px;
+  height: 11px;
+}
+
+.good {
+  color: red;
+  font-size: 12px;
+
+  margin-left: 5px;
+  margin-right: 9px;
+}
+
+.comimg {
+  width: 11px;
+  height: 11px;
+}
+
+.comment {
+  color: rgb(10, 205, 205);
+  font-size: 12px;
+
+  margin-top: 1px;
+  margin-right: 9px;
+}
+
+.scrapimg {
+  width: 11px;
+  height: 11px;
+}
+
+.scrap {
+  color: rgb(230, 230, 0);
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+/* footer */
+.extrainfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  color: gray;
+  font-size: 12px;
+
+  gap: 5px;
+
+  margin-bottom: 12px;
+}
+
+.boldlet {
+  font-weight: 700;
+}

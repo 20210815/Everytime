@@ -18,19 +18,35 @@
       </div>
       <!-- form -->
       <div>
-        <form>
+        <!-- action="{% url 'post:home' %}" -->
+        <form method="post">
           {% csrf_token %}
           <!-- {{ form.as_p }} -->
-          <input id="id_username" class="input_box input_text input_box_color" type="text" placeholder="아이디" />
-          <!-- form_id -->
-          <input id="id_password" class="input_box input_text input_box_color" type="password" placeholder="비밀번호" />
-          <!-- form_password -->
           <input
-            id="form_submit"
-            class="input_box input_button_text input_button_color"
-            type="submit"
-            value="에브리타임 로그인"
+            id="id_username"
+            class="input_box input_text input_box_color"
+            name="username"
+            type="text"
+            placeholder="아이디"
           />
+          {% if form.username.errors %}
+          <div class="error">{{ form.username.errors }}</div>
+          {% endif %}
+          <!-- form_id -->
+          <input
+            id="id_password"
+            class="input_box input_text input_box_color"
+            name="password"
+            type="password"
+            placeholder="비밀번호"
+          />
+          {% if form.password.errors %}
+          <div class="error">{{ form.username.errors }}</div>
+          {% endif %}
+          <!-- form_password -->
+          <button id="form_submit" class="input_box input_button_text input_button_color" type="submit">
+            에브리타임 로그인
+          </button>
         </form>
       </div>
       <!-- signup -->

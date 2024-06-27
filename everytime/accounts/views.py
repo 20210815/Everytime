@@ -38,7 +38,7 @@ def login_view(request):
 def logout_view(request):
   if request.user.is_authenticated:
     logout(request)
-  return redirect("post:list")
+  return redirect("post:home")
 
 def mypage(request):
   return render(request, 'accounts/mypage.html')

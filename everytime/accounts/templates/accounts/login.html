@@ -10,7 +10,7 @@
   <body>
     <div class="login-pg">
       <a href="{% url 'post:home' %}"> <div class="logo"></div></a>
-      <form action="/" method="POST" class="form">
+      <form method="POST" class="form">
         {% csrf_token %}
         <input id="id_username" class="input-box" type="text" name="username" placeholder="아이디" required />
         <input id="id_password" class="input-box" type="password" name="password" placeholder="비밀번호" required />

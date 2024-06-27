@@ -1,16 +1,98 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입</title>
-</head>
-<body>
-  <h2>회원가입</h2>
-  <form method="post" action="" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">signup</button>
-  </form>
-</body>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+    <title>에브리타임</title>
+  </head>
+  <body>
+    <div class="box_out">
+      <div class="box_in">
+        <!-- info -->
+        <h2>에브리타임 회원가입</h2>
+        <p class="top_text">
+          에브리타임 계정으로
+          <span class="text_bold">캠퍼스픽, 에브리타임</span> 등<br />다양한
+          대학생 서비스를 모두 이용하실 수 있습니다.
+        </p>
+        <!-- form -->
+        <form>
+          {% csrf_token %}
+          <div class="box_margin">
+            <p class="input_name_text">이름</p>
+            <!-- formName -->
+            <input
+              id="id_username
+              "
+              class="input_box input_text input_box_color"
+              type="text"
+              placeholder="이름을 입력하세요."
+            />
+          </div>
+          <div class="box_margin">
+            <p class="input_name_text">닉네임</p>
+            <!-- formNickname -->
+            <input
+              id="id_nickname"
+              class="input_box input_text input_box_color"
+              type="text"
+              placeholder="닉네임을 입력하세요."
+            />
+          </div>
+          <div class="box_margin">
+            <p class="input_name_text">이메일</p>
+            <!-- formEmail -->
+            <input
+              id="id_email"
+              class="input_box input_text input_box_color"
+              type="text"
+              placeholder="이메일을 입력하세요."
+            />
+          </div>
+          <div class="box_margin">
+            <p class="input_name_text">비밀번호</p>
+            <!-- formPassword -->
+            <input
+              id="id_password1"
+              class="input_box input_text input_box_color"
+              type="password"
+              placeholder="숫자/문자 조합, 최소 8자 이상"
+            />
+          </div>
+          <div class="box_margin">
+            <p class="input_name_text">비밀번호 재입력</p>
+            <!-- formRePassword -->
+            <input
+              id="id_password2"
+              class="input_box input_text input_box_color"
+              type="password"
+              placeholder="비밀번호를 재입력하세요."
+            />
+          </div>
+          <div class="box_margin">
+            <!-- formSubmit -->
+            <button
+              id="formSubmit"
+              class="input_box input_button_text input_button_color"
+              type="submit"
+            >
+              회원가입
+            </button>
+            <!-- 수정 추가 필요(빨간색으로) -->
+            <!-- <input
+              id="formSubmit"
+              class="input_box input_button_text input_button_color"
+              type="submit"
+              value="회원가입"
+            /> -->
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="{% static 'js/signup.js' %}"></script>
+  </body>
 </html>

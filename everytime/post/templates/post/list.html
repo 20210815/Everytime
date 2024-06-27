@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static 'css/main.css' %}" /> -->
+  </head>
+  <body>
+    <div class="postBox">
+      {% if posts.exists %} {% for post in posts %}
+      <a href="{% url 'post:detail' post.pk %}">
+        <div class="post">
+          <div class="postText">
+            <div class="post-title">{{ post.title }}</div>
+            <div class="post-content">{{ post.content }}</div>
+            <div class="post-detail">
+              <img class="like" src="{% static 'img/like.png' %}" />
+              <div id="like-count">{{post.post_like.all.count }}</div>
+              <img class="reply" src="{% static 'img/reply.png' %}" />
+              <div id="reply-count">{{ post.posts.all.count }}</div>
+              | {{ post.created_at }} | 익명
+            </div>
+          </div>
+          <img class="previewImg" src="{% static 'img/preview.png' %}" /></div
+      ></a>
+      {% endfor %} {% else %}
+      <div>글이 없습니다.</div>
+      {% endif %}
+    </div>
+  </body>
+</html>

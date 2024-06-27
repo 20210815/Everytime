@@ -1,63 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <a href="{% url 'post:home' %}">메인페이지로 돌아가기</a>
-  <hr>
-  <div>
-    {% include 'post/menu.html' %}
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
+    <!-- <a href="{% url 'post:home' %}">메인페이지로 돌아가기</a>
+  <hr> -->
+    <div>{% include 'post/menu.html' %}</div>
 
-  <h1>{{ category.title }} </h1>
+    <div>
+      {% load static %} {% load humanize %} {% if request.user.is_authenticated %}
+      <!-- <a href="{% url 'accounts:logout' %}">로그아웃</a>
+      <a href="{% url 'accounts:mypage' %}">마이페이지</a> -->
 
-  <div>
-    
-{% load static %}
-{% load humanize %}
-{% if request.user.is_authenticated %}
-    <a href="{% url 'accounts:logout' %}">로그아웃</a>
-    <a href="{% url 'accounts:mypage' %}">마이페이지</a>
+      {% else %}
+      <a href="{% url 'accounts:signup' %}">회원가입</a>
+      <a href="{% url 'accounts:login' %}">로그인</a>
+      {% endif %}
+      <br /><br />
 
-    {% else %}
-    <a href="{% url 'accounts:signup' %}">회원가입</a>
-    <a href="{% url 'accounts:login' %}">로그인</a>
-    {% endif %}
-    <br><br>
-    <form action="{% url 'post:create' category.slug %}" method="post">
-      {% csrf_token %}
-      <input type="text" placeholder="제목 입력" name="title">
-     
-      <br>
-      <textarea name="content" placeholder="본문 입력"></textarea>
-      <input type="checkbox" name="anonymity" value="annoymity_true" >익명
-      <!-- <input type="hidden" name="anonymity" value="annoymity_false" checked> -->
-      <input type="submit" value="작성 완료">
-    </form>
-    
-      {% if posts.exists %}
-        {% for post in posts %}
-        <a href="{% url 'post:detail' post.pk %}"><h1>{{ post.title }}</h1></a>
-      
-          <h4> {{ post.content }}</h4>
+      <div class="wrap">
+        <section class="secBox">
+          <section class="sec1">
+            <div class="categoryName">{{ category.title }}</div>
+            <div class="recom">
+              <div class="recom-q">
+                <img class="questImg" src="{% static 'img/icn_mcr_board_question_light.png' %}" />
+                <span>덕성</span>
+                <span>12기</span>
+                <span>파이팅~</span>
+              </div>
+              <div class="recom-h">
+                <img class="hotImg" src="{% static 'img/icn_mcr_board_hotarticle_light.png' %}" />
+                <span>덕멋최고</span>
+                <span>어흥</span>
+              </div>
+            </div>
+            {% include 'post/post.html' %} {% include 'post/list.html' %}
+          </section>
+          <section class="sec2">
+            <form class="search">
+              <select name="category-select" id="category-select">
+                <option value="s-all">전체</option>
+                <option value="s-tag">해시태그</option>
+                <option value="s-con">글 내용</option>
+                <option value="s-title">글 제목</option>
+              </select>
+              <input type="text" placeholder="검색어를 입력하세요" />
+            </form>
+            <a class="nextBtn" href="#"
+              ><div>다음</div>
+              <img class="next" src="{% static 'img/next.png' %}"
+            /></a>
+          </section>
+        </section>
+        {% include 'post/aside.html' %}
+      </div>
+      {% include 'post/footer.html' %}
 
-          <!-- {{ post.time.total_seconds }} -->
+      <!-- <form action="{% url 'post:create' category.slug %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="제목 입력" name="title" />
 
-          <h4> {{ post.created_at|naturaltime }}</h4>
-          <!-- <h4> {{ post.time }}</h4> -->
-      
-          <!-- <h4> 댓글 {{ post.comment_count }}개</h4> -->
-          <!-- <h4> 댓글 {{ post.post_set.all }}개</h4> -->
-          <p> 댓글 {{ post.posts.all.count }} 공감 {{post.post_like.all.count }}개</p> <!--여기서.나를 역참조할 때 이름-->
-          <hr>
-        {% endfor %}
-      <br>
-    {% else %}
-    <h1>글이 없습니다.</h1>
-    {% endif %}
-  </div>
-</body>
+        <br />
+        <textarea name="content" placeholder="본문 입력"></textarea>
+        <input type="checkbox" name="anonymity" value="annoymity_true" />익명
+        <input type="hidden" name="anonymity" value="annoymity_false" checked>
+        <input type="submit" value="작성 완료" />
+      </form> -->
+
+      <!-- {% if posts.exists %} {% for post in posts %}
+      <a href="{% url 'post:detail' post.pk %}"><h1>{{ post.title }}</h1></a>
+
+      <h4>{{ post.content }}</h4> -->
+
+      <!-- {{ post.time.total_seconds }} -->
+
+      <!-- <h4>{{ post.created_at|naturaltime }}</h4> -->
+      <!-- <h4> {{ post.time }}</h4> -->
+
+      <!-- <h4> 댓글 {{ post.comment_count }}개</h4> -->
+      <!-- <h4> 댓글 {{ post.post_set.all }}개</h4> -->
+      <!-- <p>댓글 {{ post.posts.all.count }} 공감 {{post.post_like.all.count }}개</p> -->
+      <!--여기서.나를 역참조할 때 이름-->
+      <!-- <hr />
+      {% endfor %}
+      <br />
+      {% else %}
+      <h1>글이 없습니다.</h1>
+      {% endif %} -->
+    </div>
+  </body>
 </html>

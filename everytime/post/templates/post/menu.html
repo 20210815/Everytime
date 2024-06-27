@@ -1,4 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static 'css/main.css' %}" /> -->
+  </head>
+  <body>
+    {% include 'post/header.html' %}
 
-{% for category in category_list %}
-<a href="{% url 'post:category_post_list' category.slug %}">{{category.title}}</a>
-{% endfor %}
+    <nav>
+      <div class="nav1">
+        <!-- <a href="#">자유게시판</a><a href="#">비밀게시판</a><a href="#">질문게시판</a><a href="#">새내기게시판</a><a href="#">정보게시판</a
+        ><a href="#">홍보게시판</a> -->
+        {% for category in category_list %}
+        <a href="{% url 'post:category_post_list' category.slug %}">{{category.title}}</a>
+        {% endfor %}
+      </div>
+      <div class="nav2">
+        <a href="#">어른 사자 한진경</a><a href="#">어른 사자 이규민</a><a href="#">어른 사자 김은서</a><a href="#">어른 사자 박규리</a
+        ><a href="#">어른 사자 함요영</a><a href="#">어른 사자 이성경</a>
+      </div>
+      <div class="nav3">
+        <a href="#">어른 사자 박소은</a><a href="#">어른 사자 이현주</a><a href="#">어른 사자 김현지</a><a href="#">어른 사자 한지원</a
+        ><a href="#">어른 사자 목소연</a><a href="#">어른 사자 김서윤</a>
+      </div>
+      <div class="nav4">
+        <a href="#">아기 사자 강나연</a><a href="#">아기 사자 강승현</a><a href="#">아기 사자 김민지</a><a href="#">아기 사자 김진효</a
+        ><a href="#">아기 사자 노진경</a><a href="#">아기 사자 박민주</a>
+      </div>
+      <div class="nav5">
+        <a href="#">아기 사자 박서현</a><a href="#">아기 사자 박선우</a><a href="#">아기 사자 이주원</a><a href="#">아기 사자 정서영</a
+        ><a href="#">아기 사자 최윤영</a><a href="#">아기 사자 한정현</a>
+      </div>
+      <div class="nav6">
+        <a href="#">컴퓨터공학전공</a><a href="#">IT미디어전공</a><a href="#">소프트웨어전공</a><a href="#">사이버보안전공</a><a href="#">문화인류학전공</a
+        ><a href="#">경영학전공</a>
+      </div>
+    </nav>
+  </body>
+</html>

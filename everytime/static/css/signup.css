@@ -1,0 +1,116 @@
+* {
+  font-family: "Apple SD Gothic Neo", "맑은 고딕", "돋움", sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: 0;
+}
+
+.signup-pg {
+  box-sizing: border-box;
+  width: 100vw;
+  object-fit: cover;
+  padding: 16px 24px 48px 24px;
+}
+
+@media (width >= 480px) {
+  html {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .signup-pg {
+    box-sizing: border-box;
+    width: 480px;
+    padding: 24px;
+    margin: 24px auto;
+    border: 1.5px solid #ededed;
+    border-radius: 12px;
+  }
+}
+
+section {
+  display: block;
+}
+
+h2 {
+  line-height: 30px;
+  color: #292929;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+p {
+  margin-top: 8px;
+  line-height: 20px;
+  color: #737373;
+  font-size: 14px;
+}
+
+strong {
+  color: #292929;
+}
+
+section > div {
+  margin-top: 24px;
+}
+
+label {
+  flex: auto;
+  line-height: 20px;
+  color: #737373;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  margin-top: 4px;
+  padding: 8px;
+  border: 1px solid #ededed;
+  border-radius: 12px;
+  width: 100%;
+  height: 40px;
+  line-height: 24px;
+  color: #292929;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 24px 24px;
+  padding-right: 40px;
+}
+
+.input-sub,
+.input-sub-not {
+  display: block;
+  margin-top: 24px;
+  border: 0;
+  border-radius: 12px;
+  width: 100%;
+  height: 40px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f91f15;
+  cursor: pointer;
+  text-align: center;
+  padding-right: 0;
+  cursor: pointer;
+}
+
+.input-sub-not {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}

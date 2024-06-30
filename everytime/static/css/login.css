@@ -1,0 +1,113 @@
+.logo {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.loginall {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.idbox {
+  background: rgb(232, 229, 229);
+  height: 35px;
+  width: 280px;
+  border-radius: 10px;
+  border: 2px solid rgb(232, 229, 229);
+
+  margin-top: 5px;
+}
+
+.idboxall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.redbox {
+  background: rgb(222, 55, 55);
+  border-radius: 10px;
+  border: 2px solid rgb(222, 55, 55);
+
+  margin-top: 5px;
+}
+
+.middleboxall {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bottom1 {
+  font-size: 15px;
+  margin: 90px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.bottom2 {
+  font-size: 12px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.forcenter {
+  display: flex;
+  justify-content: center;
+}
+.loginkor > input {
+  width: 280px;
+}
+
+#login {
+  background-color: rgb(207, 207, 207);
+  height: 35px;
+
+  border-radius: 10px;
+  border: 2px solid rgb(207, 207, 207);
+  color: white;
+}
+
+#login.done {
+  background: rgb(222, 55, 55);
+  height: 35px;
+
+  border-radius: 10px;
+  border: 2px solid rgb(222, 55, 55);
+  /* margin-top: 5px; */
+  color: white;
+}
+
+/*media*/
+@media all and (min-width: 780px) {
+  .middleboxall {
+    width: 100%;
+    display: flex;
+    flex-direction: center;
+  }
+
+  .idbox {
+    width: 560px;
+    display: flex;
+    flex-direction: center;
+  }
+
+  .redbox {
+    width: 100%;
+    margin-top: 5px;
+    background: none;
+    border: none;
+  }
+  .loginkor > input {
+    width: 560px;
+  }
+
+  .loginkor {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,331 @@
+.heading {
+  display: flex;
+  flex-direction: row;
+}
+
+.everytimeicon {
+  display: flex;
+  margin-left: 100px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.menu {
+  margin-left: 220px;
+  margin-right: 220px;
+}
+
+.menu h4 {
+  margin: 10px;
+}
+
+.miniicon {
+  display: flex;
+}
+
+.back {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(224, 224, 224);
+}
+
+.more {
+  font-weight: bold;
+  color: red;
+}
+
+.lasttop {
+  margin-right: 10px;
+}
+
+.lefttop {
+  width: 800px;
+  height: 50px;
+  border: 2px solid lightgray;
+  float: left;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.leftmidpost {
+  width: 800px;
+  height: 250px;
+  border: 2px solid lightgray;
+  float: left;
+  margin-top: 5px;
+}
+
+.posttoptextall {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.posttopall {
+  display: flex;
+  flex-direction: row;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.postcontent_title {
+  font-weight: bold;
+  font-size: large;
+}
+
+.postcontent_middle {
+  margin: 8px;
+}
+
+.postcontent_title {
+  margin-bottom: 10px;
+}
+
+.bottom_push_good {
+  display: flex;
+  flex-direction: row;
+
+  width: 60px;
+  height: 22px;
+  border: 1px solid rgb(238, 237, 237);
+  border-radius: 10px;
+  background-color: rgb(238, 237, 237);
+}
+
+.postcontent_bottom2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom_push_text {
+  font-size: 10px;
+  margin-left: 3px;
+  margin-top: 2px;
+}
+
+.bottom_push_scrap {
+  display: flex;
+  flex-direction: row;
+
+  width: 60px;
+  height: 22px;
+  border: 1px solid rgb(238, 237, 237);
+  border-radius: 10px;
+  background-color: rgb(238, 237, 237);
+}
+
+.bottom_push {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment_top_1 {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.comment_end {
+  color: lightgray;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.comment_middle {
+  font-size: 14px;
+  margin: 5px;
+}
+
+.comment_top {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+
+  width: 800px;
+  height: 85px;
+  border: 2px solid lightgray;
+  float: left;
+}
+
+.comment_text_all {
+  margin: 4px;
+}
+
+.write_comment_text {
+  font-size: 14px;
+  color: gray;
+}
+
+.write_comment {
+  width: 800px;
+  height: 30px;
+  border: 2px solid lightgray;
+  background-color: rgb(242, 242, 242);
+  float: left;
+}
+
+.postlist {
+  width: 90px;
+  height: 30px;
+  border: 2.5px solid rgb(223, 27, 27);
+  float: left;
+  border-radius: 2px;
+
+  display: flex;
+  flex-direction: row;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.postlist_text {
+  color: rgb(223, 27, 27);
+  font-size: 15px;
+  margin-left: 4px;
+}
+
+.leftall {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailbody_all {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.scrap_number {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(215, 215, 121);
+}
+
+/*right메뉴 css*/
+.rightmenuall {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rightmenu {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(246, 242, 242);
+  margin-left: 100px;
+}
+
+.hotarticle {
+  width: 300px;
+  height: 30px;
+  border: 2px solid lightgray;
+  float: left;
+
+  color: rgb(62, 114, 183);
+  font-weight: bold;
+}
+
+.rightbar {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 80px;
+  border: 2px solid lightgray;
+  float: left;
+}
+
+.sorry {
+  font-weight: bold;
+}
+
+.article {
+  display: flex;
+  justify-content: row;
+}
+
+.secretmenu {
+  color: rgb(219, 211, 211);
+}
+
+.right22 {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(246, 242, 242);
+  margin-left: 100px;
+}
+
+/*js*/
+.bigbox {
+  height: 95%;
+  width: 95%;
+  border: 2px solid gray;
+  justify-content: center;
+
+  margin: 10px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+
+  margin: 5px;
+}
+
+.content {
+  font-size: 20px;
+
+  margin: 5px;
+  margin-bottom: 500px;
+}
+
+.div > div > hr {
+  border: 2px solid gray;
+}
+
+.bottomleft {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+
+  margin: 5px;
+}
+
+.checkbox {
+  color: gray;
+  margin-top: 12px;
+  margin-right: 5px;
+}
+
+.bottomright {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+
+  margin-left: 1220px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.submit {
+  background: rgb(222, 55, 55);
+  height: 45px;
+  width: 45px;
+  border: 1px solid rgb(222, 55, 55);
+
+  margin-left: 15px;
+}
+
+.bottom_show {
+  display: flex;
+  flex-direction: row;
+}

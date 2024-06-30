@@ -1,0 +1,62 @@
+.bigbox {
+  height: 95%;
+  width: 95%;
+  border: 2px solid gray;
+  justify-content: center;
+
+  margin: 10px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+
+  margin: 5px;
+}
+
+.content {
+  font-size: 20px;
+
+  margin: 5px;
+  margin-bottom: 500px;
+}
+
+.div > div > hr {
+  border: 2px solid gray;
+}
+
+.bottomleft {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+
+  margin: 5px;
+}
+
+.checkbox {
+  color: gray;
+  margin-top: 12px;
+  margin-right: 5px;
+}
+
+.bottomright {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+
+  margin-left: 1220px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.submit {
+  background: rgb(222, 55, 55);
+  height: 45px;
+  width: 45px;
+  border: 1px solid rgb(222, 55, 55);
+
+  margin-left: 15px;
+}

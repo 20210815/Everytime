@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <a href="{% url 'post:home' %}">메인페이지로 돌아가기</a>
 
     <p>username : {{ request.user.username }}</p>
     <p>email : {{request.user.email }}</p>
     <p>nickname : {{ request.user.nickname }}</p>
 
-    <hr>
-    <br>
+    <hr />
+    <br />
     <!--내가 작성한 글, 내가 스크랩한 글-->
     <a href="{% url 'accounts:write_list' %}">내가 작성한 글</a>
     <a href="{% url 'accounts:scrap_list' %}">내가 스크랩한 글</a>
-
-</body>
+  </body>
 </html>

@@ -1,0 +1,325 @@
+.menu {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.everytimeicon {
+  display: flex;
+  margin-left: 100px;
+}
+
+.menu h4 {
+  margin: 10px;
+}
+
+.menu {
+  margin-left: 220px;
+  margin-right: 220px;
+}
+
+.back {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(224, 224, 224);
+  justify-content: center;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+}
+
+.miniicon {
+  display: flex;
+}
+
+.more {
+  font-weight: bold;
+  color: red;
+}
+
+.lasttop {
+  margin-right: 10px;
+}
+
+.secret {
+  width: 600px;
+  height: 35px;
+  border: 2px solid lightgray;
+  float: left;
+  margin-top: 30px;
+
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.iconbox {
+  flex-direction: row;
+  width: 600px;
+  height: 100px;
+  border: 2px solid lightgray;
+  float: left;
+}
+
+.question {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.newwrite {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(242, 239, 239);
+  width: 600px;
+  height: 30px;
+  border: 2px solid lightgray;
+  float: left;
+  margin-top: 10px;
+
+  font-weight: lighter;
+
+  justify-content: space-between;
+}
+
+.leftmenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.writing {
+  width: 600px;
+  height: 70px;
+  border: 2px solid lightgray;
+  float: left;
+  justify-content: space-between;
+}
+
+.sorry {
+  font-weight: bold;
+}
+
+.before10 {
+  font-weight: lighter;
+  font-style: color rgb(236, 236, 236);
+}
+
+.likelionds {
+  display: flex;
+  justify-content: right;
+  margin-top: 5px;
+}
+
+.rightmenu {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(246, 242, 242);
+  margin-left: 100px;
+}
+
+.hotarticle {
+  width: 300px;
+  height: 30px;
+  border: 2px solid lightgray;
+  float: left;
+
+  color: rgb(62, 114, 183);
+  font-weight: bold;
+}
+
+.allmenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.article {
+  display: flex;
+  justify-content: row;
+}
+
+.rightbar {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 80px;
+  border: 2px solid lightgray;
+  float: left;
+}
+
+.secretmenu {
+  color: rgb(219, 211, 211);
+}
+
+.rightmenuall {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right22 {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(246, 242, 242);
+  margin-left: 100px;
+}
+
+.hot {
+  display: flex;
+  flex-direction: row;
+}
+
+.allandright {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.writing_box {
+  margin: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ham_bar {
+  display: none;
+}
+
+.writingarticle {
+  flex-direction: row;
+  width: 600px;
+  height: 700px;
+  border: 2px solid lightgray;
+  float: left;
+}
+
+/*js추가사항*/
+.bigbox {
+  height: 95%;
+  width: 95%;
+  border: 2px solid gray;
+  justify-content: center;
+
+  margin: 10px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+
+  margin: 5px;
+}
+
+.content {
+  font-size: 20px;
+
+  margin: 5px;
+  margin-bottom: 500px;
+}
+
+.div > div > hr {
+  border: 2px solid gray;
+}
+
+.bottomleft {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+
+  margin: 5px;
+}
+
+.checkbox {
+  color: gray;
+  margin-top: 12px;
+  margin-right: 5px;
+}
+
+.bottomright {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+
+  margin-left: 350px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.submit {
+  background: rgb(222, 55, 55);
+  height: 45px;
+  width: 45px;
+  border: 1px solid rgb(222, 55, 55);
+
+  margin-left: 15px;
+}
+
+.alert-message {
+  width: 500px;
+  height: 50px;
+  border: 2px solid lightgray;
+  display: flex;
+  justify-content: center;
+}
+
+.alert-message-context {
+  background: rgb(147, 236, 252);
+  height: 40px;
+  width: 500px;
+  border: 2px solid rgb(147, 236, 252);
+  display: flex;
+  justify-content: center;
+
+  color: rgb(53, 108, 118);
+  font-size: 9px;
+}
+
+.hidden {
+  display: none;
+}
+
+/*media*/
+@media all and (max-width: 640px) {
+  .secret {
+    display: none;
+  }
+
+  .heading {
+    display: none;
+  }
+
+  .rightmenuall {
+    display: none;
+  }
+
+  .ham_bar {
+    display: flex;
+
+    width: 600px;
+    height: 40px;
+    border: 2px solid lightgray;
+    float: left;
+  }
+
+  .ham_bar_img {
+    margin-right: 10px;
+  }
+
+  .back {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+
+  .ham_bar_and_back {
+    display: flex;
+    flex-direction: column;
+  }
+}

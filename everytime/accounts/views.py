@@ -23,6 +23,7 @@ def signup_view(request):
   else: return render(request, 'accounts/signup.html', {'form':form})
 
 
+
 def login_view(request):
   if request.method == "GET":
     return render(request, 'accounts/login.html', {'form': AuthenticationForm})
@@ -33,7 +34,6 @@ def login_view(request):
     login(request, form.user_cache)
     return redirect("post:home")
   return render(request, 'accounts/login.html', {'form': form})
-
 
 def logout_view(request):
   if request.user.is_authenticated:

@@ -1,63 +1,249 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <a href="{% url 'post:home' %}">메인페이지로 돌아가기</a>
-  <hr>
-  <div>
-    {% include 'post/menu.html' %}
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+  </head>
+  <body>
 
-  <h1>{{ category.title }} </h1>
+<section class="all">
+      <nav>
+        <div class="wrap_bar">
+          <img src="{% static 'img/aside.title.hamburger.png' %}" alt="메뉴바">
+          <h3>비밀게시판</h3>
+        </div>
+        <div class="nav_menu">
+          <div class="logo_left">
+            <a href="{% url 'post:home' %}"><img class="logo_img" src="{% static 'img/nav.logo.png' %}"  alt="에타로고"></a>
+            <div id="title">
+              <p id="everytime">에브리타임</p>
+              <p id="duksung">덕성여대</p>
+            </div>
+          </div>
+          <div class="menu">
+          <ul>
+            <li class="red">게시판</li>
+            <li>시간표</li>
+            <li>강의실</li>
+            <li>학점계산기</li>
+            <li>친구</li>
+            <li>책방</li>
+            <li>캠퍼스픽</li>
+          </ul>
+          </div>
+          <div class="logo_right">
+            <img src="{% static 'img/icn_m_chat_gray800_light.png' %}" alt="말풍선">
+            <a href="{% url 'accounts:mypage' %}"><img src="{% static 'img/icn_m_account_gray800_light.png' %}" alt="말풍선" /></a>
+          </div>
+        </div>
+        
+        
+        <div class="category">
+          <div class="line"></div>
+          <div class="cat">            
+            <ul>
+              <li>자유게시판</li>
+              <li class="red">비밀게시판{% include 'post/menu.html' %}</li>
+              <li>질문게시판</li>
+              <li>졸업생게시판</li>
+              <li>새내기게시판</li>
+              <li>시사*이슈</li>
+              <li>정보게시판</li>
+              <li>홍보게시판</li>              
+            </ul>
+          </div>
+          <div class="cat">
+            <ul>
+              <li>동아리*학회</li>
+            </ul>
+          </div>
+          <div class="line"></div>
+          <div class="cat">
+            <ul>
+              <li>취업*진로</li>
+              <li>⭐교직이수⭐</li>
+              <li>덕성 예비공무원들♡</li>
+              <li>대학원 뿌숭뿌슝🔥🔥</li>
+              <li>미래의 회계사(CPA) ...</li>
+              <li>덕성 로스쿨러들📚</li>
+            </ul>
+          </div>
+          <div class="line"></div>
+          <div class="cat">
+            <ul>
+              <li>총학생회</li>
+              <li>신문사</li>
+              <li>영자신문사</li>
+              <li>운현방송국</li>
+              <li>대학일자리본부</li>
+              <li>동아리연합회</li>
+              <li>교지편집위원회</li>
+              <li class="red">더 보기</li>
+            </ul>
+          </div>
+          <div class="line"></div>
+          <div class="cat">
+              <ul>
+                <li>📑덕성여대 경영학...</li>
+                <li>국제통상학과</li>
+                <li>두드리는 회계학...</li>
+                <li>👩‍💻디지털소프트웨어...</li>
+                <li>🧠심리학과 자게🧠</li>
+                <li>🌕예대의 밤은 깊어...</li>
+                <li>프리팜/바이오공학과...</li>
+                <li class="red">더 보기</li>
+              </ul>
+            </div>
+            <div class="line"></div>
+            <div class="cat">
+              <ul>
+                <li>🌺덕성여대 장터🌺</li>
+                <li>♡덕성여대 기숙사♡</li>
+                <li>덕성 연애방</li>
+                <li>덕성여대 자취생 모임</li>
+                <li>주의 없는 게시판</li>
+                <li>퀴어이기 전에 여성</li>
+                <li>💘덕성 파견학생💘</li>
+                <li>덕성의 국가근로동자...</li>
+              </ul>
+            </div>
+            <div class="cat">
+              <ul>
+                <li>🌺23학번 게시판🌺</li>
+                <li>덕성의 아이돌❤</li>
+                <li>덕성 사랑방</li>
+                <li>덕성여대 책 거래장터</li>
+                <li>다이어덕</li>
+                <li>덕친소 : 내 덕친은 누...</li>
+                <li>미팅 모집방</li>
+                <li class="red">더 보기</li>
+              </ul>
+            </div>
+            <div class="line"></div>
+          </div>
+          
+        </div>
+      </nav>
+    <section class="main">
+      <div class="main_left">
+        <div class="category_name">
+          <h class="title_1">{{ category.title }}</h>
+        </div>
+        <div class="posting_preview">
+          <div class="question">
+            <img class="preview_img" src="{% static 'img/icn_mcr_board_question_light.png' %}" alt="질문">
+            <p>질문</p>
+            <p>질문</p>
+            <p>질문...</p>
+          </div>
+          <div class="hot">
+            <img class="preview_img" src="{% static 'img/icn_mcr_board_hotarticle_light.png' %}" alt="핫">
+            <p>글</p>
+          </div>
+        </div>
+    <div>
+      {% load static %} {% load humanize %} 
+      <form id="write_box">
+        <input type="button" class="write" value="새 글을 작성해주세요!">
+        </input>
+          <img class="writebox-pencil" src="{% static 'img/container.write.background.png' %}" alt="글쓰기">
+        </form>
+      <div id="postContent">
+{% include "post/post.html" %}
+</div>
 
-  <div>
-    
-{% load static %}
-{% load humanize %}
-{% if request.user.is_authenticated %}
-    <a href="{% url 'accounts:logout' %}">로그아웃</a>
-    <a href="{% url 'accounts:mypage' %}">마이페이지</a>
+{% if posts.exists %} {% for post in posts %}
+          <div class="posting">
+            <a href="{% url 'post:detail' post.pk %}"><p class="p_title">{{ post.title }}</p></a>
+            <p class="p_content">{{ post.content }}</p>
+            <p class="p_writter">
+              
+              {{ post.created_at|naturaltime }}
+            </p>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <h1>글이 없습니다.</h1>
+        {% endif %}
+    </div>
 
-    {% else %}
-    <a href="{% url 'accounts:signup' %}">회원가입</a>
-    <a href="{% url 'accounts:login' %}">로그인</a>
-    {% endif %}
-    <br><br>
-    <form action="{% url 'post:create' category.slug %}" method="post">
-      {% csrf_token %}
-      <input type="text" placeholder="제목 입력" name="title">
-     
-      <br>
-      <textarea name="content" placeholder="본문 입력"></textarea>
-      <input type="checkbox" name="anonymity" value="annoymity_true" >익명
-      <!-- <input type="hidden" name="anonymity" value="annoymity_false" checked> -->
-      <input type="submit" value="작성 완료">
-    </form>
-    
-      {% if posts.exists %}
-        {% for post in posts %}
-        <a href="{% url 'post:detail' post.pk %}"><h1>{{ post.title }}</h1></a>
-      
-          <h4> {{ post.content }}</h4>
+    <div class="main_right">
+      <div class="posting_popular">
+        <div class="p_contentbox">
+        <p class="title_2">실시간 인기 글</p>
+        </div>
+        <div class="p_contentbox">
+        <p class="title_3">제목</p>
+        <p class="content_1">내용내용내용내용</p>
+        <div class="icon-bar">
+          <p>비밀게시판</p>
+          <div class="vote-icon">
+          <img class="icon" src="{% static 'img/container.articles.vote.png' %}" alt="좋아요">
+          <p class="vote-number">3</p>
+          </div>
+          <div class="comment-icon">
+          <img class="icon" src="{% static 'img/container.articles.comment.png' %}" alt="댓글">
+          <p class="comment-number">0</p>
+          </div>
+          </div>
+      </div>
+      <div class="p_contentbox">
+        <p class="title_3">제목</p>
+        <p class="content_1">내용내용내용내용</p>
+        <div class="icon-bar">
+          <p>비밀게시판</p>
+          <div class="vote-icon">
+          <img class="icon" src="{% static 'img/container.articles.vote.png' %}" alt="좋아요">
+          <p class="vote-number">3</p>
+          </div>
+          <div class="comment-icon">
+          <img class="icon" src="{% static 'img/container.articles.comment.png' %}" alt="댓글">
+          <p class="comment-number">0</p>
+          </div>
+          </div>
+      </div>
+    </div>
+      <div class="posting_hot">
+        <div class="hot1">
+        <p class="title_2">HOT 게시물</p>
+        <p class="time">더 보기</p>
+      </div>
+        
+        <div class="hot1">
+        <p class="content_2">제목</p>
+        <p class="time">13분 전</p>
+        </div>
+        
+        <div class="hot1">
+        <p class="content_2">제목</p>
+        <p class="time">3/31 16:45</p>
+        </div>
+        
+        <div class="hot1">
+        <p class="content_2">제목</p>
+        <p class="time">3/27 11:05</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
 
-          <!-- {{ post.time.total_seconds }} -->
-
-          <h4> {{ post.created_at|naturaltime }}</h4>
-          <!-- <h4> {{ post.time }}</h4> -->
-      
-          <!-- <h4> 댓글 {{ post.comment_count }}개</h4> -->
-          <!-- <h4> 댓글 {{ post.post_set.all }}개</h4> -->
-          <p> 댓글 {{ post.posts.all.count }} 공감 {{post.post_like.all.count }}개</p> <!--여기서.나를 역참조할 때 이름-->
-          <hr>
-        {% endfor %}
-      <br>
-    {% else %}
-    <h1>글이 없습니다.</h1>
-    {% endif %}
-  </div>
-</body>
+<footer>
+  <ul class="footer">
+    <li>이용약관</li>
+    <li>개인정보처리방침</li>
+    <li>청소년보호정책</li>
+    <li>커뮤니티이용규칙</li>
+    <li>공지사항</li>
+    <li>문의하기</li>
+    <li>(c) 에브리타임</li>
+  </ul>
+</footer>
+</section>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
 </html>

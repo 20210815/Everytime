@@ -1,67 +1,359 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글 상세</title>
-</head>
-<body>
-  <a href="{% url 'post:category_post_list' post.category.slug%}"> 뒤로가기 </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>글 상세</title>
+    <link href="{% static 'css/detail.css'%}" rel="stylesheet" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav_menu">      
+        <div class="logo_left">
+          <img class="logo_img" src="{% static 'img/nav.logo.png'%}"  alt="에타로고">
+          
+          <div class="title">
+            <p id="everytime">에브리타임</p>
+            <p id="duksung">덕성여대</p>
+          </div>
+        </div>
+        <div class="menu">
+          <ul>
+            <li class="red">게시판</li>
+            <li>시간표</li>
+            <li>강의실</li>
+            <li>학점계산기</li>
+            <li>친구</li>
+            <li>책방</li>
+            <li>캠퍼스픽</li>
+          </ul>
+          </div>
+          <div class="logo_right">
+            <img src="{% static 'img/icn_m_chat_gray800_light.png' %}" alt="말풍선">
+            <a href="{% url 'accounts:mypage' %}"><img src="{% static 'img/icn_m_account_gray800_light.png' %}" alt="말풍선" /></a>
+          </div>
+        </div>
+        
+        
+        <div class="category">
+          <hr>
+          <div class="line"></div>
+          <div class="cat">            
+            <ul>
+              <li>자유게시판</li>
+              <li class="red">비밀게시판</li>
+              <li>질문게시판</li>
+              <li>졸업생게시판</li>
+              <li>새내기게시판</li>
+              <li>시사*이슈</li>
+              <li>정보게시판</li>
+              <li>홍보게시판</li>              
+            </ul>
+          </div>
+          <div class="cat">
+            <ul>
+              <li>동아리*학회</li>
+            </ul>
+          </div>
+          <div class="line"></div>
+          <div class="cat">
+            <ul>
+              <li>취업*진로</li>
+              <li>⭐교직이수⭐</li>
+              <li>덕성 예비공무원들♡</li>
+              <li>대학원 뿌숭뿌슝🔥🔥</li>
+              <li>미래의 회계사(CPA) ...</li>
+              <li>덕성 로스쿨러들📚</li>
+            </ul>
+          </div>
+          <div class="line"></div>
+          <div class="cat">
+            <ul>
+              <li>총학생회</li>
+              <li>신문사</li>
+              <li>영자신문사</li>
+              <li>운현방송국</li>
+              <li>대학일자리본부</li>
+              <li>동아리연합회</li>
+              <li>교지편집위원회</li>
+              <li class="red">더 보기</li>
+            </ul>
+          </div>
+          <div class="line"></div>
+          <div class="cat">
+              <ul>
+                <li>📑덕성여대 경영학...</li>
+                <li>국제통상학과</li>
+                <li>두드리는 회계학...</li>
+                <li>👩‍💻디지털소프트웨어...</li>
+                <li>🧠심리학과 자게🧠</li>
+                <li>🌕예대의 밤은 깊어...</li>
+                <li>프리팜/바이오공학과...</li>
+                <li class="red">더 보기</li>
+              </ul>
+            </div>
+            <div class="line"></div>
+            <div class="cat">
+              <ul>
+                <li>🌺덕성여대 장터🌺</li>
+                <li>♡덕성여대 기숙사♡</li>
+                <li>덕성 연애방</li>
+                <li>덕성여대 자취생 모임</li>
+                <li>주의 없는 게시판</li>
+                <li>퀴어이기 전에 여성</li>
+                <li>💘덕성 파견학생💘</li>
+                <li>덕성의 국가근로동자...</li>
+              </ul>
+            </div>
+            <div class="cat">
+              <ul>
+                <li>🌺23학번 게시판🌺</li>
+                <li>덕성의 아이돌❤</li>
+                <li>덕성 사랑방</li>
+                <li>덕성여대 책 거래장터</li>
+                <li>다이어덕</li>
+                <li>덕친소 : 내 덕친은 누...</li>
+                <li>미팅 모집방</li>
+                <li class="red">더 보기</li>
+              </ul>
+            </div>
+            <div class="line"></div>
+          <hr>
+          </div>
+        </div>
+      </nav>
 
-  <h1>{{ post.title }}</h1> 
-  <h2>{{ post.content }} </h2> 
-  <h2>{{ post.created_at }}</h2> <br><br>
-  {% if post.anonymity == True %}익명
-  {% else %}
-    <h5>{{ post.user.username }}</h5>
-  {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}
+    {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
+    <!---->
+    {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}
 
+    <div class="main">
+      <section>
+        <section class="sec1">
+          <a href="{% url 'post:category_post_list' post.category.slug%}"><h3>비밀게시판</h3></a>
+        </section>
+        <section class="sec2">
+          <div class="top">
+          <div class="writer">
+            <img class="profile-photo" src="{% static 'img/anonymous.profile.png' %}" alt="프로필사진">
+            <div class="profile">
+              {% if post.anonymity == True %} <p class="anonymity">익명</p> {% else %}
+              <p class="anonymity">{{ post.user.username }}</p>{% endif %}
+            
+              
+            <p class="time1">{{ post.created_at }}</p>
+          </div>
 
-  <p>공감 {{post.post_like.all.count }}개</p>
-  <p>스크랩 {{post.scrap_users.count }}개</p>
-  <form action="{% url 'post:post_like' post.id %}" method="post">
-    {% csrf_token %}
-    <button>공감</button>
-  </form>
+          </div>
+          <div class="top-right">
+            {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
+            <!---->
+            {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}
+            <p class="message">쪽지</p>
+            <p class="report">신고</p>
+          </div>
+          </div>
+          <div class="content">
+            <h4>{{ post.title }}</h4>
+            <P>{{ post.content }}</P>
+          </div>
+          <div class="icon-bar">
+            <div class="vote-icon">
+            <img class="icon1" src="{% static 'img/container.articles.vote.png' %}" alt="좋아요">
+            <p class="vote-number">{{post.post_like.all.count }}</p>
+            </div>
+            <div class="comment-icon">
+            <img class="icon2" src="{% static 'img/container.articles.comment.png' %}" alt="댓글">
+            <p class="comment-number">{{ post.posts.all.count }}</p>
+            </div>
+            <div class="scrap-icon">
+            <img class="icon3" src="{% static 'img/container.articles.scrap.png' %}" alt="스크랩">
+            <p class="scrap-number">{{post.scrap_users.count }}</p>
+            </div>
+          </div>
+
+          <div class="icon-button">
+            <div class="vote-button">
+              <form action="{% url 'post:post_like' post.id %}" method="post">
+              {% csrf_token %}
+              <img src="{% static 'img/container.articles.buttons.posvote.png' %}" alt="공감 버튼">
+              <button id="voteBtn">공감</button>
+            </form>
+            </div>
+
+            <div class="scrap-button">
+              <form action="{% url 'post:post_scrap' post.id %}" method="post">
+              {% csrf_token %}
+              <img src="{% static 'img/container.articles.buttons.scrap.png' %}" alt="스크랩 버튼">
+              <button onclick="change()" id="scrapBtn">스크랩</button>
+              </form>
+            </div>
+          </div>
+        </section>
+    
+    {% if comments.exists %}
+          <section class="sec3">
+            {% for comment in comments %}
+            <div class="comment-box">
+            <div class="comment-top">
+            <div class="nickname">
+              <img src="{% static 'img/anonymous.profile.png' %}" alt="프로필사진">
+              <p>{% if comment.anonymity == True %}익명 {% else %} {{ comment.user }} {% endif %}</p>               
+            </div>
+            <div class="comment-side">
+              <input type="button" value="대댓글" class="replybtn"/>
+              <p>공감</p>
+              <p>쪽지</p>
+              {% if request.user == comment.user %} <a href="{% url 'post:com_delete' com_id=comment.id post_id=post.id %}">삭제하기</a> {% endif %}
+            </div>
+          </div>
+            <div class="comment-content">
+              <p>{{ comment.content }}</p>             
+            </div>
+            <div class="comment-time">
+              <p>{{ comment.created_at }}</p>
+            </div>
+            <div class="reply-box">
+              <div class="comment-top">
+                <div class="nickname">
+                  <img src="{% static 'img/anonymous.profile.png' %}" alt="프로필사진">
+                  <p>익명(글쓴이)</p>               
+                </div>
+                <div class="comment-side">
+                  <p>공감</p>
+                  <p>쪽지</p>
+                </div>
+              </div>
+                <div class="comment-content">
+                  <p>답글...</p>             
+                </div>
+                <div class="comment-time">
+                  <p>2분 전</p>
+                </div>
+              </div>
+                <div class="input-box2">
+                  <form class="form">
+                  <input type="text" class="comment-input" placeholder="대댓글을 입력하세요."></input>
+                  <div class="checkbox">
+                    <input type="checkbox" id="check" onclick="change2()"></input>
+                    <label for="check" class="check1">익명</label>
+                  </div>
+                  <button type="submit">
+                  <img class="pencil" src="{% static 'img/container.articles.write.submit.png' %}" alt="글작성" />
+                </button>
+              </form>
+              </div>
+          </div>
+            </form>
+            
+          </section>
+    {% endfor %} {% else %}{% endif %}
+    <section class="sec4">
+    <div class="input-box">
+    <form action="{% url 'post:com_create' post.id %}" class="form" method="POST">
+      {% csrf_token %}
+      <input type="text" name="content" class="comment-input" placeholder="댓글을 입력하세요." />
+      <div class="checkbox">
+      <input type="checkbox" name="anonymity" id="check" onclick="change2()" value="annoymity_true" checked />
+      <label for="check" class="check1">익명</label>
+      </div>
+      <input type="submit" value="">
+      <img class="pencil" src="{% static 'img/container.articles.write.submit.png' %}" alt="글작성" />
+    </input>
+    </form>
+    </div>
+    </section>
   
-
-  <form action="{% url 'post:post_scrap' post.id %}" method="post">
-    {% csrf_token %}
-    <button>스크랩</button>
-  </form>
-
-  <hr>
-  <h4>댓글</h4>
-  {% if comments.exists %} 
-      {% for comment in comments %}
-      <p>
-      <br>
-        {{ comment.content }} -   
-        {% if comment.anonymity == True %}익명
-
-        {% else %}
-          {{ comment.user }}
-        {% endif %}
-        - {{ comment.created_at }}
-        <br>
-        {% if request.user == comment.user %} <a href="{% url 'post:com_delete' com_id=comment.id post_id=post.id %}">삭제하기</a> {% endif %}
-      </p>
-        {% endfor %}
+    <section class="sec5">
+      <img src="{% static 'img/container.articles.pagination.list.png' %}" alt="글목록">
+      <p>글 목록</p>
+    </section>
+</section>
+    <aside>
+    <div class="posting_hot">
+      <div class="hot1">
+      <p class="aside-title">HOT 게시물</p>
+      <p class="time">더 보기</p>
+    </div>
+      
+      <div class="hot1">
+      <p class="content_2">떡튀순 1인분 6000원</p>
+      <p class="time">04/03 15:40</p>
+      </div>
+      
+      <div class="hot1">
+      <p class="content_2">요즘 나만 느끼나</p>
+      <p class="time">3/31 16:45</p>
+      </div>
+      
+      <div class="hot1">
+      <p class="content_2">지역학 시간에 딴짓 좀 그만하세요</p>
+      <p class="time">3/27 11:05</p>
+      </div>
+    </div>
   
-  {% else %}
-  댓글이 없습니다.
-  {% endif %}
-  <hr>
-  <form action="{% url 'post:com_create' post.id %}" method="POST">
-    {% csrf_token %}
-    <input type="text" name="content">
-    <input type="submit" value="작성">
-    <input type="checkbox" name="anonymity" value="annoymity_true" checked>익명
-
-  </form>
+    <div class="best">
+      <div class="hot1">
+      <p class="aside-title">BEST 게시판</p>
+      <p class="time">더 보기</p>
+    </div>
+    </div>
 
 
-</body>
+    <div class="posting_popular">
+      <div class="title_2">
+        <p class="aside-title">학교 소식</p>
+      </div>
+      <div class="post">
+      <p class="title_3">🌊덕성과 봄이 만난 순간포착 이벤트🌊</p>
+      <p class="content_1">#총학생회_파도<br>안녕하세요, 덕성여자대학교 제 40대 총학생회 파도입</p>
+      <div class="icon-bar">
+        <p>총학생회</p>
+        <div class="vote-icon">
+        <img class="icon" src="{% static 'img/container.articles.vote.png' %}" alt="좋아요">
+        <p class="vote-number">3</p>
+        </div>
+        <div class="comment-icon">
+        <img class="icon" src="{% static 'img/container.articles.comment.png' %}" alt="댓글">
+        <p class="comment-number">0</p>
+        </div>
+        </div>
+        </div>
+        <div class="post">
+          <p class="title_3">글로벌융합대학 ICAN 다이어리 여분 배부 진행 ...</p>
+          <p class="content_1">안녕하세요, 제4대 글로벌융합대학 비상대책위원회입니다. 글로벌융합대학 교학부의 협조와 요청을 받아 글로</p>
+          <div class="icon-bar">
+            <p>글로벌융합대학 학생회</p>
+            <div class="vote-icon">
+            <img class="icon" src="{% static 'img/container.articles.vote.png' %}" alt="좋아요">
+            <p class="vote-number">12</p>
+            </div>
+            <div class="comment-icon">
+            <img class="icon" src="{% static 'img/container.articles.comment.png' %}" alt="댓글">
+            <p class="comment-number">0</p>
+            </div>
+            </div>
+            </div>
+            </div>
+    
+      <div class="review">
+        <div class="hot1">
+        <p class="aside-title">최근 강의평</p>
+        <p class="time">더 보기</p>
+      </div>
+      <div class="post">
+      <img class="star" src="{% static 'img/app.subject.rating.details.star.off.png' %}" alt="별">
+      <p class="title_3">일반생물학2 : 김태훈</p>
+      <p class="content_1">교수님 수업 너무 좋아요!!<br>문제도 막ㅁ어렵지 않고 적당한 것 같아요</p>
+      </div>
+      <div class="post">
+        <img class="star" src="{% static 'img/app.subject.rating.details.star.off.png' %}" alt="별">
+        <p class="title_3">나의진로나의꿈 : 손재현, 최주아</p>
+        <p class="content_1">유익하고 들을만합니다<br>녹강임에도 기간도 충분하여 충분히 패스 받으실 수 있</p>
+      </div>
+</aside>
+</div>
+    <script src="{% static 'js/detail.js'%}"></script>
+  </body>
 </html>

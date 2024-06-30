@@ -1,28 +1,62 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/start.css' %}">
+{% include "post/header.html" %}
 {% include "post/menu.html" %}
-{% if request.user.is_authenticated %}
-  <p>nickname : {{ request.user.nickname }}</p>
-  <hr>
-  <br>
-  <a href="{% url 'accounts:mypage' %}">마이페이지</a>
-  <a href="{% url 'accounts:logout' %}">로그아웃</a>
 
-  <hr>
-  <!--내가 작성한 글, 내가 스크랩한 글-->
-  <a href="{% url 'accounts:write_list' %}">내가 작성한 글</a>
-  <a href="{% url 'accounts:scrap_list' %}">내가 스크랩한 글</a>
-{% else %}
-|
-  <a href="{% url 'accounts:signup' %}">회원가입</a>
-  <a href="{% url 'accounts:login' %}">로그인</a>
-{% endif %}
-<p> 
-  {% for category in category_list %}
-  <h1><a href="{% url 'post:category_post_list' category.slug %}">{{category.title}}</a></h1>
+<!--본문-->
+{% block body %}
+<div class="intro">
+  <div class="btnSpace">
+    <div class="btnLogo">
+      <img src="{% static 'img/logo.png' %}" alt="에브리타임 로고" />
+    </div>
+    <div class="btnS">
+      {% if request.user.is_authenticated %}
+      <p class="user_nick">nickname : {{ request.user.nickname }}</p>
+
+      <button class="mypageBtn" onclick=""><!--href="{% url 'accounts:mypage' %}"-->마이페이지</button>
+      <button class="logoutBtn" onclick=""><!--a href="{% url 'accounts:logout' %}"-->로그아웃</button>
+      <!--내가 작성한 글, 내가 스크랩한 글-->
+      <button class="mypostBtn" onclick=""><!--a href="{% url 'accounts:write_list' %}"-->내가 작성한 글</button>
+      <button class="myscrapBtn" onclick=""><!--a href="{% url 'accounts:scrap_list' %}"-->내가 스크랩한 글</button>
+      {% else %}
+      <button class="loginBtn" onclick="goToLogin()">로그인</button>
+      <button class="signupBtn" onclick="goToSignup()">에브리타임 회원가입</button>
+      {% endif %}
+
+    </div>
+  </div>
+  <div class="contentSpace">
+    <img src="{% static 'img/start_img.png' %}" alt="대문 이미지" />
+  </div>
+</div>
+
+
+<div class="categorySpace">
+  <div class="categorys">
+    {% for category in category_list %}
+    <div class="category_div">
+      <h1 class="categorys_title"><a href="{% url 'post:category_post_list' category.slug %}">{{category.title}}</a>
+      </h1>
       {% for post in recent_posts %}
-        {% if post.category.title == category.title %}
-          <p><a href="{% url 'post:detail' post.id %}">{{ post.title }}</a></p>
-        {% endif %}
+      {% if post.category.title == category.title %}
+      <p class="category_post"><a href="{% url 'post:detail' post.id %}">{{ post.title }}</a></p>
+      {% endif %}
       {% endfor %}
-    <hr>
-  {% endfor %}
+
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  function goToSignup() {
+    window.location.href = "{% url 'accounts:signup' %}";
+  }
+
+  function goToLogin() {
+    window.location.href = "{% url 'accounts:login' %}";
+  }
+</script>
 </p>
+{% endblock %}

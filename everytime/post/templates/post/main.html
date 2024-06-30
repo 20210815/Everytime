@@ -1,0 +1,10 @@
+{% extends 'post/base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{static 'css/style_main.css'}">{% end block %}
+{% block body %}
+{% include 'post/header.html' %}
+{% include 'post/nav.html' %}
+{% include 'post/list.html' %}
+{% include 'post/aside.html' %}
+{% endblock %}

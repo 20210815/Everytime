@@ -1,0 +1,33 @@
+{% extends 'post/base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style_header.css' %}">
+{% endblock %}
+{% block body %}
+<nav class="topmenu" id="topmenu">
+    <div class=" mainlogo">
+        <a href="{% url 'post:home' %}"><img src="{% static 'img/nav.logo.png' %}" alt="에브리타임 로고" width="40"
+                height="40"></a>
+        <p><span id="everytime">에브리타임</span><br><span id="duksung">덕성여대</span></p>
+    </div>
+    <ul class="category">
+        <li><a href="https://everytime.kr/" id="board" style="color: red">게시판</a></li>
+        <li id="timetable"><a href="https://everytime.kr/timetable">시간표</a></li>
+        <li><a href="https://everytime.kr/lecture">강의실</a></li>
+        <li><a href="https://everytime.kr/calculator">학점계산기</a></li>
+        <li><a href="https://everytime.kr/friend">친구</a></li>
+        <li><a href="https://bookstore.everytime.kr/">책방</a></li>
+        <li><a href="https://www.campuspick.com/">캠퍼스픽</a></li>
+    </ul>
+    <div class="menu">
+        <a href="https://everytime.kr/message"><img src="{% static 'img/채팅.png' %}" alt="채팅" width="24px"
+                height="24px"></a>
+        <a href="https://everytime.kr/my"><img src="{% static 'img/나.png' %}" alt="회원 정보" width="24px"
+                height="24px"></a>
+    </div>
+</nav>
+<nav class="mobile_header">
+    <a href="" class="full_menu"><img src="{% static 'img/aside.title.hamburger.png' %}" alt="전체 메뉴" width="25"></a>
+    <a href="#" class="secret_board">비밀게시판</a>
+</nav>
+{% endblock %}

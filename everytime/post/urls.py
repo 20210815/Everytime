@@ -17,4 +17,5 @@ urlpatterns = [
   path('<int:post_id>/scrap', views.post_scrap, name="post_scrap"),
   path('<slug:slug>/', views.category_post_list, name="category_post_list"),
 
+  #path('', views.start, name="start")
 ]

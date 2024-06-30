@@ -1,0 +1,577 @@
+/* 전체적으로 적용 */
+
+a {
+  text-decoration-line: none;
+}
+
+a:link {
+  color: #666;
+}
+
+a:visited {
+  color: #666;
+}
+
+/* 기능이동 */
+
+#topmenu {
+  width: 100vw;
+  height: 80px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-bottom: 2px solid #d6d6d6;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  z-index: 999;
+  justify-content: center;
+}
+
+.topmenu_content {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*로고*/
+.mainlogo {
+  display: flex;
+  align-items: center;
+}
+
+.mainlogo img {
+  margin-right: 18px;
+}
+
+#everytime {
+  font-size: 12px;
+  color: red;
+  font-weight: bold;
+}
+
+#duksung {
+  font-size: 22px;
+  position: relative;
+  right: 3px;
+  bottom: 2px;
+}
+
+/*topmenu-category*/
+.category {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.category li {
+  font-size: 16px;
+  font-weight: bold;
+  list-style: none;
+  margin-right: 22px;
+}
+
+.category li a:hover {
+  color: red;
+}
+
+#board {
+  padding-top: 33px;
+  padding-bottom: 28px;
+  border-bottom: 4px solid red;
+}
+
+.menu a img {
+  border: 1px solid rgb(175, 175, 175);
+  border-radius: 10px;
+  padding: 7px;
+}
+
+/*다양한 게시판*/
+.messageboard_bg {
+  clear: left;
+  width: 100vw;
+  height: 230px;
+  background-color: #f2f2f2;
+  border: 1px solid #d6d6d6;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.messageboard {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.messageboard div {
+  margin: 10px 5px;
+}
+
+.messageboard div {
+  display: flex;
+  justify-content: center;
+}
+
+.messageboard div:first-child {
+  border-left: 1px solid #d6d6d6;
+}
+
+.messageboard div:last-child {
+  border-right: 1px solid #d6d6d6;
+}
+
+.messageboard div ul {
+  padding: 0;
+  padding-left: 3vw;
+}
+
+.messageboard div ul li {
+  font-size: 13px;
+  list-style: none;
+  margin-bottom: 7px;
+  display: inline-block;
+  width: 150px;
+  margin: 1px;
+}
+
+.messageboard div ul li a:hover {
+  color: red;
+}
+
+.more a {
+  color: red;
+  font-weight: bold;
+}
+
+.group {
+  border-left: 1px solid #d6d6d6;
+}
+
+/*  */
+
+.main_post {
+  width: 780px;
+}
+
+#name {
+  width: 100%;
+  border: 1px solid #d6d6d6;
+  margin-top: 8px;
+}
+
+#name h1 {
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 23px;
+}
+
+#recommendation {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d6d6d6;
+  margin-top: 8px;
+  width: 100%;
+}
+
+#recommendation div {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.QnA {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  height: 40px;
+  width: 90px;
+  background-color: #edfffe;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.QnA a p,
+.hot a p {
+  font-size: 12px;
+}
+
+.hot {
+  border-radius: 10px;
+  height: 40px;
+  width: 150px;
+  background-color: #fff3f3;
+  margin-left: 20px;
+  margin: 10px 0;
+  justify-content: center;
+}
+
+.hot a {
+  display: flex;
+  align-items: center;
+}
+
+.hot img {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.new {
+  border: 2px solid #d0cfcf;
+  width: 100%;
+  height: 50px;
+  background-color: #f5f5f5;
+  margin-top: 8px;
+}
+
+.new div {
+  display: flex;
+  margin-left: 10px;
+
+  font-size: 14px;
+  color: #8f8f8f;
+  background-color: #f5f5f5;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new div p {
+  margin-top: 15px;
+}
+
+.post {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.post_content {
+  width: 100%;
+  height: 110px;
+  border-top: 1px solid #d0cfcf;
+  border-left: 1px solid #d0cfcf;
+  border-right: 1px solid #d0cfcf;
+}
+
+.post_content:hover {
+  background-color: #f1f1f1;
+}
+
+.post_content:last-child {
+  border-bottom: 1px solid #d0cfcf;
+}
+
+.post_title {
+  margin: 15px 0 0 15px;
+  font-size: 14px;
+  color: black;
+}
+
+.post_text {
+  font-size: 14px;
+  margin: 5px 0 0 15px;
+  color: black;
+}
+
+.post_detail {
+  font-size: 10px;
+  margin: 5px 0 15px 15px;
+  color: #8f8f8f;
+}
+
+.search_next {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d0cfcf;
+  height: 37px;
+  border-radius: 5px;
+  margin-left: 8px;
+}
+
+.search select,
+.search input {
+  color: #8f8f8f;
+  border: none;
+  height: 26px;
+}
+
+.search img {
+  margin: 0px 5px;
+}
+
+.next a {
+  color: red;
+  border-radius: 2px;
+  padding: 7px 6px;
+  border: 1px solid red;
+  background-color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.side {
+  width: 300px;
+}
+
+.side_title,
+.hot_post {
+  border-top: 1px solid #d0cfcf;
+  border-left: 1px solid #d0cfcf;
+  border-right: 1px solid #d0cfcf;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  height: 40px;
+  justify-content: space-between;
+}
+
+.side_post {
+  border-top: 1px solid #d0cfcf;
+  border-left: 1px solid #d0cfcf;
+  border-right: 1px solid #d0cfcf;
+  background-color: #f7f7f7;
+}
+
+.side_post:hover,
+.hot_post:hover {
+  background-color: #fdfdfd;
+}
+
+.last {
+  border-bottom: 1px solid #d0cfcf;
+}
+
+.side_title {
+  margin-top: 8px;
+}
+
+.side_title p {
+  margin: 10px;
+  font-weight: bold;
+  color: rgb(39, 90, 161);
+}
+
+.hot_post p {
+  margin-left: 10px;
+  color: black;
+}
+
+.side_post_content {
+  margin: 0;
+  color: black;
+}
+
+a.more_content {
+  font-size: 13px;
+  color: #8f8f8f;
+  margin: 10px 10px 10px 0;
+}
+
+.hot_post_detail,
+.side_post_detail {
+  color: #8f8f8f;
+  font-size: 12px;
+}
+.hot_post_detail {
+  margin-right: 10px;
+}
+
+.side_post_detail p {
+  font-weight: bold;
+}
+
+.side_post h3 {
+  margin: 10px 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+}
+
+.side_post img {
+  margin-left: 10px;
+}
+
+.side_post p {
+  font-size: 13px;
+  margin: 5px 10px;
+}
+
+.main_content {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+
+.side {
+  margin-left: 30px;
+}
+
+.star p {
+  margin-bottom: 0;
+}
+
+.star img {
+  margin: 10px 0 0 8px;
+}
+
+/*하단 바*/
+.footer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.website_detail ul {
+  display: flex;
+  list-style: none;
+  margin-top: 60px;
+  justify-content: center;
+  padding: 0;
+}
+
+.website_detail ul li:first-child {
+  margin: 0;
+}
+
+.website_detail ul li a {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.notify {
+  font-size: 12px;
+  color: #c4c4c4;
+  text-align: center;
+}
+
+.review {
+  padding-bottom: 10px;
+}
+@media all and ((min-width: 641px) and (max-width: 920px)) {
+  .category li {
+    font-size: 0.8rem;
+  }
+}
+
+@media all and (min-width: 641px) {
+  .mobile_header {
+    display: none;
+  }
+}
+
+@media all and (max-width: 640px) {
+  #topmenu,
+  #name,
+  .side {
+    display: none;
+  }
+
+  .mobile_header {
+    width: 101vw;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 2px solid #d6d6d6;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #ffffff;
+    font-size: 16px;
+  }
+
+  .mobile_header a {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+  }
+
+  .mobile_header a:first-child {
+    margin-left: 10px;
+  }
+
+  .main_post {
+    width: 98vw;
+  }
+
+  .website_detail ul {
+    flex-wrap: wrap;
+  }
+
+  .messageboard {
+    overflow-x: scroll;
+  }
+
+  .messageboard div ul li {
+    width: 150px;
+  }
+}
+
+/*글 쓰기*/
+.post_form {
+  width: 780px;
+  display: none;
+}
+
+.newpost {
+  margin-top: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #ccc;
+}
+
+.newpost_title {
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 0 15px 15px;
+}
+
+.newpost_content {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  font-size: 12px;
+  padding: 15px 0 15px 15px;
+}
+
+.file_submit {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.anonymity {
+  margin-left: 595px;
+}
+
+.submit {
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border: none;
+  margin-left: 15px;
+}
+
+.ko_anonymity {
+  color: #737373;
+  font-size: 12px;
+  font-weight: 800;
+}

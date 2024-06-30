@@ -1,9 +1,9 @@
-let user_name = document.querySelector("#user_name");
-let user_nick = document.querySelector("#user_nick");
-let user_email = document.querySelector("#user_email");
-let user_pw = document.querySelector("#user_pw");
-let re_user_pw = document.querySelector("#re_user_pw");
-let submit = document.querySelector("#submit");
+let user_name = document.querySelector("#id_username");
+let user_nick = document.querySelector("#id_nickname");
+let user_email = document.querySelector("#id_email");
+let user_pw = document.querySelector("#id_password1");
+let re_user_pw = document.querySelector("#id_password2");
+let submit = document.getElementsByTagName("button")[0];
 
 function submitColor() {
   if (

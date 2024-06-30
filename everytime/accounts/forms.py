@@ -6,3 +6,9 @@ class SignUpForm(UserCreationForm):
   class Meta():
     model = get_user_model()
     fields = ['username', 'email', 'nickname']
+
+    labels = {
+      'username': '이름',
+      'email': '이메일',
+      'nickname' : '닉네임'
+    }

@@ -14,12 +14,19 @@ from django.views.generic import ListView
 #   #posts = Post.objects.annotate(comment_count=Count('comment')).order_by('-id')
 #   return render(request, 'post/home.html', {'posts': posts})
 
+#start.html
+
+'''
+def start(request):
+  return render(request, "post/start.html")
+'''
 
 def detail(request, id):
   post = get_object_or_404(Post, pk=id)
   comments = Comment.objects.filter(post = post)
   #해당 순서대로 번호 부여할 수 있도록....
   #com_count = ComCount.objects.filter(post=post)
+  category_list = Category.objects.all()
   return render(request, "post/detail.html", {'post': post, 'comments': comments})#, 'com_count': com_count})
 
 
@@ -109,7 +116,7 @@ def post_like(request, post_id):
     #관계 설정
     post.like_users.add(user)
     
-  return redirect("post:detail", post_id)
+  return redirect("post:detail", post_id, {'category_list': category_list})
 
 
 @login_required

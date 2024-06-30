@@ -1,63 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  {% load static %}
+  <title>Category</title>
+  <link rel="stylesheet" href="{% static 'css/style_category.css' %}">
+
 </head>
+
 <body>
-  <a href="{% url 'post:home' %}">메인페이지로 돌아가기</a>
-  <hr>
-  <div>
-    {% include 'post/menu.html' %}
-  </div>
+  {% load static %}
+  {% load humanize %}
+  {% include "post/header.html" %}
+  {% include 'post/menu.html' %}
 
-  <h1>{{ category.title }} </h1>
+  <div class="main_content">
 
-  <div>
+    <div class="main_post">
+
+      <div>
+        <div id="name">
+          <h1>{{ category.title }}</h1>
+        </div>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'accounts:logout' %}">로그아웃</a>
+        <a href="{% url 'accounts:mypage' %}">마이페이지</a>
+
+        {% else %}
+        <a href="{% url 'accounts:signup' %}">회원가입</a>
+        <a href="{% url 'accounts:login' %}">로그인</a>
+        {% endif %}
+
+        <div class="new" id="new">
+          <div>
+            <p>새 글을 작성해주세요!</p>
+            <img src="{% static 'img/연필.png' %}" alt="연필" width="40" height="40">
+          </div>
+        </div>
+
+        <div class="post_form">
+          <form action="{% url 'post:create' category.slug %}" method="post" name="post" class="newpost">
+            {% csrf_token %}
+            <input type="text" placeholder="제목 입력" name="title" class="newpost_title" placeholder="글 제목" size="100">
+            <textarea class="newpost_content" cols="20" rows="20" name="content" placeholder="에브리타임은 누구나 기분 좋게 참여할 수 있는 커뮤니티를 만들기 위해 커뮤니티 이용규칙을 제정하고 운영하고 있습니다. 위반 시 게시물이 삭제되고 서비스 이용이 일정 기간 제한될 수 있습니다.
     
-{% load static %}
-{% load humanize %}
-{% if request.user.is_authenticated %}
-    <a href="{% url 'accounts:logout' %}">로그아웃</a>
-    <a href="{% url 'accounts:mypage' %}">마이페이지</a>
+            아래는 이 게시판에 해당하는 핵심 내용에 대한 요약 사항이며, 게시물 작성 전 커뮤니티 이용규칙 전문을 반드시 확인하시기 바랍니다.
+                
+            ※정치∙사회 관련 행위 금지
+            -국가기관, 정치 관련 단체, 언론, 시민단체에 대한 언급 혹은 이와 관련한 행위
+            -정책∙외교 또는 정치∙정파에 대한 의견, 주장 및 이념, 가치관을 드러내는 행위
+            -성별, 종교, 인종, 출신, 지역, 직업, 이념 등 사회적 이슈에 대한 언급 혹은 이와 관련한 행위
+            -위와 같은 내용으로 유추될 수 있는 비유, 은어 사용 행위
+            ＊해당 게시물은 시사∙이슈 게시판에만 작성 가능합니다.
+                
+            ※홍보 및 판매 관련 행위 금지
+            -영리 여부와 관계 없이 사업체∙기관∙단체∙개인에게 직간접적으로 영향을 줄 수 있는 게시물 작성 행위
+            -위와 관련된 것으로 의심되거나 예상될 수 있는 바이럴 홍보 및 명칭∙단어 언급 행위
+            ＊해당 게시물은 홍보게시판에만 작성 가능합니다.
+                
+            ※불법촬영물 유통 금지
+            불법촬영물등을 게재할 경우 전기통신사업법에 따라 삭제 조치 및 서비스 이용이 영구적으로 제한될 수 있으며 관련 법률에 따라 처벌받을 수 있습니다.
+                
+            ※그 밖의 규칙 위반
+            -타인의 권리를 침해하거나 불쾌감을 주는 행위
+            -범죄, 불법 행위 등 법령을 위반하는 행위
+            -욕설, 비하, 차별, 혐오, 자살, 폭력 관련 내용을 포함한 게시물 작성 행위
+            -음란물, 성적 수치심을 유발하는 행위
+            -스포일러, 공포, 속임, 놀라게 하는 행위"></textarea>
+            <div class="file_submit">
+              <div class="anonymity">
+                <input type="checkbox" name="anonymity" value="annoymity_true">
+                <label for="anonymity" class="ko_anonymity">익명</label>
+              </div>
+              <!-- <input type="hidden" name="anonymity" value="annoymity_false" checked> -->
+              <input type="submit" value="작성 완료">
+            </div>
+          </form>
+        </div>
+      </div>
 
-    {% else %}
-    <a href="{% url 'accounts:signup' %}">회원가입</a>
-    <a href="{% url 'accounts:login' %}">로그인</a>
-    {% endif %}
-    <br><br>
-    <form action="{% url 'post:create' category.slug %}" method="post">
-      {% csrf_token %}
-      <input type="text" placeholder="제목 입력" name="title">
-     
-      <br>
-      <textarea name="content" placeholder="본문 입력"></textarea>
-      <input type="checkbox" name="anonymity" value="annoymity_true" >익명
-      <!-- <input type="hidden" name="anonymity" value="annoymity_false" checked> -->
-      <input type="submit" value="작성 완료">
-    </form>
-    
-      {% if posts.exists %}
-        {% for post in posts %}
-        <a href="{% url 'post:detail' post.pk %}"><h1>{{ post.title }}</h1></a>
-      
-          <h4> {{ post.content }}</h4>
+      <section class="post">
+        <article>
+          {% if posts.exists %}
+          {% for post in posts %}
+          <a href="{% url 'post:detail' post.pk %}">
+            <div class="post_content">
+              <h1 class="post_title">{{ post.title }}</h1>
 
-          <!-- {{ post.time.total_seconds }} -->
 
-          <h4> {{ post.created_at|naturaltime }}</h4>
-          <!-- <h4> {{ post.time }}</h4> -->
-      
-          <!-- <h4> 댓글 {{ post.comment_count }}개</h4> -->
-          <!-- <h4> 댓글 {{ post.post_set.all }}개</h4> -->
-          <p> 댓글 {{ post.posts.all.count }} 공감 {{post.post_like.all.count }}개</p> <!--여기서.나를 역참조할 때 이름-->
-          <hr>
-        {% endfor %}
-      <br>
-    {% else %}
-    <h1>글이 없습니다.</h1>
-    {% endif %}
+              <p class="post_text"> {{ post.content }}</p>
+
+              <!-- {{ post.time.total_seconds }} -->
+
+              <h4 class="post_detail"> {{ post.created_at|naturaltime }}</h4>
+              <!-- <h4> {{ post.time }}</h4> -->
+
+              <!-- <h4> 댓글 {{ post.comment_count }}개</h4> -->
+              <!-- <h4> 댓글 {{ post.post_set.all }}개</h4> -->
+              <p class="post_detail"> 댓글 {{ post.posts.all.count }} 공감 {{post.post_like.all.count }}개</p>
+              <!--여기서.나를 역참조할 때 이름-->
+            </div>
+          </a>
+          {% endfor %}
+          <br>
+          {% else %}
+          <h1>글이 없습니다.</h1>
+          {% endif %}
+        </article>
+        <div class="search_next">
+          <div class="search">
+            <form name="search_box" method="post">
+              <select name="search_choose">
+                <option value="1">전체</option>
+                <option value="2">해시태그</option>
+                <option value="3">글 제목</option>
+                <option value="4">글 내용</option>
+              </select>
+              <input type="text" name="search_keyword" placeholder="검색어를 입력하세요.">
+            </form>
+            <img src="{% static 'img/돋보기.png' %}" alt="돋보기" width="25" height="25">
+          </div>
+          <div class="next">
+            <a href="">다음 &gt;</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    {% include 'post/aside.html' %}
   </div>
+  {% include 'post/list.html' %}
+  <script src="{% static 'js/script_main.js' %}"></script>
 </body>
+
 </html>

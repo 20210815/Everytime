@@ -1,4 +1,18 @@
-
-{% for category in category_list %}
-<a href="{% url 'post:category_post_list' category.slug %}">{{category.title}}</a>
-{% endfor %}
+{% extends 'post/base.html' %}
+{% load static %}
+{%block style %}
+<link rel="stylesheet" href="{% static 'css/style_menu.css' %}">
+{% endblock %}
+{% block body %}
+<nav class="messageboard_bg">
+    <div class="messageboard">
+        <div class="group">
+            <ul>
+                {% for category in category_list %}
+                <li><a href="{% url 'post:category_post_list' category.slug %}">{{category.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}

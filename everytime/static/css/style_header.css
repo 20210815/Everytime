@@ -1,0 +1,153 @@
+/* 전체적으로 적용 */
+
+a {
+    text-decoration-line: none;
+  }
+  
+  a:link {
+    color: #666;
+  }
+  
+  a:visited {
+    color: #666;
+  }
+  
+  /* 기능이동 */
+  
+  .topmenu {
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-bottom: 2px solid #d6d6d6;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .topmenu_content {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /*로고*/
+  .mainlogo {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+  }
+  
+  .mainlogo img {
+    margin-right: 18px;
+  }
+  
+  #everytime {
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+  }
+  
+  #duksung {
+    font-size: 22px;
+    position: relative;
+    right: 3px;
+    bottom: 2px;
+  }
+  
+  /*topmenu-category*/
+  .category {
+    display: flex;
+    align-items: center;
+    padding-left: 182px;
+    margin-top: 10px;
+  }
+  
+  .category li {
+    font-size: 16px;
+    font-weight: bold;
+    list-style: none;
+    margin-right: 22px;
+  }
+  
+  .category li a:hover {
+    color: red;
+  }
+  
+  #board {
+    padding-top: 33px;
+    padding-bottom: 28px;
+    border-bottom: 4px solid red;
+  }
+  
+  .menu {
+    margin-left: 205px;
+  }
+  
+  .menu a img {
+    border: 1px solid rgb(175, 175, 175);
+    border-radius: 10px;
+    padding: 7px;
+  }
+
+@media all and ((min-width: 641px) and (max-width: 920px)) {
+    .category li {
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media all and (min-width: 641px) {
+    .mobile_header {
+      display: none;
+    }
+  }
+  
+  @media all and (max-width: 640px) {
+    #topmenu,
+    #name,
+    .side {
+      display: none;
+    }
+  
+    .mobile_header {
+      width: 101vw;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      border-bottom: 2px solid #d6d6d6;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-color: #ffffff;
+      font-size: 16px;
+    }
+  
+    .mobile_header a {
+      display: flex;
+      align-items: center;
+      margin-left: 5px;
+    }
+  
+    .mobile_header a:first-child {
+      margin-left: 10px;
+    }
+  
+    .main_post {
+      width: 98vw;
+    }
+  
+    .website_detail ul {
+      flex-wrap: wrap;
+    }
+  
+    .messageboard {
+      overflow-x: scroll;
+    }
+  
+    .messageboard div ul li {
+      width: 150px;
+    }
+  }

@@ -1,0 +1,34 @@
+{% extends 'post/base.html' %}{% load static %}
+{% block title %}시작 - 에브리타임{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/start.css' %}">{% endblock %}
+{% block body %}
+<div class="intro">
+  <div class="btnSpace">
+    <div class="btnLogo">
+      <img src="{% static 'img/logo.png' %}" alt="에브리타임 로고" />
+    </div>
+    <div class="btnS">
+      <button class="loginBtn" onclick="goToLogin()">로그인</button>
+      <button class="signupBtn" onclick="goToSignup()">에브리타임 회원가입</button>
+      <button class="toMainBtn" onclick="goToMain()">Home</button>
+    </div>
+  </div>
+  <div class="contentSpace">
+    <img src="{% static 'img/start_img.png' %}" alt="대문 이미지" />
+  </div>
+</div>
+<script>
+  function goToSignup() {
+    window.location.href = "{% url 'accounts:signup' %}";
+  }
+
+  function goToLogin() {
+    window.location.href = "{% url 'accounts:login' %}";
+  }
+
+  function goToMain() {
+    window.location.href = "{% url 'post:home' %}";
+  }
+</script>
+{% endblock %}

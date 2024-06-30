@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입</title>
-</head>
-<body>
-  <h2>회원가입</h2>
-  <form method="post" action="" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">signup</button>
-  </form>
-</body>
-</html>
+{% extends 'post/base.html' %}{% load static %}
+{% block title %}회원가입{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style_signup.css' %}">{% endblock %}
+{% block body %}
+<form method="post" action="" enctype="multipart/form-data">
+  <div>
+    <h2>회원가입</h2>
+    <p>에브리타임 계정으로 <span class="bold">캠퍼스픽, 에브리타임</span> 등<br>다양한 대학생 서비스를 모두 이용하실 수 있습니다.</p>
+  </div>
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <button type="submit">signup</button>
+</form>
+<script src="{% static 'js/script_signup.js' %}"></script>
+{% endblock %}

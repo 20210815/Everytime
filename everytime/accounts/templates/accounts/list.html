@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="secretboard">비밀게시판</div>
+
+        <div class="questhot">
+            <div class="quest">
+                <img src="./img/quest.png" alt="질문" width=25 height=25>
+                <div class="questletter">교환</div>
+                <div class="questletter">이러닝</div>
+                <div class="questletter">덕기초 노트북으로 들으려는데 줌 설치...</div>
+            </div>
+
+            <div class="hot">
+                <img src="./img/hot.png" alt="핫 게시판" width=25 height=25>
+                <div class="hotletters">
+                    <div class="sec_hotletter">오늘 수유동에서</div>
+                    <div class="good"><img class="goodimg" src="./img/good.png" alt="좋아요"> 83 </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="new_newwrite">
+            <div class="newletter" onclick="newletter_detail()">
+                <div>새 글을 작성해주세요!</div>
+                <img src="./img/pencil.png" alt="새 글 작성" width=40 height=40>
+            </div>
+        </div>
+
+        <div class="letter">
+            <div class="sec_letter">
+                <div class="sec_letter_content">
+                    <div class="lettitle">이거 답이 뭐임?</div>
+                    <div class="letcontent">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+                    <div class="interest">
+                        <div class="good"><img class="goodimg" src="./img/good.png" alt="좋아요"> 44 </div>
+                        <div class="comment"><img class="comimg" src="./img/comment.png" alt="댓글"> 1 </div>
+                        <div class="letinfo"> &nbsp&nbsp | 방금 | 익명</div>
+                    </div>
+
+                </div>
+                <div class="prevsc">
+                    <img src="./img/capturescreen.png" width=70 height=90>
+                </div>
+            </div>
+            <div class="sec_letter">
+                <div class="sec_letter_content">
+                    <div class="lettitle">이거 답이 뭐임?</div>
+                    <div class="letcontent">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+                    <div class="interest">
+                        <div class="good"><img class="goodimg" src="./img/good.png" alt="좋아요"> 44 </div>
+                        <div class="comment"><img class="comimg" src="./img/comment.png" alt="댓글"> 1 </div>
+                        <div class="letinfo"> &nbsp&nbsp | 방금 | 익명</div>
+                    </div>
+
+                </div>
+                <div class="prevsc">
+                    <img src="./img/capturescreen.png" width=70 height=90>
+                </div>
+            </div>
+            <div class="sec_letter">
+                <div class="sec_letter_content">
+                    <div class="lettitle">이거 답이 뭐임?</div>
+                    <div class="letcontent">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+                    <div class="interest">
+                        <div class="good"><img class="goodimg" src="./img/good.png" alt="좋아요"> 44 </div>
+                        <div class="comment"><img class="comimg" src="./img/comment.png" alt="댓글"> 1 </div>
+                        <div class="letinfo"> &nbsp&nbsp | 방금 | 익명</div>
+                    </div>
+
+                </div>
+                <div class="prevsc">
+                    <img src="./img/capturescreen.png" width=70 height=90>
+                </div>
+            </div>
+            <div class="sec_letter">
+                <div class="sec_letter_content">
+                    <div class="lettitle">이거 답이 뭐임?</div>
+                    <div class="letcontent">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+                    <div class="interest">
+                        <div class="good"><img class="goodimg" src="./img/good.png" alt="좋아요"> 44 </div>
+                        <div class="comment"><img class="comimg" src="./img/comment.png" alt="댓글"> 1 </div>
+                        <div class="letinfo"> &nbsp&nbsp | 방금 | 익명</div>
+                    </div>
+
+                </div>
+                <div class="prevsc">
+                    <img src="./img/capturescreen.png" width=70 height=90>
+                </div>
+            </div>
+            <div class="sec_letter">
+                <div class="sec_letter_content">
+                    <div class="lettitle">이거 답이 뭐임?</div>
+                    <div class="letcontent">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+                    <div class="interest">
+                        <div class="good"><img class="goodimg" src="./img/good.png" alt="좋아요"> 44 </div>
+                        <div class="comment"><img class="comimg" src="./img/comment.png" alt="댓글"> 1 </div>
+                        <div class="letinfo"> &nbsp&nbsp | 방금 | 익명</div>
+                    </div>
+
+                </div>
+                <div class="prevsc">
+                    <img src="./img/capturescreen.png" width=70 height=90>
+                </div>
+            </div>
+            <div class="sec_letter">
+                <div class="sec_letter_content">
+                    <div class="lettitle">이거 답이 뭐임?</div>
+                    <div class="letcontent">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+                    <div class="interest">
+                        <div class="good"><img class="goodimg" src="./img/good.png" alt="좋아요"> 44 </div>
+                        <div class="comment"><img class="comimg" src="./img/comment.png" alt="댓글"> 1 </div>
+                        <div class="letinfo"> &nbsp&nbsp | 방금 | 익명</div>
+                    </div>
+
+                </div>
+                <div class="prevsc">
+                    <img src="./img/capturescreen.png" width=70 height=90>
+                </div>
+            </div>
+
+
+            <div class="sec_letter">
+                <div class="sec_letter_content">
+                    <div class="lettitle">다들 회전초밥 최대 몇 접시 먹어봄</div>
+                    <div class="letcontent">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+                    <div class="letinfo">방금 | 익명</div>
+                </div>
+            </div>
+
+            <div class="downfunc">
+                <form class="search_func">
+                    <select>
+                        <option selected>전체</option>
+                        <option>해시태그</option>
+                        <option>글 제목</option>
+                        <option>글 내용</option>
+                    </select>
+                    <input type="search" placeholder="검색어를 입력하세요.">
+                    <img src="./img/search.png" width=10 height=10>
+                </form>
+
+                <div>
+                    <div class="next"> 다음 ></div>
+                </div>
+            </div>
+
+    </section>
+</body>
+
+</html>

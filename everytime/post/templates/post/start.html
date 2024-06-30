@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시작 - 에브리타임</title>
+    <link rel="stylesheet" href="{% static 'css/start.css' %}" />
+  </head>
+  <body>
+    <div class="intro">
+      <div class="btnSpace">
+        <div class="btnLogo">
+          <img src="{% static 'img/logo.png' %}" alt="에브리타임 로고" />
+        </div>
+        <div class="btnS">
+          <button class="loginBtn"><a href="{% url 'accounts:login' %}">로그인</a></button>
+          <button class="signupBtn"><a href="{% url 'accounts:signup' %}">회원가입</a></button>
+          <button class="toMainBtn">비밀게시판</button>
+        </div>
+      </div>
+      <div class="contentSpace">
+        <img src="{% static 'img/start_img.png' %}" alt="대문 이미지" />
+      </div>
+    </div>
+  </body>
+</html>

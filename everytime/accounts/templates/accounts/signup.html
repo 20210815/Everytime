@@ -1,16 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입</title>
-</head>
-<body>
-  <h2>회원가입</h2>
-  <form method="post" action="" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">signup</button>
-  </form>
-</body>
+  <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}" />
+        <title>회원가입</title>
+    </head>
+    <body>
+      <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+      <div class="container">
+          <section>
+              <h2>에브리타임 회원가입</h2> 
+              <p class="title">에브리타임 계정으로 <strong>캠퍼스픽, 에브리타임</strong> 등<br>다양한 대학생 서비스를 모두 이용하실 수 있습니다.</p> 
+              <div  class="input">
+                  <p class="school"><span>이름</span></p>
+                  <input  name="campusName" id="id_username" placeholder="이름을 입력하세요." type="text" class="search"> 
+                  <p class="school"><span>닉네임</span></p>
+                  <input  name="campusName" id ="id_nickname" placeholder="닉네임을 입력하세요." type="text" class="search"> 
+                  <p class="school"><span>이메일</span></p>
+                  <input  name="campusName" id="id_email" placeholder="이메일을 입력하세요." type="text" class="search"> 
+                  <p class="school"><span>비밀번호</span></p>
+                  <input  name="campusName" id="id_password1" placeholder="숫자/문자 조합. 최소 8자 이상" type="password" class="search"> 
+                  <p class="school"><span>비밀번호 재입력</span></p>
+                  <input  name="campusName" id="id_password2" placeholder="비밀번호를 재입력하세요." type="password" class="search"> 
+              </div>
+              <button class="next" id="signup"><span>회원가입</span></button>
+          </section>
+      </div>    
+      <script>
+          const nmForm = document.querySelector('#id_username');
+          const nikForm = document.querySelector('#id_nikname');
+          const eForm = document.querySelector('#id_email');
+          const pwForm = document.querySelector('#id_password1');
+          const pw2Form = document.querySelector('#id_password2');
+          const loginButton = document.querySelector('#signup');
+  
+          [nmForm, nikForm, eForm, pwForm, pw2Form].forEach(input => {
+              input.addEventListener('input', () => {
+                  const allFilled = nmForm.value.trim() && nikForm.value.trim() && eForm.value.trim() && pwForm.value.trim() && pw2Form.value.trim();
+  
+                  if (allFilled) {
+                      loginButton.style.backgroundColor = "#F91F15";
+                      loginButton.disabled = false;
+                  } else {
+                      loginButton.style.backgroundColor = "#c2c2c2";
+                      loginButton.disabled = true; 
+                  }
+              });
+          });
+  
+      </script>
+    </form>
+  </body>
 </html>

@@ -1,0 +1,111 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 24px;
+}
+
+.logo {
+    width: 210px;
+    height: 56px;
+    margin: 200px auto 40px;
+    padding: 30px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"],
+input[type="password"] {
+    display: block;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 360px;
+    height: 44px;
+    color: #A6A6A6;
+    font-size: 16px;
+    background-color: #F2F2F2;
+    margin-top: 4px;
+    border-radius: 12px;
+    border: 1px solid #F2F2F2
+}
+
+button[type="button"] {
+    display: block;
+    box-sizing: border-box;
+    margin-top: 4px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+    width: 360px;
+    height: 44px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.keep {
+    color: #A6A6A6;
+    background-color: #F91F15;
+    border: 1px solid #F91F15;
+}
+
+.register {
+    text-align: center;
+    font-size: 14px;
+    color: #737373;
+    text-decoration-line: underline;
+    margin-top: 30px;
+}
+
+
+div.container footer[copyright] {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 85px;
+    font-size: 12px;
+    color: #737373;
+    gap: 15px;
+}
+
+.copyright2 {
+    font-weight: bold;
+}
+
+/* login.css */
+#user_lg {
+    background-color: #c2c2c2; /* 비활성화 상태의 색상 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#user_lg.active {
+    background-color: #F91F15; /* 활성화 상태의 색상 */
+}
+
+
+/*780px 기준으로 전체적인 요소가 위 정렬, 입력창 크기 변경(화면에 꽉 차도록)*/
+@media all and (max-width : 780px) {
+    .input {
+        width: 90vw;
+    }
+
+    .logo {
+        margin: 0 auto 40px;
+    }
+    
+
+    input[type="text"],
+    input[type="password"], .lg {
+        width: 100%;
+    }
+    
+}
+

@@ -1,67 +1,99 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/detail.css' %}" />
   <title>글 상세</title>
 </head>
 <body>
   <a href="{% url 'post:category_post_list' post.category.slug%}"> 뒤로가기 </a>
-
-  <h1>{{ post.title }}</h1> 
-  <h2>{{ post.content }} </h2> 
-  <h2>{{ post.created_at }}</h2> <br><br>
-  {% if post.anonymity == True %}익명
-  {% else %}
-    <h5>{{ post.user.username }}</h5>
-  {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}
-
-
-  <p>공감 {{post.post_like.all.count }}개</p>
-  <p>스크랩 {{post.scrap_users.count }}개</p>
-  <form action="{% url 'post:post_like' post.id %}" method="post">
-    {% csrf_token %}
-    <button>공감</button>
-  </form>
-  
-
-  <form action="{% url 'post:post_scrap' post.id %}" method="post">
-    {% csrf_token %}
-    <button>스크랩</button>
-  </form>
-
-  <hr>
-  <h4>댓글</h4>
-  {% if comments.exists %} 
-      {% for comment in comments %}
-      <p>
-      <br>
-        {{ comment.content }} -   
-        {% if comment.anonymity == True %}익명
-
-        {% else %}
-          {{ comment.user }}
-        {% endif %}
-        - {{ comment.created_at }}
-        <br>
-        {% if request.user == comment.user %} <a href="{% url 'post:com_delete' com_id=comment.id post_id=post.id %}">삭제하기</a> {% endif %}
-      </p>
-        {% endfor %}
-  
-  {% else %}
-  댓글이 없습니다.
-  {% endif %}
-  <hr>
-  <form action="{% url 'post:com_create' post.id %}" method="POST">
-    {% csrf_token %}
-    <input type="text" name="content">
-    <input type="submit" value="작성">
-    <input type="checkbox" name="anonymity" value="annoymity_true" checked>익명
-
-  </form>
-
-
+  <header>
+    {% include 'post/header.html' %}
+  </header>
+  <nav>
+    {% include 'post/nav.html' %}
+  </nav>
+  <div id="container">
+    <section>
+      <div class="title">
+        <h2><span class="name1">비밀게시판</span></h2>
+      </div>
+      <article class="item">
+        <div class="profile">
+          <img src="{% static 'img/anonymous.profile.png' %}" class="profile-img">
+          <div class="info">
+            <h3 class="large">{% if post.anonymity == True %}익명
+            {% else %}
+              {{ post.user.username }}
+            {% endif %}</h3>
+            <time class="large">{{ post.created_at }}</time>
+          </div>
+          <ul class="status">
+            <li class="messagesend">{% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}</li>
+            <li class="abuse">{% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}</li>
+          </ul>
+        </div>
+        <h2 class="large">{{ post.title }}</h2>
+        <p class="large">{{ post.content }}</p>
+        <div class="status2">
+          <img src="{% static 'img/container.articles.vote.png' %}" alt="공감" class="vote"><sapn class="vote-count" style="color: red;">{{post.post_like.all.count }}</sapn>
+          <img src="{% static 'img/container.articles.comment.png' %}" alt="댓글" class="comment"><sapn style="color: #05BCBC;">0</sapn>
+          <img src="{% static 'img/container.articles.scrap.png' %}" alt="스크랩" class="scrap"><sapn class="scrap-count" style="color: #FFC900;">{{post.scrap_users.count }}</sapn>
+      </div>
+      <div class="buttons">
+        <div class="posvote-btn">
+          <form action="{% url 'post:post_like' post.id %}" method="post">
+            <img src="{% static 'img/container.articles.buttons.posvote.png' %}" alt="공감" class="vote">{% csrf_token %}
+            <button>공감</button>
+          </form>
+        </div>
+        <div class="scrap-btn">
+          <form action="{% url 'post:post_scrap' post.id %}" method="post">
+            <img src="{% static 'img/container.articles.buttons.scrap.png' %}" alt="스크랩" class="scrap">{% csrf_token %}
+            <button>스크랩</button>
+          </form>
+        </div>
+      </div>
+      <div class="coments">
+        <div class="parent">
+          {% if comments.exists %} 
+          {% for comment in comments %}
+          <p>
+          <br>
+            {{ comment.content }} -   
+            {% if comment.anonymity == True %}익명
+    
+            {% else %}
+              {{ comment.user }}
+            {% endif %}
+            - {{ comment.created_at }}
+            <br>
+            {% if request.user == comment.user %} 
+            <a href="{% url 'post:com_delete' com_id=comment.id post_id=post.id %}">삭제하기</a> {% endif %}
+          </p>
+            {% endfor %}
+          {% else %}
+          댓글이 없습니다.
+          {% endif %}
+          <hr>
+        </div>
+        <form class="writecomment-child">
+        </form>
+        <form action="{% url 'post:com_create' post.id %}" method="POST">
+          {% csrf_token %}
+          <input type="text" name="content">
+          <input type="submit" value="작성">
+          <input type="checkbox" name="anonymity" value="annoymity_true" checked>익명
+        </form>
+      </div>
+    </article>
+    </section>
+    <aside>
+      {% include 'post/aside.html' %}
+    </aside>
+  </div>
 </body>
 </html>
+

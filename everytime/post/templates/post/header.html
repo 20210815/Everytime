@@ -1,0 +1,31 @@
+{% load static %} 
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+{% endblock %}
+{% block body %}
+<header>
+    <div class="wrap">
+        <div id="logo">
+            <img class ="me" src ="{% static 'img/nav.logo.png' %}" alt="에브리타임 로고" >
+            <p><span class="name">에브리타임</span><br><span class="subname">덕성여대</span></p>
+        </div>
+        <div class="box">
+            <img class="hamberger" src="{% static 'img/aside.title.hamburger.png' %}" alt="햄버거 바">
+            <p><span class="hamname">비밀게시판</span></p>
+        </div>
+        <ul id="menu">
+            <li>게시판</li>
+            <li>시간표</li>
+            <li>강의실</li>
+            <li>학점계산기</li>
+            <li>친구</li>
+            <li>책방</li>
+            <li>캠퍼스픽</li>
+        </ul>
+        <div id="account">
+            <img alt="쪽지함" class="icon" src="{% static 'img/icn_m_chat_gray800_light.png' %}">
+            <img alt="내 정보" class="icon" src="{% static 'img/icn_m_account_gray800_light.png' %}">
+        </div>
+    </div>
+</header>
+{% endblock %}

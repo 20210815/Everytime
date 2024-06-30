@@ -1,16 +1,52 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+    <title>에브리타임 로그인</title>
   </head>
   <body>
-    <h2>로그인</h2>
-    <form method="post">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">login</button>
+    <div class="container">
+      <form class="login-form">
+        {% csrf_token %}
+      <img src="{% static 'img/logo.png' %}" alt="에브리타임 로고" class="logo" />
+      <div class="login">
+        <div class="input">
+          <input type="text" value="" id="id_username" placeholder="아이디" />
+          <input type="password" value="" id="id_password" placeholder="비밀번호" />
+          <button type="button" id="user_lg">
+            <span>에브리타임 로그인</span>
+          </button>
+        </div>
+        <p class="register"><a href="{% url 'accounts:signup' %}">회원가입</a></p>
+      </div>
+      <footer copyright="">
+        <p class="copyright1">이용약관</p>
+        <p class="copyright2">개인정보처리방침</p>
+        <p class="copyright1">문의하기</p>
+        <p class="copyright2">© 에브리타임</p>
+      </footer>
     </form>
-    <p><a href="{% url 'accounts:signup' %}">회원가입하기</a></p>
+    </div>
+    <script>
+      const idForm = document.querySelector("#id_username");
+      const pwForm = document.querySelector("#id_password");
+      const loginButton = document.querySelector("#user_lg");
+
+      idForm.addEventListener("keyup", activeEvent);
+      pwForm.addEventListener("keyup", activeEvent);
+
+      function activeEvent() {
+        if (idForm.value && pwForm.value) {
+          loginButton.classList.add("active");
+          loginButton.disabled = false;
+        } else {
+          loginButton.classList.remove("active");
+          loginButton.disabled = true;
+        }
+      }
+    </script>
   </body>
 </html>

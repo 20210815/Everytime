@@ -143,3 +143,7 @@ def category_post_list(request, slug):
   posts = Post.objects.filter(category = category).order_by('-id')
 
   return render(request, "post/category.html", {'category': category, 'posts':posts, 'category_list': category_list})
+
+def start(request):
+    # start.html을 렌더링하는 로직
+    return render(request, 'post/start.html')

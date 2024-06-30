@@ -1,0 +1,16 @@
+{% load static %}
+<div class="nav">
+  <ul>
+    {% for category in category_list %}
+    <li><a href="{% url 'post:category_post_list' category.slug %}">{{category.title}}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="profile">
+  <div>
+    <img src="{% static 'img/icn_m_chat_gray800_light.png' %}" />
+  </div>
+  <div>
+    <img src="{% static 'img/icn_m_account_gray800_light.png' %}" />
+  </div>
+</div>

@@ -1,0 +1,47 @@
+{% load static %} {% load humanize %}
+<section>
+  <div class="section1">
+    <div class="board">
+      <span>{{ category.title }}</span>
+    </div>
+
+    <div class="new_post" data-include-path="{% static 'post.html' %}">
+      <span style="flex: 7" class="span4">새 글을 작성해주세요!</span>
+      <div>
+        <img src="{% static 'img/container.write.background.png' %}" style="width: 30px" />
+      </div>
+    </div>
+    {% if posts.exists %}
+    <div class="aside_live" style="visibility: visible">
+      {% for post in posts %}
+      <div class="post_">
+        <div class="div_">
+          <span class="span1">
+            <a href="{% url 'post:detail' post.pk %}">
+              <h1>{{ post.title }}</h1>
+            </a> </span
+          ><br />
+          <span class="span2">{{ post.content }}</span><br />
+          <img src="{% static 'img/container.articles.vote.png' %}" style="width: 13px" />
+          <span style="color: #f91f15" class="span4">{{ post.post_like.all.count }}</span>
+          <img src="{% static 'img/container.articles.comment.png' %}" style="width: 13px" />
+          <span style="color: #05bcbc" class="span4">{{ post.posts.all.count }}</span>
+          <span class="span3">{{ post.created_at|naturaltime }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="aside_live" style="visibility: visible">
+      <div class="post_">
+        <div class="div_">
+          <span class="span1">
+            <h1>글이 없습니다.</h1>
+          </span>
+          <br />
+          <span class="span2">글이 없습니다.</span><br />
+        </div>
+      </div>
+      {% endif %}
+    </div>
+</section>

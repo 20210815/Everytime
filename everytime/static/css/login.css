@@ -37,7 +37,7 @@ input[type="password"] {
   padding-left: 1vw;
 }
 
-input[type="submit"] {
+button {
   /* background-color: #f91f15; */
   background-color: #8e8b8b;
   color: white;
@@ -79,6 +79,6 @@ p {
   #id_username,
   #id_password,
   #loginBtn {
-    width: 50vw;
+    width: 40vw;
   }
 }

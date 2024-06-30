@@ -1,67 +1,234 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글 상세</title>
+  <link rel="stylesheet" href="{% static 'css/detail.css' %}"></link>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"></link>
+  <title>에브리타임</title>
 </head>
 <body>
   <a href="{% url 'post:category_post_list' post.category.slug%}"> 뒤로가기 </a>
+  <header>
+    <!-- <div class="header"> -->
+      <div class="section">
+        <div class="logo2">
+          <div class="logo_img2">
+            <img src="{% static 'img/aside.title.hamburger.png' %}">
+          </div>
+          <p>비밀게시판</p>
+        </div>
+        <div class="logo">
+          <div class="logo_img">
+            <img src="{% static 'img/nav.logo.png' %}">
+          </div>
+          
+          <div class="logo_text">
+            <div id="logo_text1">함께하는 대학생활</div>
+            <div id="logo_text2">에브리타임</div>
+          </div>
+        </div>
+        <div class="nav">
+          <ul>
+            <li>게시판</li>
+            <li>시간표</li>
+            <li>강의실</li>
+            <li>학점계산기</li>
+            <li>친구</li>
+            <li>책방</li>
+            <li>캠퍼스픽</li>
+          </ul>
+        </div>
+        <div class="profile">
+          <div>
+            <img src="{% static 'img/icn_m_chat_gray800_light.png' %}">
+          </div>
+          <div>
+            <img src="{% static 'img/icn_m_account_gray800_light.png' %}">
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+  </header>
 
-  <h1>{{ post.title }}</h1> 
-  <h2>{{ post.content }} </h2> 
-  <h2>{{ post.created_at }}</h2> <br><br>
-  {% if post.anonymity == True %}익명
-  {% else %}
-    <h5>{{ post.user.username }}</h5>
-  {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}
-
-
-  <p>공감 {{post.post_like.all.count }}개</p>
-  <p>스크랩 {{post.scrap_users.count }}개</p>
-  <form action="{% url 'post:post_like' post.id %}" method="post">
-    {% csrf_token %}
-    <button>공감</button>
-  </form>
+  <div class="content">
+      <section>
+          <div class="section1">
+            <div class="board">
+              <span>게시판</span>
+            </div>
+  <div>
+            <div class="post_detail">
+              <div class="post_detail1">
+                <div class="post_detail_header">
+                  
+                  <div class="post_detail_img">
+                    <img src="{% static 'img/anonymous.profile.png' %}">
+                  </div>
   
-
-  <form action="{% url 'post:post_scrap' post.id %}" method="post">
-    {% csrf_token %}
-    <button>스크랩</button>
-  </form>
-
-  <hr>
-  <h4>댓글</h4>
-  {% if comments.exists %} 
-      {% for comment in comments %}
-      <p>
-      <br>
-        {{ comment.content }} -   
-        {% if comment.anonymity == True %}익명
-
-        {% else %}
-          {{ comment.user }}
-        {% endif %}
-        - {{ comment.created_at }}
-        <br>
-        {% if request.user == comment.user %} <a href="{% url 'post:com_delete' com_id=comment.id post_id=post.id %}">삭제하기</a> {% endif %}
-      </p>
-        {% endfor %}
+                  <div class="post_detail_info">
+                    <p style="font-weight: bold;">
+                      {% if post.anonymity == True %}익명 {% else %}
+                      <h5>{{ post.user.username }}</h5>
+                      {% endif %} 
+                    </p>
+                    <p class="light">{{ post.created_at }}</p>
+                  </div>
   
-  {% else %}
-  댓글이 없습니다.
-  {% endif %}
-  <hr>
-  <form action="{% url 'post:com_create' post.id %}" method="POST">
-    {% csrf_token %}
-    <input type="text" name="content">
-    <input type="submit" value="작성">
-    <input type="checkbox" name="anonymity" value="annoymity_true" checked>익명
+                  <div class="post_detail_info2">
+                    <p class="light">{% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %} {% if request.user == post.user %}
+                      <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}</p>
+                  </div>
+                </div>
+  
+                <div class="post_detail_post">
+                  <div class="post_detail_title">
+                    <p class="title">{{ post.title }}</p>
+                  </div>
+  
+                  <div class="post_detail_content">
+                    <p>{{ post.content }}</p>
+                  </div>
+  
+                  <div class="post_detail_icons">
+                    <img src="{% static 'img/container.articles.vote.png' %}">
+                    <p style="color: #F91F15;" id="like">{{post.post_like.all.count }}</p>
+                    <img src="{% static 'img/container.articles.comment.png' %}">
+                    <p style="color: #05BCBC;" id="comments">{{ post.posts.all.count }}</p>
+                    <img src="{% static 'img/container.articles.scrap.png' %}">
+                    <p style="color: #FBCE1E;" id="scrap">{{post.scrap_users.count }}</p>
+                  </div>
+  
+                  <div class="post_detail_buttons">
+                    <form action="{% url 'post:post_like' post.id %}" method="post">
+                      {% csrf_token %}
+                      <button class="button1">
+                        <img src="{% static 'img/container.articles.buttons.posvote.png' %}">
+                        <p id="button1Text">공감</p>
+                      </button>
 
-  </form>
+                    </form>
+                    
+                    <form action="{% url 'post:post_scrap' post.id %}" method="post">
+                      {% csrf_token %}
+                      <button class="button2">
+                        <img src="{% static 'img/container.articles.buttons.scrap.png' %}">
+                        <p id="button2Text">스크랩</p>
+                      </button>
+                    </form>
+                    
+                  </div>
+                </div>
+              </div>
 
+              <hr color="gainsboro">
+              
+              <!-- 댓글  -->
+              {% if comments.exists %} {% for comment in comments %}
+              <div class="post_detail2">
+                <div>
+                  <div class="post_detail_comment">
+                    <div class="post_detail_comment_img">
+                      <img src="{% static 'img/anonymous.profile.png' %}">
+                    </div>
+    
+                    <div class="post_detail_comment_info">
+                      <p class="name">{% if comment.anonymity == True %}익명 {% else %} {{ comment.user }} {% endif %}</p>
+                    </div>
+                  
+                    {% if request.user == comment.user %} <a href="{% url 'post:com_delete' com_id=comment.id post_id=post.id %}">삭제하기</a> {% endif %}
+                  </div>
+                  <div class="post_detail_comment2">
+                      <p class="comment">{{ comment.content }}</p>
+                      <p class="light">{{ comment.created_at }}</p>
+                  </div>
+                </div>
+                <div class="post_detail_write2" style="display: none;">
+              </div>
+              
+              
+            </div>{% endfor %} {% else %} <p style="margin-left: 1vw;">댓글이 없습니다.</p> {% endif %}
+            <form action="{% url 'post:com_create' post.id %}" method="POST">
+              {% csrf_token %}
+              <div class="post_detail_write">
+                <div class="div_write">
+                  <input type="text" name="content" class="write" placeholder="댓글을 입력하세요"></input>
+                </div>
 
+                <div class="div_check">
+                  <input type="checkbox" name="anonymity" value="anonymity_true"> 익명
+                </div>
+                <button type="submit" value="작성" style="border: none;">
+                  <div class="post_detail_write_img">
+                    <img src="{% static 'img/container.articles.write.submit.png' %}">
+                  </div>
+                </button>
+              </div>
+              </form>
+            </div>
+              <div class="post_button">
+                <button class="button"><a href="{% url 'post:category_post_list' post.category.slug%}" style="text-decoration: none;">
+                  <div class="list_button">
+                    <div class="button_img" >
+                      <img src="{% static 'img/container.articles.pagination.list.png' %}">
+                    </div>
+                    <p style="color: #F91F15;"> 글 목록</p>
+                  </div>
+                
+                </a>
+                </button>
+              </div>
+            
+          <!-- section1 = 비밀게시판 ~ 방금|익명 -->
+              </section>
+              <aside>
+                <!-- aside -> 실시간 인기 글 ~ 더 보기 -->
+                <div class="aside">
+                  <div class="aside_live">
+          
+                    <div class="live_title">
+                      <span>실시간 인기 글</span>
+                    </div>
+          
+                    <hr color="gainsboro">
+          
+                    <div class="live_post">
+                      <span class="span1">네가 깃아 미안해 했잖아?</span><br>
+                      <span class="span2">그럼 깃 충돌 이딴거 안생겼어</span><br>
+                      <span class="span3">비밀게시판</span>
+                      <img src="{% static 'img/container.articles.vote.png' %}" style="width: 13px;">
+                      <span style="color: #F91F15;" class="span4">10</span>
+                      <img src="{% static 'img/container.articles.comment.png'%}" style="width: 13px;">
+                      <span style="color: #05BCBC;" class="span4">17</span>
+            
+                    </div>
+          
+                  <hr color="gainsboro">
+          
+                  <div class="live_post">
+                    <span class="span1">네가 깃아 미안해 했잖아?</span><br>
+                    <span class="span2">그럼 깃 충돌 이딴거 안생겼어</span><br>
+                    <span class="span3">비밀게시판</span>
+                    <img src="{% static 'img/container.articles.vote.png' %}" style="width: 13px;">
+                    <span style="color: #F91F15;" class="span4">10</span>
+                    <img src="{% static 'img/container.articles.comment.png' %}" style="width: 13px;">
+                    <span style="color: #05BCBC;" class="span4">17</span>
+                  </div>
+          
+                </div>
+              </aside>
+          </div> 
+<!-- ~ // content -->
+
+            
+        
+      
+
+      
+  </div>
+
+  <footer class="footer"></footer>
+  <script src="{% static 'js/detail.js' %}"></script>
 </body>
 </html>

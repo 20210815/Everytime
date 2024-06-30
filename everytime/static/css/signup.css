@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+  border: 1px solid gainsboro;
+  border-radius: 0.7vw;
+  /* width: max-content; */
+  width: 35%;
+  margin: auto;
+  margin-top: 1.3vw;
+  padding: 0.3vw 1.3vw 1.3vw 1.3vw;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 32vw;
+  height: 35px;
+  border: 0;
+  border-radius: 0.7vw;
+  background-color: #f6f6f6;
+  text-align: left;
+  margin-top: 0;
+  outline: none;
+  padding-left: 0.7vw;
+}
+
+.title {
+  font-weight: bolder;
+  font-size: 2.2rem;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+button {
+  margin-top: 1vw;
+  width: 32vw;
+  height: 35px;
+  border: 0;
+  border-radius: 0.7vw;
+  margin: 1vw 0.2vw 0.2vw 0.2vw;
+  /* background-color: #f91f15; */
+  background-color: #8e8b8b;
+  color: white;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.pText {
+  margin: 0.1vw;
+  font-size: 1.3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.forms import AuthenticationForm, PasswordResetForm
 from django.contrib.auth import login, logout
 from .forms import *
-from post.models import Post
+from post.models import Post, Category
 from user.models import User
 
 # Create your views here.

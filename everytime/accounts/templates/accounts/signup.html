@@ -1,16 +1,64 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입</title>
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}"></link>
+  <title>signup</title>
 </head>
 <body>
-  <h2>회원가입</h2>
-  <form method="post" action="" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">signup</button>
-  </form>
+
+  <div class="signup">
+      <div class="text">
+        <p class="title">에브리타임 회원가입</p>
+        <p class="pText">에브리타임 계정으로 <span class="bold">캠퍼스픽, 에브리타임</span> 등</p>
+        <p class="pText">다양한 대학생 서비스를 모두 이용하실 수 있습니다.</p>
+      </div>
+      
+      <div>
+        <form method="post" action="{% url 'accounts:signup' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <label>
+            <p>이름</p>
+            <input type="text" placeholder="이름을 입력하세요." id="id_username" name="username">
+          </label>
+    
+          <label>
+            <p>닉네임</p>
+            <input type="text" placeholder="닉네임을 입력하세요." id="id_nickname" name="nickname">
+          </label>
+    
+          <label>
+            <p>이메일</p>
+            <input type="email" placeholder="이메일을 입력하세요." id="id_email" name="email">
+          </label>
+    
+          <label>
+            <p>비밀번호</p>
+            <input type="password" placeholder="숫자/문자 조합, 최소 8자 이상" id="id_password1" name="password1">
+            {% if form.password1.errors %}
+              <div class="error">{{ form.password1.errors }}</div>
+            {% endif %}
+          </label>
+    
+          <label>
+            <p>비밀번호 재입력</p>
+            <input type="password" placeholder="비밀번호를 재입력하세요." id="id_password2" name="password2">
+            {% if form.password2.errors %}
+              <div class="error">{{ form.password2.errors }}</div>
+            {% endif %}
+          </label>
+  
+          <label>
+            <button type="submit" id="submit">signup</button>
+          </label>
+  
+        </form>
+      </div>
+      
+    </div>
+
+  <script src="{% static 'js/signup.js' %}"></script>
 </body>
 </html>

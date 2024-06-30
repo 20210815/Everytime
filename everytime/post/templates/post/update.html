@@ -1,18 +1,59 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글 수정</title>
-</head>
-<body>
-  <form action="{% url 'post:update' post.id %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="title" value="{{post.title}}">
-    <hr>
-    <br>
-    <textarea name="content">{{ post.content }}</textarea>
-    <input type="submit" value="작성 완료">
-  </form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"></link>
+    <link rel="stylesheet" href="{% static 'css/post.css' %}"></link>
+    <title>글 수정</title>
+  </head>
+  <body>
+
+    <div class="section">{% include "post/header.html" %} {% include "post/nav.html" %}</div>
+    <div class="content">
+      <div>
+        <div class="post0" style="display: block;">
+          <form action="{% url 'post:update' post.id %}" method="post">
+          {% csrf_token %}
+          {% include "post/post.html" %}</form>
+        </div>
+      </div>
+      <aside>
+        <!-- aside -> 실시간 인기 글 ~ 더 보기 -->
+        <div class="aside">
+          <div class="aside_live">
+  
+            <div class="live_title">
+              <span>실시간 인기 글</span>
+            </div>
+  
+            <hr color="gainsboro">
+  
+            <div class="live_post">
+              <span class="span1">네가 깃아 미안해 했잖아?</span><br>
+              <span class="span2">그럼 깃 충돌 이딴거 안생겼어</span><br>
+              <span class="span3">비밀게시판</span>
+              <img src="{% static 'img/container.articles.vote.png' %}" style="width: 13px;">
+              <span style="color: #F91F15;" class="span4">10</span>
+              <img src="{% static 'img/container.articles.comment.png'%}" style="width: 13px;">
+              <span style="color: #05BCBC;" class="span4">17</span>
+    
+            </div>
+  
+          <hr color="gainsboro">
+  
+          <div class="live_post">
+            <span class="span1">네가 깃아 미안해 했잖아?</span><br>
+            <span class="span2">그럼 깃 충돌 이딴거 안생겼어</span><br>
+            <span class="span3">비밀게시판</span>
+            <img src="{% static 'img/container.articles.vote.png' %}" style="width: 13px;">
+            <span style="color: #F91F15;" class="span4">10</span>
+            <img src="{% static 'img/container.articles.comment.png' %}" style="width: 13px;">
+            <span style="color: #05BCBC;" class="span4">17</span>
+          </div>
+  
+        </div>
+      </aside></div></script>
+  </body>
 </html>

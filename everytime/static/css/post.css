@@ -1,0 +1,78 @@
+.box_container_writing {
+  box-sizing: border-box;
+
+  width: 780px;
+  height: 478px;
+
+  border: 2px solid #acacac;
+}
+
+.input_writing_title {
+  box-sizing: border-box;
+  width: 776px;
+  height: 50px;
+  padding: 0px 16px;
+
+  font-size: 1rem;
+  font-weight: 900;
+
+  border: none;
+  border-bottom: 1px solid #acacac;
+  outline: none;
+}
+.input_writing_content {
+  box-sizing: border-box;
+  width: 776px;
+  height: 380px;
+  padding: 16px;
+
+  font-size: 0.9rem;
+  font-weight: 900;
+
+  border: none;
+  outline: none;
+
+  resize: none;
+}
+.input_writing_submit {
+  box-sizing: border-box;
+  width: 776px;
+  height: 40px;
+  padding: 0px;
+
+  border: none;
+  border-top: 1px solid #acacac;
+
+  display: flex;
+  justify-content: space-between;
+}
+.box_evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* bottom_submit box */
+.box_img_icon {
+  margin: 0;
+  padding: 0;
+}
+
+.img_icon {
+  width: 40px;
+  height: 40px;
+}
+
+.img_back_red {
+  background-color: #f91f15;
+}
+
+.box_check_anonymity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #acacac;
+}

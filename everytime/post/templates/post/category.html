@@ -1,63 +1,500 @@
+{% load static %} {% load humanize %}
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <a href="{% url 'post:home' %}">메인페이지로 돌아가기</a>
-  <hr>
-  <div>
-    {% include 'post/menu.html' %}
-  </div>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/category.css' %}" />
+    <title>에브리타임 main</title>
+  </head>
 
-  <h1>{{ category.title }} </h1>
+  <body>
+    <!-- header -->
+    <header class="outside">
+      <header class="inside">
+        <div class="title">
+          <div class="img_logo">
+            <a href="{% url 'post:home' %}">
+              <img
+                src="{% static 'img/nav.logo.png' %}"
+                width="40px"
+                alt="에타 로고"
+            /></a>
+          </div>
+          <div class="title_text">
+            <h4 class="title_text">에브리타임</h4>
+            <h2 class="title_text">덕성여대</h2>
+          </div>
+        </div>
+        <div class="menus">
+          <h3 class="picked">게시판</h3>
+          <h3>시간표</h3>
+          <h3>강의실</h3>
+          <h3>학점계산기</h3>
+          <h3>친구</h3>
+          <h3>책방</h3>
+          <h3>캠퍼스픽</h3>
+        </div>
 
-  <div>
-    
-{% load static %}
-{% load humanize %}
-{% if request.user.is_authenticated %}
-    <a href="{% url 'accounts:logout' %}">로그아웃</a>
-    <a href="{% url 'accounts:mypage' %}">마이페이지</a>
+        <div class="icons">
+          <div class="img_icon">
+            <img
+              class="img_icon"
+              src="{% static 'img/icn_m_chat_gray800_light.png' %}"
+              alt="아이콘 로고"
+            />
+          </div>
+          <div class="img_icon">
+            <img
+              class="img_icon"
+              src="{% static 'img/icn_m_account_gray800_light.png' %}"
+              alt="아이콘 로고"
+            />
+          </div>
+        </div>
+      </header>
+    </header>
+    <!-- header 640px -->
+    <header class="media_640px">
+      <div>
+        <img src="{% static 'img/aside.title.hamburger.png' %}" alt="아이콘" />
+      </div>
+      <h1>{{ category.title }}</h1>
+    </header>
+    <!-- navigation -->
+    <nav class="outside">
+      <nav class="inside">
+        <div class="sub_menus_left">
+          {% include 'post/menu.html' %}
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu_red">비밀게시판</p>
+          <p class="sub_menu">질문게시판</p>
+          <p class="sub_menu">졸업생게시판</p>
+          <p class="sub_menu">새내기게시판</p>
+          <p class="sub_menu">시사·이슈</p>
+          <p class="sub_menu">정보게시판</p>
+          <p class="sub_menu">홍보게시판</p>
+        </div>
+        <div class="sub_menus">
+          <p class="sub_menu">동아리·학회</p>
+          <p class="sub_menu"></p>
+          <p class="sub_menu"></p>
+          <p class="sub_menu"></p>
+          <p class="sub_menu"></p>
+          <p class="sub_menu"></p>
+          <p class="sub_menu"></p>
+          <p class="sub_menu"></p>
+        </div>
+        <div class="sub_menus_left">
+          <p class="sub_menu">취업·진로</p>
+          <p class="sub_menu">교직이수</p>
+          <p class="sub_menu">덕성 예비공무원들원들</p>
+          <p class="sub_menu">대학원 뿌숭뿌숭</p>
+          <p class="sub_menu">미래의 회계사</p>
+          <p class="sub_menu">덕성로스쿨러들</p>
+          <p class="sub_menu"></p>
+          <p class="sub_menu"></p>
+        </div>
+        <div class="sub_menus_left">
+          <p class="sub_menu">총학생회</p>
+          <p class="sub_menu">신문사</p>
+          <p class="sub_menu">영자신문사</p>
+          <p class="sub_menu">운현방송국</p>
+          <p class="sub_menu">대학일자리본부</p>
+          <p class="sub_menu">교직편집위원회</p>
+          <p class="sub_menu">동아리연합회</p>
+          <p class="sub_menu_red">더 보기</p>
+        </div>
+        <div class="sub_menus_left">
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu_red">더 보기</p>
+        </div>
+        <div class="sub_menus_left">
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+        </div>
+        <div class="sub_menus_right">
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu">자유게시판</p>
+          <p class="sub_menu_red">더 보기</p>
+        </div>
+        <!-- x8개 -->
+      </nav>
+    </nav>
 
-    {% else %}
-    <a href="{% url 'accounts:signup' %}">회원가입</a>
-    <a href="{% url 'accounts:login' %}">로그인</a>
-    {% endif %}
-    <br><br>
-    <form action="{% url 'post:create' category.slug %}" method="post">
-      {% csrf_token %}
-      <input type="text" placeholder="제목 입력" name="title">
-     
-      <br>
-      <textarea name="content" placeholder="본문 입력"></textarea>
-      <input type="checkbox" name="anonymity" value="annoymity_true" >익명
-      <!-- <input type="hidden" name="anonymity" value="annoymity_false" checked> -->
-      <input type="submit" value="작성 완료">
-    </form>
-    
-      {% if posts.exists %}
-        {% for post in posts %}
-        <a href="{% url 'post:detail' post.pk %}"><h1>{{ post.title }}</h1></a>
-      
-          <h4> {{ post.content }}</h4>
+    <!-- section -->
+    <div class="body_outside">
+      <div class="body_inside">
+        <!-- board -->
+        <div class="board">
+          <!-- title -->
+          <section class="board">
+            <h1>{{ category.title }}</h1>
+          </section>
 
-          <!-- {{ post.time.total_seconds }} -->
+          <!-- bubbles -->
+          <section class="board">
+            <div class="board_s2">
+              <div class="img_icon_board">
+                <img
+                  src="{% static 'img/icn_mcr_board_question_light.png' %}"
+                  class="img_icon_board"
+                  alt="아이콘"
+                />
+              </div>
+              <div class="box_text">
+                <p class="box_text">덕성여대</p>
+              </div>
+              <div class="box_text">
+                <p class="box_text">밥약 걸어도 될까요</p>
+              </div>
+              <div class="box_text">
+                <p class="box_text">오피스365</p>
+              </div>
+              <div class="box_text">
+                <p class="box_text">전공선택</p>
+              </div>
+            </div>
+            <div class="board_s2">
+              <div class="img_icon_board">
+                <img
+                  src="{% static 'img/icn_mcr_board_hotarticle_light.png' %}"
+                  class="img_icon_board"
+                  alt="아이콘"
+                />
+              </div>
+              <div class="box_text_red">
+                <p class="box_text">
+                  힐링했다
+                  <img
+                    src="{% static 'img/container.articles.vote.png' %}"
+                    width="12px"
+                    height="12px"
+                    alt="아이콘"
+                  />
+                  <span class="text_emphasis">125</span>
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- whiting -->
+          <section id="loadPostButton" class="board_background_color">
+            <p class="text_writing">새 글을 작성해주세요!</p>
+            <div class="img_icon_board">
+              <!-- <div class="box_margin"></div> -->
+              <img
+                src="{% static 'img/container.write.background.png' %}"
+                class="img_icon_board"
+                alt="아이콘"
+              />
+            </div>
+          </section>
+          <!-- post -->
+          <section id="postContainer">
+            <div class="box_container_writing">
+              <form
+                action="{% url 'post:create' category.slug %}"
+                method="post"
+              >
+                {% csrf_token %}
+                <!-- title -->
+                <div>
+                  <input
+                    class="input_writing_title"
+                    type="text"
+                    name="title"
+                    value="{{post.title}}"
+                    placeholder="글 제목"
+                  />
+                </div>
+                <!-- content -->
+                <div>
+                  <textarea
+                    class="input_writing_content"
+                    name="content"
+                    cols="30"
+                    rows="10"
+                    placeholder="네가 깃아 미안해 했잖아? 그럼 깃 충돌 이딴거 안 생겼어"
+                  >
+{{ post.content }}</textarea
+                  >
+                </div>
+                <!-- question alarm -->
+                <div class="question_alarm">
+                  <p>
+                    질문 글을 작성하면 게시판 상단에 일정 기간 동안 노출되어,
+                    더욱 빠르게 답변을 얻을 수 있게 됩니다.
+                    <br />
+                    또한, 다른 학우들이 정성껏 작성한 답변을 유지하기 위해,
+                    댓글이 달린 이후에는 글을 수정 및 삭제할 수 없습니다.
+                  </p>
+                </div>
+                <div class="input_writing_submit">
+                  <!-- left -->
+                  <div class="box_evenly">
+                    <div class="box_img_icon40">
+                      <img
+                        class="img_icon40"
+                        src="{% static 'img/container.articles.write.hashtag.png' %}"
+                        alt="아이콘"
+                      />
+                    </div>
+                    <div class="box_img_icon40">
+                      <img
+                        class="img_icon40"
+                        src="{% static 'img/container.articles.write.attach.png' %}"
+                        alt="아이콘"
+                      />
+                    </div>
+                  </div>
+                  <!-- right -->
+                  <div class="box_evenly">
+                    <div class="box_check_anonymity">
+                      <input
+                        class="box_check_anonymity"
+                        type="checkbox"
+                        id="question"
+                      />
+                      <label for="question">질문</label>
+                    </div>
+                    <div class="box_check_anonymity">
+                      <input
+                        class="box_check_anonymity"
+                        type="checkbox"
+                        id="username"
+                        checked
+                      />
+                      <label for="username">익명</label>
+                    </div>
+                    <!-- <input type="submit" value="작성 완료"> -->
+                    <button type="submit">
+                      <div class="box_img_icon40">
+                        <img
+                          class="img_icon40 img_back_red"
+                          src="{% static 'img/container.articles.write.submit.png' %}"
+                          alt="아이콘"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+          <!-- articles -->
 
-          <h4> {{ post.created_at|naturaltime }}</h4>
-          <!-- <h4> {{ post.time }}</h4> -->
-      
-          <!-- <h4> 댓글 {{ post.comment_count }}개</h4> -->
-          <!-- <h4> 댓글 {{ post.post_set.all }}개</h4> -->
-          <p> 댓글 {{ post.posts.all.count }} 공감 {{post.post_like.all.count }}개</p> <!--여기서.나를 역참조할 때 이름-->
-          <hr>
-        {% endfor %}
-      <br>
-    {% else %}
-    <h1>글이 없습니다.</h1>
-    {% endif %}
-  </div>
-</body>
+          <!-- 연동write_list -->
+          {% if posts.exists %} {% for post in posts %}
+          <section class="board">
+            <div class="post">
+              <a href="{% url 'post:detail' post.pk %}">
+                <p class="post_title">{{ post.title }}</p>
+              </a>
+              <p class="post_content">{{ post.content }}</p>
+              {% if post.anonymity == True %}
+              <p class="post_info">
+                {{ post.created_at|naturaltime }} | 익명 | 댓글
+                {{post.posts.all.count }} | 공감 {{post.post_like.all.count}}개
+              </p>
+              {% else %}
+              <p class="post_info">
+                {{ post.created_at|naturaltime }} | {{ post.user.username }} |
+                댓글 {{post.posts.all.count }} | 공감
+                {{post.post_like.all.count}}개
+              </p>
+              {% endif %}
+            </div>
+            <!-- {{ post.time.total_seconds }} -->
+            <!-- <h4> {{ post.time }}</h4> -->
+            <!-- <h4> 댓글 {{ post.comment_count }}개</h4> -->
+            <!-- <h4> 댓글 {{ post.post_set.all }}개</h4> -->
+          </section>
+          {% endfor %}
+          <br />
+          {% else %}
+          <h1>글이 없습니다.</h1>
+          {% endif %}
+        </div>
+
+        <!-- aside -->
+        <!-- aside -->
+        <!-- aside -->
+        <aside>
+          <!-- 실시간 인기 글 -->
+          <section class="aside">
+            <div class="posts_spacebetween">
+              <h5 class="text_aside_top">실시간 인기 글</h5>
+            </div>
+            <hr />
+            <div class="posts_normal">
+              <p class="post_title_aside">[86호] 덕성의 장금이</p>
+              <p class="post_content_aside">
+                근맥 86호 여섯 번째 기사가 브런치에 업로드 되었습니다.
+              </p>
+              <div class="post_info_aside">
+                <p class="post_info_aside">교지편집위원회</p>
+                <div class="img_10px">
+                  <img
+                    src="{% static 'img/container.articles.vote.png' %}"
+                    class="img_10px"
+                    alt="아이콘"
+                  />
+                </div>
+                <p class="post_info_aside">72</p>
+                <div class="img_10px">
+                  <img
+                    src="{% static 'img/container.articles.comment.png' %}"
+                    class="img_10px"
+                    alt="아이콘"
+                  />
+                </div>
+                <p class="post_info_aside">18</p>
+              </div>
+            </div>
+            <hr />
+            <div class="posts_normal">
+              <p class="post_title_aside">[86호] 덕성의 장금이</p>
+              <p class="post_content_aside">
+                근맥 86호 여섯 번째 기사가 브런치에 업로드 되었습니다.
+              </p>
+              <div class="post_info_aside">
+                <p class="post_info_aside">교지편집위원회</p>
+                <div class="img_10px">
+                  <img
+                    src="{% static 'img/container.articles.vote.png' %}"
+                    class="img_10px"
+                    alt="아이콘"
+                  />
+                </div>
+                <p class="post_info_aside">72</p>
+                <div class="img_10px">
+                  <img
+                    src="{% static 'img/container.articles.comment.png' %}"
+                    class="img_10px"
+                    alt="아이콘"
+                  />
+                </div>
+                <p class="post_info_aside">18</p>
+              </div>
+            </div>
+          </section>
+          <!-- Hot 게시물 -->
+          <section class="aside">
+            <div class="posts_spacebetween">
+              <h5 class="text_aside_top">HOT 게시물</h5>
+              <p class="text_more">더 보기</p>
+            </div>
+            <hr />
+            <div class="posts_spacebetween">
+              <p class="post_content_aside">덕설이 보고싶어</p>
+              <p class="post_info_aside">03/31 11:14</p>
+            </div>
+            <hr />
+            <div class="posts_spacebetween">
+              <p class="post_content_aside">개강</p>
+              <p class="post_info_aside">03/31 11:14</p>
+            </div>
+            <hr />
+            <div class="posts_spacebetween">
+              <p class="post_content_aside">게시글 제목</p>
+              <p class="post_info_aside">03/31 11:14</p>
+            </div>
+            <hr />
+            <div class="posts_spacebetween">
+              <p class="post_content_aside">개강개강</p>
+              <p class="post_info_aside">03/31 11:14</p>
+            </div>
+          </section>
+          <!-- Best 게시판 -->
+          <section class="aside">
+            <div class="posts_spacebetween">
+              <h5 class="text_aside_top">BEST 게시판</h5>
+              <p class="text_more">더 보기</p>
+            </div>
+          </section>
+          <!-- 학교 소식 -->
+          <section class="aside">
+            <div class="posts_spacebetween">
+              <h5 class="text_aside_top">학교 소식</h5>
+            </div>
+            <hr />
+            <div class="posts_normal">
+              <p class="post_title_aside">[86호] 덕성의 장금이</p>
+              <p class="post_content_aside">
+                근맥 86호 여섯 번째 기사가 브런치에 업로드 되었습니다.
+              </p>
+              <div class="post_info_aside">
+                <p class="post_info_aside">교지편집위원회</p>
+                <div class="img_10px">
+                  <img
+                    src="{% static 'img/container.articles.vote.png' %}"
+                    class="img_10px"
+                    alt="아이콘"
+                  />
+                </div>
+                <p class="post_info_aside">0</p>
+                <div class="img_10px">
+                  <img
+                    src="{% static 'img/container.articles.comment.png' %}"
+                    class="img_10px"
+                    alt="아이콘"
+                  />
+                </div>
+                <p class="post_info_aside">0</p>
+              </div>
+            </div>
+          </section>
+          <!-- 최근 강의평 -->
+          <section class="aside">
+            <div class="posts_spacebetween">
+              <h5 class="text_aside_top">최근 강의평</h5>
+              <p class="text_more">더 보기</p>
+            </div>
+            <hr />
+            <div class="posts_normal">
+              <div class="img_">
+                <img
+                  src="{% static 'img/app.subject.rating.details.star.off.png' %}"
+                  class="img_"
+                  alt="아이콘"
+                />
+              </div>
+              <p class="post_title_aside">대학글쓰기 : 강교수</p>
+              <p class="post_content_aside">최고의 교수님</p>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <p class="footer">
+        이용약관 개인정보처리방침 청소년보호정책 커뮤니티이용규칙 공지사항
+        문의하기 에브리타임
+      </p>
+      <p class="footer">직업정보제공사업 신고번호 : J1234567890</p>
+    </footer>
+
+    <!-- script -->
+    <script src="{% static 'js/category_post.js' %}"></script>
+  </body>
 </html>

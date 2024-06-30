@@ -1,67 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글 상세</title>
-</head>
-<body>
-  <a href="{% url 'post:category_post_list' post.category.slug%}"> 뒤로가기 </a>
+{% load static %} {% block title %}detail{%endblock %} {% block style %}<link
+  rel="stylesheet"
+  href="{% static 'css/detail.css' %}"
+/>{% endblock %} {% block body %} {% include "accounts/header.html"%} {% include "accounts/nav.html" %}
 
-  <h1>{{ post.title }}</h1> 
-  <h2>{{ post.content }} </h2> 
-  <h2>{{ post.created_at }}</h2> <br><br>
-  {% if post.anonymity == True %}익명
-  {% else %}
-    <h5>{{ post.user.username }}</h5>
-  {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}
+<section class="secret_all">
 
-
-  <p>공감 {{post.post_like.all.count }}개</p>
-  <p>스크랩 {{post.scrap_users.count }}개</p>
-  <form action="{% url 'post:post_like' post.id %}" method="post">
-    {% csrf_token %}
-    <button>공감</button>
-  </form>
+  <!--section 라인-->
   
-
-  <form action="{% url 'post:post_scrap' post.id %}" method="post">
-    {% csrf_token %}
-    <button>스크랩</button>
-  </form>
-
-  <hr>
-  <h4>댓글</h4>
-  {% if comments.exists %} 
-      {% for comment in comments %}
-      <p>
-      <br>
-        {{ comment.content }} -   
-        {% if comment.anonymity == True %}익명
-
-        {% else %}
-          {{ comment.user }}
-        {% endif %}
-        - {{ comment.created_at }}
-        <br>
-        {% if request.user == comment.user %} <a href="{% url 'post:com_delete' com_id=comment.id post_id=post.id %}">삭제하기</a> {% endif %}
-      </p>
-        {% endfor %}
+      <div class="section_1">
+          <p class="font_bold">비밀게시판</p>
+      </div>
   
-  {% else %}
-  댓글이 없습니다.
-  {% endif %}
-  <hr>
-  <form action="{% url 'post:com_create' post.id %}" method="POST">
-    {% csrf_token %}
-    <input type="text" name="content">
-    <input type="submit" value="작성">
-    <input type="checkbox" name="anonymity" value="annoymity_true" checked>익명
+  
+      <div class="section_2">
+  
+          <div class="section2_img_1">
+              <img class="person" src="{% static "img/anonymous.profile.png" %}" alt="사진 로딩 중">
+          </div>
+          
+          <div class="section2_text_1_2">
+  
+          <div class="section2_text_1">
+              <span>익명</span>
+              <p class="graycolor">03/12 10:42</p>
+          </div>
+  
+          <div class="section2_text_2">
+              <span class="graycolor">쪽지</span>
+              <span class="graycolor">신고</span>
+          </div>
+  
+          </div>
+  
+          <div class="section2_text_3">
+              <p class="section2_text_bold">🦁 멋쟁이사자처럼 아기사자 모집 완료 🦁</p>
+              <p class="section2_text_small">안녕하세요, 덕성여자대학교 멋쟁이사자처럼 12기 아기사자 선발이 완료되었습니다!</p>
+              <p class="section2_text_small">최종 선발 결과는 홈페이지에서 확인 가능합니다!</p>
+              <p class="section2_text_small">📍https://likelion-ds.site/</p>
+              <p class="section2_text_small">덕성여자대학교 멋쟁이사자처럼 12기 모집에 지원해 주신 모든 분들께 감사드립니다.</p>
+              <p class="section2_text_small">기타 문의사항은 https://open.kakao.com/o/sa1eBU5f 로 문의 부탁드립니다.</p>
+          </div>
+  
+  
+          <div class="section2_img_2">
+              <img class="section_img1" src="{% static "./img/section_img_1.png" %}" alt="사진 로딩 중">
+              <img class="section_img2" src="{% static "./img/section_img_2.png" %}" alt="사진 로딩 중">
+          </div>
+  
+          <div class="section2_img_3">
+              <img class="good_1" src="{% static "./img/container.articles.vote.png" %}" alt="사진 로딩 중">
+              <span id="likeCount" class="redcolor">9</span>
+              <img class="comment" src="{% static "./img/container.articles.comment.png" %}" alt="사진 로딩 중">
+              <span class="greencolor">1</span>
+              <img class="scrap" src="{% static "./img/container.articles.scrap.png" %}" alt="사진 로딩 중">
+              <span id="scrapCount" class="yellowcolor">0</span>
+          </div>
+  
+          <div class="section2_img_4">
+              <div class="gray_good_text">
+                  <img class="gray_good" src="{% static "./img/container.articles.buttons.posvote.png" %}" alt="사진 로딩 중">
+                  <input class="button_input" id="likeButton" type="button" value="공감" onclick="change_good()">
+              </div>
+  
+              <div class="gray_scrap_text">
+                  <img id="scrapImage" class="gray_scrap" src="{% static "./img/container.articles.buttons.scrap.png" %}" alt="사진 로딩 중">
+                  <input class="button_input" id="scrapButton" type="button" value="스크랩" onclick="change_scrap()">
+              </div>
+          </div>
+      </div>
+  
+          <div class="section_3">
+  
+              <div class="section3_img_1">
+                  <img class="person_2" src="{% static "img/anonymous.profile.png" %}" alt="사진 로딩 중">
+                  <span class="anonymous">익명1</span>
+  
+                  <div class="section3_text_2">
+                      <input class="graycolor_1" id="co-coment-toggle" type="button" value="대댓글" onclick="toggleDisplay()">
+                      <span class="graycolor_1">공감</span>
+                      <span class="graycolor">삭제</span>
+                  </div>
+  
+              </div>
+              
+              <div class="section_3_1">
+  
+              <div class="section3_text_1">
+                  <p>우와</p>
+                  <p class="graycolor_small">방금</p>
+              </div>
+              
+              </div>
+  
+  
+                  <div id="background" class="backgroud">
+                  <input id="co-coment" type="text" placeholder="댓글을 입력하세요." class="section_box_2">
+                  <input id="checkbox_red_2" type="checkbox" class="checkbox_1" onclick="checkbox_1()" />
+                  <span id="for_red_2" class="graycolor"> 익명 </span>
+                  
+                  <div class="section4_img_1">
+                      <img class="pencil" src="{% static "./img/container.write.background.png" %}" alt="사진 로딩 중" onclick="showComment_1()">
+                  </div>
+                  </div>
+      
+  
+  
+              
+          </div>
+  
+              <div class="section_4">
+                  <input id="commentInput" type="text" placeholder="댓글을 입력하세요." class="section_box">
+                  <input id="checkbox_red" type="checkbox" class="checkbox_1" onclick="checkbox()" />
+                  <span id="for_red" class="graycolor"> 익명 </span>
+                  
+                  <div class="section4_img_1">
+                      <img class="pencil" src="{% static "./img/container.write.background.png" %}" alt="사진 로딩 중" onclick="showComment()">
+                  </div>
+              
+              </div>
+          
+  
+              <div class="section_5">
+                  <img class="section5_img_1" src="{% static "./img/container.articles.pagination.list.png" %}" alt="사진 로딩 중">
+                  <input class="button" type="button" value="글 목록" onclick="location.href='{% url 'post:category_static' %}'">
+              </div>
+          
+  </section>
 
-  </form>
-
-
-</body>
-</html>
+{% include "accounts/aside.html" %}
+<script src="{% static "js/everytime3.js" %}"></script>
+{% endblock body %}

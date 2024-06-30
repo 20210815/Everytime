@@ -56,3 +56,6 @@ def scrap_list(request):
   #posts = Post.post_user.scrap_post.all()
   #posts = Post.scrap_post.filter(user = request.user)
   return render(request, 'accounts/scrap_list.html', {'posts': posts})
+
+def post_view(request):
+    return render(request, 'accounts/post.html')

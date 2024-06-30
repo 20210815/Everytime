@@ -143,3 +143,9 @@ def category_post_list(request, slug):
   posts = Post.objects.filter(category = category).order_by('-id')
 
   return render(request, "post/category.html", {'category': category, 'posts':posts, 'category_list': category_list})
+
+def category_static(request):
+    return render(request, 'post/category.html')
+  
+def detail_static(request):
+    return render(request, 'post/detail.html')

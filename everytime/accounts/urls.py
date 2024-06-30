@@ -10,4 +10,5 @@ urlpatterns = [
   path('mypage/', mypage, name="mypage"),
   path('write_list/', write_list, name='write_list'),
   path('scrap_list/', scrap_list, name='scrap_list'),
+  path('post/', post_view, name='post'), 
 ]

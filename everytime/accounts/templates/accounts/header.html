@@ -1,0 +1,38 @@
+{% load static %} {% block style %} <link rel="stylesheet" href="{% static 'css/main.css' %}" /> {% endblock %} 
+{%block body %}
+<header>
+  <div class="all">
+    <div class="header">
+      <div class="imgandtext">
+      <img class="everytime_logo" src="{% static './img/에타.png'%}" alt="사진 로딩 중" />
+      <div class="every">
+      <p class="let">에브리타임</p>
+      <span class="ev"><p>덕성여대</p></span>
+      </div>
+      </div>
+      <div class="text">
+      <p class="link">게시판</p>
+      <p class="head_p_1">시간표</p>
+      <p class="head_p_2">강의실</p>
+      <p class="head_p_3">학점계산기</p>
+      <p class="head_p_4">친구</p>
+      <p class="head_p_5">책방</p>
+      <p class="head_p_6">캠퍼스픽</p>
+    </div>
+    <div class="img2">
+    <img class="message"
+      src="{% static './img/icn_m_chat_gray800_light.png' %}" alt="사진로딩중"
+    
+    >
+    <img class="account"
+      src="{% static './img/icn_m_account_gray800_light.png' %}" alt="사진로딩중"
+    >
+    </div>
+    
+    <div class="head_ham">
+        <img class="head_ham_img" src="{% static './img/aside.title.hamburger.png' %}" alt="사진 로딩 중">
+    </div>
+
+  </div>
+</header>
+{% endblock body %}

@@ -1,18 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글 수정</title>
-</head>
-<body>
-  <form action="{% url 'post:update' post.id %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="title" value="{{post.title}}">
-    <hr>
-    <br>
-    <textarea name="content">{{ post.content }}</textarea>
-    <input type="submit" value="작성 완료">
-  </form>
-</body>
-</html>
+{% load static %} {% block title %}category{%endblock %} {% block style %}<link
+  rel="stylesheet"
+  href="{% static 'css/main.css' %}}"
+/>{% endblock %} {% block body %} {% include "accounts/header.html"%} {% include "accounts/nav.html" %}
+
+<section class="secret_all">
+  <!--section 라인-->
+
+  <div class="section_1">
+    <p class="font_bold">비밀게시판</p>
+  </div>
+
+  <!--반응형 때문에 추가한 section-->
+  <div class="moving_section_1">
+    <div class="bluethings">
+      <img class="blue_ask" src="{% static "./img/icn_mcr_board_question_light.png" %}" alt="이미지 로딩 중" />
+      <p class="duksung">덕성</p>
+      <p class="num">12기</p>
+      <p class="power">파이팅~</p>
+    </div>
+    <div class="redthings">
+      <img class="red_fire" src="{% static "./img/icn_mcr_board_hotarticle_light.png" %}" alt="이미지 로딩 중" />
+      <p class="best">덕멋최고</p>
+      <p class="grr">어흥</p>
+    </div>
+  </div>
+  <div class="gray_back">
+    <div class="moving_section_2">
+      <span class="new"
+        ><p><a href="{% url 'accounts:post'%}">새 글을 작성해주세요!</a></p></span
+      >
+      <img class="pen" src="{% static "./img/container.write.background.png" %}" alt="이미지 로딩 중" />
+    </div>
+  </div>
+
+  <div class="moving_section_3">
+    <div class="like">
+      <p class="sorry">네가 "깃아 미안해" 했잖아?</p>
+      <p class="no">그럼 깃 충돌 이딴거 안생겼어</p>
+      <div class="like_comment">
+        <img class="likes" src="{% static "./img/container.articles.vote.png" %}" alt="이미지 로딩 중" />
+        <span class="ten">10</span>
+
+        <img class="comment" src="{% static "./img/container.articles.comment.png" %}" alt="이미지 로딩 중" />
+        <span class="seventeen">17</span>
+        <span class="min">| 10분전 | 익명</span>
+      </div>
+    </div>
+    <div class="lion">
+      <img class="lions" src="{% static "./img/likelion.png" %}" alt="이미지 로딩 중" />
+    </div>
+  </div>
+
+  <div class="moving_section_3">
+    <div class="like">
+      <p class="sorry">심각한 멋사 중독입니다</p>
+      <p class="no">흥 무슨 소리 세션이나 들어 어흥</p>
+      <div class="like_comment">
+        <img class="likes" src="{% static "./img/container.articles.vote.png" %}" alt="이미지 로딩 중" />
+        <span class="ten">10</span>
+
+        <img class="comment" src="{% static "./img/container.articles.comment.png" %}" alt="이미지 로딩 중" />
+        <span class="seventeen">17</span>
+        <span class="min">| 20분전 | 익명</span>
+      </div>
+    </div>
+    <div class="lion">
+      <img class="lions" src="{% static "./img/likelion.png" %}" alt="이미지 로딩 중" />
+    </div>
+  </div>
+
+  <div class="moving_section_3">
+    <div class="like">
+      <p class="sorry">꽁꽁 얼어붙은 한강 위로</p>
+      <p class="no">아기 사자가 걸어다닙니다</p>
+      <div class="like_comment">
+        <img class="likes" src="{% static "./img/container.articles.vote.png" %}" alt="이미지 로딩 중" />
+        <span class="ten">10</span>
+
+        <img class="comment" src="{% static "./img/container.articles.comment.png" %}" alt="이미지 로딩 중" />
+        <span class="seventeen">17</span>
+        <span class="min">| 30분전 | 익명</span>
+      </div>
+    </div>
+    <div class="lion">
+      <img class="lions" src="{% static "./img/likelion.png" %}" alt="이미지 로딩 중" />
+    </div>
+  </div>
+
+  <div class="moving_section_3">
+    <div class="like">
+      <p class="sorry">네가 "깃아 미안해" 했잖아?</p>
+      <p class="no">그럼 깃 충돌 이딴거 안생겼어</p>
+      <div class="like_comment">
+        <img class="likes" src="{% static "./img/container.articles.vote.png" %}" alt="이미지 로딩 중" />
+        <span class="ten">10</span>
+
+        <img class="comment" src="{% static "./img/container.articles.comment.png" %}" alt="이미지 로딩 중" />
+        <span class="seventeen">17</span>
+        <span class="min">| 40분전 | 익명</span>
+      </div>
+    </div>
+    <div class="lion">
+      <img class="lions" src="{% static "./img/likelion.png" %}" alt="이미지 로딩 중" />
+    </div>
+  </div>
+</section>
+{% include "accounts/aside.html" %}
+<script src="{% static "./everytime3.js" %}"></script>
+{% endblock body %}

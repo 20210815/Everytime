@@ -1,0 +1,88 @@
+.pick {
+  color: red;
+  font-weight: bold;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  margin-left: 200px;
+}
+
+.icon img {
+  width: 22px;
+}
+
+.icon > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid #b9b9b9;
+  margin-right: 5px;
+}
+
+.posted {
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  background-color: #f2f2f2;
+  height: 230px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  overflow-x: hidden;
+  white-space: nowrap;
+  padding: 0 auto;
+  margin: 0 auto;
+}
+
+.posted ul {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  list-style-type: none;
+  justify-content: space-evenly;
+  padding: 0px;
+  margin: 0;
+  font-size: 13px;
+  color: #444444;
+}
+
+.posted li {
+  margin-bottom: 6.5px;
+  flex-shrink: 0;
+}
+
+.posted li:hover {
+  color: red;
+}
+
+.postText {
+  margin: 13px 0px 13px 10px;
+  border-left: 1px solid #e1e1e1;
+  padding-left: 15px;
+  padding-right: 40px;
+  flex-shrink: 0;
+}
+
+#noline {
+  border: none;
+  font-size: 13px;
+  color: #444444;
+}
+
+#lastline {
+  border-right: 1px solid #e1e1e1;
+  font-size: 13px;
+  color: #444444;
+}
+
+.postText ul li:hover {
+  color: red;
+  font-weight: bold;
+}

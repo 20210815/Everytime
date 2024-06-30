@@ -1,0 +1,109 @@
+{% extends 'base.html' %}{% load static %} {% block style %}<link
+  rel="stylesheet"
+  href="{% static 'css/sec2.css' %}"
+/>{% endblock %} {% block body %}
+<div id="sec2">
+  <div class="secret">
+    <div class="title">비밀게시판</div>
+    <div class="ask">
+      <div class="ques">
+        <img alt="질문아이콘" src="{% static 'img/icn_mcr_board_question_light.png' %}" />
+        <div class="mint">교환</div>
+        <div class="mint">이러닝</div>
+        <div class="mint">덕기초 노트북으로 들어려는데 줌 설치...</div>
+      </div>
+      <div class="fire">
+        <img alt="불아이콘" src="{% static 'img/icn_mcr_board_hotarticle_light.png' %}" />
+        <div class="redness">
+          오늘 수유동에서
+          <div class="good">
+            <img alt="좋아요" src="{% static 'img/container.articles.vote.png' %}" />83
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="border">
+      <div class="new">새 글을 작성해주세요!</div>
+      <img alt="돋보기" src="{% static 'img/container.write.background.png' %}" />
+    </div>
+    <div id="posting">
+      <div class="contents">
+        <span>이거 답이 뭐임?</span>
+        <div class="post_body">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+        <div id="post_info">방금 | 익명</div>
+      </div>
+      <div class="contents">
+        <span>다들 회전초밥 몇 접시 먹어봄</span>
+        <div class="post_body">난 12접시..</div>
+        <div id="post_info">방금| 익명</div>
+      </div>
+      <div class="contents">
+        <span>이거 답이 뭐임?</span>
+        <div class="post_body">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+        <div id="post_info">방금| 익명</div>
+      </div>
+      <div class="contents">
+        <span>이거 답이 뭐임?</span>
+        <div class="post_body">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+        <div id="post_info">방금| 익명</div>
+      </div>
+      <div class="contents">
+        <span>이거 답이 뭐임?</span>
+        <div class="post_body">닝닝하고 지젤만 정답인줄 알았늗데 아니야??</div>
+        <div id="post_info">방금| 익명</div>
+      </div>
+    </div>
+  </div>
+  <div class="aside">
+    <div class="popular">
+      <div class="bluetitle"><span>실시간 인기 글</span></div>
+      <div class="text">
+        <span>신기한 알바하는 덕우 있나</span><br />
+        난 파충류샵 알바<br />
+        사진은 맨날 나한테 밥달라고 쳐다보는 애
+        <div class="reac">
+          비밀게시판
+          <div class="good">
+            <img alt="좋아요" src="{% static 'img/container.articles.vote.png' %}" />71
+          </div>
+          <div class="comment">
+            <img alt="댓글" src="{% static 'img/container.articles.comment.png' %}" />39
+          </div>
+        </div>
+      </div>
+      <div class="text">
+        <span>(장터덕우 찾아요)어제 신촌cgv파묘3인 구매</span><br />
+        어제 cgv 파묘 9500 3인 대리예매해주신 서ㅇㅇ님 찾아요<br />
+        3월 9일 영화를 예매했는데 같이 구입한 콤보 쿠폰 유효기
+        <div class="reac">
+          비밀게시판
+          <div class="good">
+            <img alt="좋아요" src="{% static 'img/container.articles.vote.png' %}" />44
+          </div>
+          <div class="comment">
+            <img alt="댓글" src="{% static 'img/container.articles.comment.png' %}" />1
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hot">
+      <div class="bluetitle">
+        <span>HOT 게시물</span>&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;더 보기
+      </div>
+      <div class="contents">
+        우와 커피차 우리가 3위
+        <div class="time">15분전</div>
+      </div>
+      <div class="contents">
+        모찌네타코야끼.. 최고의 타코야끼.. ...
+        <div class="time">03/09 16:16</div>
+      </div>
+      <div class="contents">
+        술에 관대한 문화 너무 싫어
+        <div class="time">03/09 20:33</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

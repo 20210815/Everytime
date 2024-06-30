@@ -1,16 +1,79 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입</title>
-</head>
-<body>
-  <h2>회원가입</h2>
-  <form method="post" action="" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">signup</button>
-  </form>
-</body>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sighup.css' %}" />
+    <title>에브리타임 회원가입</title>
+  </head>
+  <body>
+    <div class="total">
+      <div class="info">
+        <div class="title">에브리타임 회원가입</div>
+        <div class="sub">
+          에브리타임 계정으로 <span>캠퍼스픽, 에브리타임</span> 등<br />
+          다양한 대학생 서비스를 모두 이용하실 수 있습니다.
+        </div>
+      </div>
+      <div class="main">
+        <form class="signup-form">
+          <div class="name">
+            <div class="text">이름</div>
+            <input
+              type="text"
+              id="id_username"
+              name="username"
+              placeholder="이름을 입력하세요."
+              required
+            />
+          </div>
+          <div class="nickname">
+            <div class="text">닉네임</div>
+            <input
+              type="text"
+              id="id_nickname"
+              name="nickname"
+              placeholder="닉네임을 입력하세요."
+              required
+            />
+          </div>
+          <div class="email">
+            <div class="text">이메일</div>
+            <input
+              type="text"
+              id="id_email"
+              name="email"
+              placeholder="이메일을 입력하세요."
+              required
+            />
+          </div>
+          <div class="password">
+            <div class="text">비밀번호</div>
+            <input
+              type="password"
+              id="id_password1"
+              name="password1"
+              placeholder="숫자/문자 조합, 최소 8자 이상"
+              required
+            />
+          </div>
+          <div class="re_password">
+            <div class="text">비밀번호 재입력</div>
+            <input
+              type="password"
+              id="id_password2"
+              name="password2"
+              placeholder="비밀번호 재입력"
+              required
+            />
+          </div>
+          <div class="submit">
+            <button type="submit">회원가입</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="{% static 'js/signup.js' %}"></script>
+  </body>
 </html>

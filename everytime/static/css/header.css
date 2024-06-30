@@ -1,0 +1,132 @@
+@media all and (min-width: 641px) {
+  body .header_hidden {
+    display: none;
+  }
+  .posted {
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 1180px) {
+  body .header,
+  section .posted {
+    justify-content: flex-start;
+    overflow-x: hidden;
+  }
+}
+
+@media all and (max-width: 640px) {
+  body .header {
+    display: none;
+  }
+  section .aside {
+    display: none;
+  }
+  .secret .title {
+    display: none;
+  }
+  body #sec2 {
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 2px;
+  }
+  section .posted {
+    height: 220px;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #ffffff;
+  font-family: "Apple SD Gothic Neo", "맑은 고딕", "돋움", sans-serif;
+  letter-spacing: -0.5px;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 100vw;
+  height: 80px;
+  white-space: nowrap;
+}
+
+.header_hidden {
+  display: flex;
+  align-items: center;
+  padding: 13px;
+  z-index: 1;
+  font-size: 17px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.header_hidden img {
+  width: 1.5em;
+  padding-right: 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 150px;
+}
+
+.logo img {
+  width: 40px;
+  height: auto;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.logo #text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 23.5px;
+  font-weight: 400;
+  align-self: flex-start;
+  padding: 0px;
+}
+
+.logo span {
+  align-self: flex-start;
+  margin-left: 3px;
+  font-size: 13px;
+  font-weight: 700;
+  color: red;
+}
+
+nav {
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-evenly;
+}
+
+nav ul li {
+  margin-right: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444444;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav ul li:hover {
+  color: red;
+}

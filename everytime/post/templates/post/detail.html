@@ -1,67 +1,384 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글 상세</title>
-</head>
-<body>
-  <a href="{% url 'post:category_post_list' post.category.slug%}"> 뒤로가기 </a>
-
-  <h1>{{ post.title }}</h1> 
-  <h2>{{ post.content }} </h2> 
-  <h2>{{ post.created_at }}</h2> <br><br>
-  {% if post.anonymity == True %}익명
-  {% else %}
-    <h5>{{ post.user.username }}</h5>
-  {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}
-
-
-  <p>공감 {{post.post_like.all.count }}개</p>
-  <p>스크랩 {{post.scrap_users.count }}개</p>
-  <form action="{% url 'post:post_like' post.id %}" method="post">
-    {% csrf_token %}
-    <button>공감</button>
-  </form>
-  
-
-  <form action="{% url 'post:post_scrap' post.id %}" method="post">
-    {% csrf_token %}
-    <button>스크랩</button>
-  </form>
-
-  <hr>
-  <h4>댓글</h4>
-  {% if comments.exists %} 
-      {% for comment in comments %}
-      <p>
-      <br>
-        {{ comment.content }} -   
-        {% if comment.anonymity == True %}익명
-
-        {% else %}
-          {{ comment.user }}
-        {% endif %}
-        - {{ comment.created_at }}
-        <br>
-        {% if request.user == comment.user %} <a href="{% url 'post:com_delete' com_id=comment.id post_id=post.id %}">삭제하기</a> {% endif %}
-      </p>
-        {% endfor %}
-  
-  {% else %}
-  댓글이 없습니다.
-  {% endif %}
-  <hr>
-  <form action="{% url 'post:com_create' post.id %}" method="POST">
-    {% csrf_token %}
-    <input type="text" name="content">
-    <input type="submit" value="작성">
-    <input type="checkbox" name="anonymity" value="annoymity_true" checked>익명
-
-  </form>
-
-
-</body>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}" />
+    <title>에브리타임</title>
+    <script src="{% static 'js/detail.js' %}" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img alt="에브리타임로고" src="{% static 'img/nav.logo.png' %}" />
+        <div id="text"><span>에브리타임</span>덕성여대</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" class="pick">게시판</a></li>
+          <li><a href="#">시간표</a></li>
+          <li><a href="#">강의실</a></li>
+          <li><a href="#">학점계산기</a></li>
+          <li><a href="#">친구</a></li>
+          <li><a href="#">책방</a></li>
+          <li><a href="#">캠퍼스픽</a></li>
+        </ul>
+      </nav>
+      <div class="icon">
+        <div class="chat">
+          <img
+            alt="쪽지"
+            src="{% static 'img/icn_m_chat_gray800_light.png' %}"
+          />
+        </div>
+        <div class="mypage">
+          <img
+            alt="마이페이지"
+            src="{% static 'img/icn_m_account_gray800_light.png' %}"
+          />
+        </div>
+      </div>
+    </header>
+    <section class="secBox">
+      <section id="sec1">
+        <div class="posted">
+          <div class="line"></div>
+          <div class="postText">
+            <ul>
+              <li>자유게시판</li>
+              <li>비밀게시판</li>
+              <li>질문게시판</li>
+              <li>졸업생게시판</li>
+              <li>새내기게시판</li>
+              <li>시사·이슈</li>
+              <li>정보게시판</li>
+              <li>홍보게시판</li>
+            </ul>
+          </div>
+          <div class="postText">
+            <ul>
+              <li>동아리·학회</li>
+            </ul>
+          </div>
+          <div class="line"></div>
+          <div class="postText">
+            <ul>
+              <li>취업·진로</li>
+              <li>⭐️👩🏻‍🏫교직이수👩🏻‍🏫⭐️</li>
+              <li>덕성 예비공무원들♡</li>
+              <li>대학원 뿌숭뿌슝🔥...</li>
+              <li>미래의 회계사(CPA)...</li>
+              <li>덕성 로스쿨러들 📚</li>
+            </ul>
+          </div>
+          <div class="line"></div>
+          <div class="postText">
+            <ul>
+              <li>총학생회</li>
+              <li>신문사</li>
+              <li>영자신문사</li>
+              <li>운현방송국</li>
+              <li>대학일자리본부</li>
+              <li>교지편집위원회</li>
+              <li>동아리 연합회</li>
+              <li><span>더보기</span></li>
+            </ul>
+          </div>
+          <div class="line"></div>
+          <div class="postText">
+            <ul>
+              <li>📑덕성여대 경영학...</li>
+              <li>💰두드리는 회계학...</li>
+              <li>국제통상학과</li>
+              <li>👩‍💻디지털소프트웨어...</li>
+              <li>🌕 예대의 밤은 깊어...</li>
+              <li>프리팜/바이오공학과...</li>
+              <li>🧠심리학과 자게🧠</li>
+              <li><span>더보기</span></li>
+            </ul>
+          </div>
+          <div class="line"></div>
+          <div class="postText">
+            <ul>
+              <li>🌺덕성여대 장터🌺</li>
+              <li>♡덕성여대 기숙사♡</li>
+              <li>🌺뻔선뻔후 찾기 프...</li>
+              <li>덕성 연애방</li>
+              <li>덕성여대 자취생 모임</li>
+              <li>주의 없는 게시판</li>
+              <li>퀴어이기 전에 여성</li>
+              <li>💘덕성 파견학생💘</li>
+            </ul>
+          </div>
+          <div class="postText">
+            <ul>
+              <li>덕성여대~수유역 맛...</li>
+              <li>덕성의 아이돌 ❤️</li>
+              <li>다이어덕</li>
+              <li>미팅 모집방</li>
+              <li>덕친소 : 내 덕친은 누...</li>
+              <li>덕성의 국가근로동자...</li>
+              <li>덕성여대 책 거래장터</li>
+              <li><span>더보기</span></li>
+            </ul>
+          </div>
+          <div class="line"></div>
+        </div>
+      </section>
+      <div id="sec2">
+        <div class="secret">
+          <div class="title">비밀게시판</div>
+          <div class="post_secret">
+            <div class="posting">
+              <div class="pos_head">
+                  <div class="profile">
+                    <img alt="프로필사진" src="{% static 'img/anonymous.profile.png' %}">
+                    <div class="me">
+                      <div class="nickname">
+                        익명
+                      </div>
+                      <div class="timestamp">
+                        03/12 10:42
+                      </div>
+                    </div>
+                  </div>
+                  <div class="massage">
+                      <button>쪽지</button>
+                      <button>신고</button>
+                  </div>
+              </div>
+              <div class="pos_main">
+                  <div class="pos_title">
+                      🦁멋쟁이사자처럼 아기사자 모집 완료🦁
+                  </div>
+                  <div class="pos_text">
+                      안녕하세요, 덕성여자대학교 멋쟁이사자처럼 12기 아기사자 선발이 완료되었습니다!<br>
+                      최종 선발 결과는 홈페이지에서 확인 가능합니다.<br>
+                      📍<a href="https://likelion-ds.site/" target="_blank">https://likelion-ds.site/</a><br>
+                      덕성여자대학교 멋쟁이사자처럼 12기 모집에 지원해 주신 모든 분들께 감사드립니다.<br>
+                      기타 문의사항은 <a href="https://open.kakao.com/o/sa1eBU5f" target="_blank">https://open.kakao.com/o/sa1eBU5f</a>
+                      로 문의 부탁드립니다.
+                  </div>
+                  <div class="pos_img">
+                      <img alt="업로드한 이미지1" src="{% static 'img/img1.jpg' %}">
+                      <img alt="업로드한 이미지2" src="{% static 'img/img2.jpg' %}">
+                  </div>
+              </div>
+              <div class="pos_bottom">
+                  <div class="reaction">
+                      <div class="good">
+                          <img alt="좋아요" src="{% static 'img/container.articles.vote.png' %}">9
+                      </div>
+                      <div class="comment">
+                          <img alt="댓글" src="{% static 'img/container.articles.comment.png' %}">1
+                      </div>
+                      <div class="scrap">
+                          <img alt="스크랩" src="{% static 'img/container.articles.scrap.png' %}">0
+                      </div>
+                  </div>
+                  <div class="select">
+                      <button class="sel_good">
+                          <img alt="좋아요하기" src="{% static 'img/container.articles.buttons.posvote.png' %}">
+                          공감
+                      </button>
+                      <button class="sel_scrap">
+                          <img alt="스크랩하기" src="{% static 'img/container.articles.buttons.scrap.png' %}">
+                          스크랩
+                      </button>
+                  </div>
+              </div>
+            </div>
+            <div class="B_anony_cmt">
+              <div class="anony_cmt">
+                <div class="pos_head">
+                  <div class="profile">
+                    <img alt="프로필사진" src="{% static 'img/anonymous.profile.png' %}">
+                    <div class="nickname">
+                      익명2
+                    </div>
+                  </div>
+                  <div class="massage">
+                      <button>대댓글</button>
+                      <button>공감</button>
+                      <button>쪽지</button>
+                      <button>신고</button>
+                  </div>
+                </div>
+                <div class="pos_mid">
+                  우와
+                </div>
+                <div class="timestamp">
+                  03/12 10:42
+                </div>
+                <div class="anony_cmt" id="anony_cmt">
+                  <div class="pos_head">
+                    <div class="profile">
+                      <img alt="프로필사진" src="{% static 'img/anonymous.profile.png' %}">
+                      <div class="nickname">
+                        익명(글쓴이)
+                      </div>
+                    </div>
+                    <div class="massage">
+                        <button>공감</button>
+                        <button>쪽지</button>
+                        <button>신고</button>
+                    </div>
+                  </div>
+                  <div class="pos_mid">
+                    우와＼＼ ٩(๑❛ワ❛๑)و ／／
+                  </div>
+                  <div class="timestamp">
+                    03/12 10:42
+                  </div>
+                </div>
+                <div class="typing" id="typing">
+                  <form class="input_comment">
+                    <div class="input_box">
+                      <input type="text" id="comment" name="comment" placeholder='댓글을 입력하세요.'>
+                    </div> 
+                    <div class="flex_end">
+                      <div class="check">
+                          <input type="checkbox" id="anony" />
+                          <div class="myCheckbox">익명</div>
+                      </div>
+                      <button class="submit">
+                          <img
+                            alt="글쓰기"
+                            src="{% static 'img/container.articles.write.submit.png' %}"
+                          />
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="anony_cmt">
+              <div class="pos_head">
+                <div class="profile">
+                  <img alt="프로필사진" src="{% static 'img/anonymous.profile.png' %}">
+                  <div class="nickname">
+                    익명3
+                  </div>
+                </div>
+                <div class="massage">
+                    <button>대댓글</button>
+                    <button>공감</button>
+                    <button>쪽지</button>
+                    <button>신고</button>
+                </div>
+              </div>
+              <div class="pos_mid">
+                운영진분들 멋있다!
+              </div>
+              <div class="timestamp">
+                방금
+              </div>
+            </div>
+            <div class="typing">
+              <form class="input_comment">
+                <div class="input_box">
+                  <input type="text" id="comment" name="comment" placeholder='댓글을 입력하세요.'>
+                </div> 
+                <div class="flex_end">
+                  <div class="check">
+                      <input type="checkbox" id="anony" />
+                      <div class="myCheckbox">익명</div>
+                  </div>
+                  <button class="submit">
+                      <img
+                        alt="글쓰기"
+                        src="{% static 'img/container.articles.write.submit.png' %}"
+                      />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="secret_list">
+            <img alt="글 목록" src="{% static 'img/container.articles.pagination.list.png' %}">
+            <a href="{% url 'post:category_post_list' slug='gamza' %}">글 목록</a>
+          </div>
+        </div>
+        <div class="aside">
+          <div class="popular">
+            <div class="bluetitle"><span>실시간 인기 글</span></div>
+            <div class="text">
+              <span>신기한 알바하는 덕우 있나</span><br>
+              난 파충류샵 알바<br>
+              사진은 맨날 나한테 밥달라고 쳐다보는 애
+              <div class="reac">
+                비밀게시판
+                <div class="good">
+                  <img
+                    alt="좋아요"
+                    src="{% static 'img/container.articles.vote.png' %}"
+                  />71
+                </div>
+                <div class="comment">
+                  <img
+                    alt="댓글"
+                    src="{% static 'img/container.articles.comment.png' %}"
+                  />39
+                </div>
+              </div>
+            </div>
+            <div class="text">
+              <span>(장터덕우 찾아요)어제 신촌cgv파묘3인 구매</span><br>
+              어제 cgv 파묘 9500 3인 대리예매해주신 서ㅇㅇ님 찾아요<br>
+              3월 9일 영화를 예매했는데 같이 구입한 콤보 쿠폰 유효기
+              <div class="reac">
+                비밀게시판
+                <div class="good">
+                  <img
+                    alt="좋아요"
+                    src="{% static 'img/container.articles.vote.png' %}"
+                  />44
+                </div>
+                <div class="comment">
+                  <img
+                    alt="댓글"
+                    src="{% static 'img/container.articles.comment.png' %}"
+                  />1
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hot">
+            <div class="bluetitle"><span>HOT 게시물</span>&emsp;&emsp;&emsp;&emsp;
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;더 보기
+            </div>
+            <div class="contents">
+              우와 커피차 우리가 3위
+              <div class="time">15분전</div>
+            </div>
+            <div class="contents">
+              모찌네타코야끼.. 최고의 타코야끼.. ...
+              <div class="time">03/09 16:16</div>
+            </div>
+            <div class="contents">
+              술에 관대한 문화 너무 싫어
+              <div class="time">03/09 20:33</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <footer>
+        <div class="footer_main">
+            <ul>
+                <li>이용약관</li>
+                <li><span>개인정보처리방침</span></li>
+                <li>청소년보호정책</li>
+                <li>커뮤니티이용규칙</li>
+                <li>공지사항</li>
+                <li>문의하기</li>
+                <li><span>© 에브리타임</span></li>
+            </ul>
+        </div>
+        <div class="number">
+            직업정보제공사업 신고번호: J1204020230008
+        </div>
+    </footer>
+  </body>
 </html>

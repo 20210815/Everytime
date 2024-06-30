@@ -1,0 +1,559 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*header*/
+header {
+  display: flex;
+  margin: 20px 130px;
+}
+
+#logo {
+  position: relative;
+}
+
+#logo img {
+  width: 180px;
+  margin-right: 120px;
+}
+
+#menu {
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  font-weight: bold;
+}
+
+#menu li {
+  margin: 0 12px;
+  white-space: nowrap;
+}
+
+.board {
+  color: red;
+}
+
+#account {
+  margin-left: 210px;
+  white-space: nowrap;
+  position: relative;
+}
+
+#account img {
+  width: 40px;
+}
+
+.burger-bar {
+  display: flex;
+}
+
+.burger-bar img {
+  margin-right: 1em;
+}
+
+/*submenu(게시판 종류)*/
+nav {
+  display: flex;
+  height: 200px;
+  background-color: #efefef;
+  padding: 10px 180px;
+  border: 1px solid #d2d2d2;
+  justify-content: center;
+}
+
+.section {
+  display: flex;
+  border-right: 1px solid #d2d2d2;
+}
+
+.section:last-child {
+  border-right: none;
+}
+
+.section ul {
+  list-style-type: none;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 180px;
+}
+
+.section ul li {
+  list-style-type: none;
+  margin: 0px 40px 4px 0px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.more {
+  color: red;
+  font-weight: bold;
+}
+
+.burger-bar img {
+  width: 2rem;
+}
+
+/*본문 main-content*/
+.main-content {
+  display: flex; /* flexbox를 활성화 */
+  justify-content: center;
+}
+
+.left-side {
+  margin-right: 25px;
+  margin-top: 25px;
+}
+
+/*1. 게시판 제목 container*/
+.title-wrap {
+  width: 780px;
+  height: auto;
+  border: 1px solid #d2d2d2;
+}
+
+.title {
+  margin: 15px;
+  font-size: 21px;
+}
+
+/*2. 게시판 글 container*/
+.writing-wrap {
+  margin-top: 5px;
+  width: 780px;
+  height: auto;
+  border: 1px solid #d2d2d2;
+}
+
+.writer-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.writer {
+  display: flex;
+}
+
+.writer-wrap img {
+  margin: 15px;
+  border-radius: 5px;
+  width: 50px;
+}
+
+.anonymous {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.time {
+  font-size: 15px;
+  color: gray;
+  margin: 0;
+}
+
+.writer-text-right {
+  display: flex;
+}
+
+.writer-text-right > .add {
+  margin-right: 15px;
+  font-size: 14px;
+  color: gray;
+}
+
+/*글 writing*/
+.writing-title {
+  margin: 0px;
+  margin-left: 15px;
+  font-size: 21px;
+}
+
+.writing-text {
+  margin-left: 15px;
+  font-size: 13px;
+  line-height: 25px;
+}
+
+.writing-img img {
+  width: 200px;
+  background-color: #8f8f8f;
+  margin-left: 15px;
+}
+
+.comment-info {
+  display: flex;
+  align-items: center;
+}
+
+.comment-wrap {
+  display: flex;
+  align-items: center;
+  margin: 0px 0px 0px 15px;
+}
+
+.comment-like-num {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-right: -5px;
+  color: rgb(225, 0, 0);
+}
+
+.comment-reply-num {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-right: -5px;
+  color: rgb(0, 165, 190);
+}
+
+.comment-scrap-num {
+  font-size: 12px;
+  margin-left: 5px;
+  color: rgb(255, 179, 0);
+}
+
+.select-wrap {
+  display: flex;
+  margin-left: 8px;
+}
+
+.select {
+  background-color: #e9e9e9a2;
+  display: flex;
+  padding: 8px 10px;
+  border-radius: 5px;
+  align-items: center;
+  margin: 0px 0px 15px 8px;
+  cursor: pointer;
+}
+
+.select img {
+  width: 12px;
+  height: 12px;
+}
+
+.select-text {
+  font-size: 12px;
+  margin-left: 5px;
+  font-weight: bold;
+  color: gray;
+}
+
+/*3. 댓글 container*/
+.comment-text-wrap {
+  width: 780px;
+  height: auto;
+  border: 1px solid #d2d2d2;
+  border-top: none;
+}
+
+.comment-writer-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-writer {
+  display: flex;
+  align-items: center;
+}
+
+.comment-writer-wrap img {
+  width: 25px;
+  margin: 0px 8px 0px 15px;
+  border-radius: 5px;
+}
+
+.comment-writer-text-left > .anonymous {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.comment-writer-text-right {
+  display: flex;
+}
+
+.comment-writer-text-right > .add {
+  margin-right: 15px;
+  font-size: 14px;
+  color: gray;
+}
+
+.comment-text-content {
+  margin-left: 15px;
+}
+
+.comment-text-content > .text {
+  margin: 0;
+}
+
+.comment-text-content > .time {
+  font-size: 14px;
+  color: gray;
+  margin: 5px 0 8px 0;
+}
+
+/*4. 댓글 작성 container*/
+.comment-writing-wrap {
+  width: 780px;
+  height: auto;
+  border: 1px solid #d2d2d2;
+  border-top: none;
+}
+
+.submit-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+#comment-input {
+  flex-grow: 1; /* 남은 공간을 모두 차지하도록 설정 */
+  padding-left: 8px;
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+}
+
+#comment-input:focus {
+  outline: none;
+}
+
+.checkbox {
+  font-size: 13px;
+  color: rgb(152, 152, 152);
+  font-weight: bold;
+}
+
+input[type='checkbox']:checked {
+  accent-color: red;
+}
+
+.submit-section img {
+  width: 100%;
+  background-color: red;
+}
+
+.submit-section button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  margin-left: 10px;
+}
+
+/*대댓글*/
+.add-comment-writing-wrap{
+  display: none;
+  width: 740px;
+  margin-left: 30px;
+  border: 1px solid #d2d2d2;
+  margin-bottom: 10px;
+}
+
+.add-comment-text-wrap {
+  width: 740px;
+  height: auto;
+  border: 1px solid #d2d2d2;
+  margin-left: 30px;
+  margin-bottom: 3px;
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+/* 5. 글 목록*/
+.articles-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  border: 2px solid red;
+  border-radius: 5px;
+  margin: 5px 0px 0px 3px;
+}
+
+.articles-list img {
+  width: 18px;
+  height: 18px;
+  margin: 8px 4px;
+}
+
+.articles-list-text {
+  margin: 8px 0px;
+  font-size: 14px;
+  font-weight: bold;
+  color: red;
+}
+
+/******************오른쪽 게시글******************/
+.right-side {
+  margin-top: 17px;
+}
+
+.right-board {
+  margin-top: 8px;
+  width: 320px;
+  height: auto;
+  box-shadow: 0 0 0 1px #d2d2d2;
+  background-color: #f9f9f9;
+}
+
+.board-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.board-title {
+  font-weight: bold;
+  color: rgb(47, 96, 169);
+  font-size: 17px;
+  padding: 8px;
+}
+
+.board-add {
+  font-size: 12px;
+  padding: 10px;
+  color: #8f8f8f;
+}
+
+.hotboard-writing {
+  border-top: 1px solid #d2d2d2;
+  justify-content: space-between;
+  display: flex;
+}
+
+.hotboard-text {
+  font-size: 14px;
+  padding: 10px 8px;
+  color: black;
+}
+
+.hotboard-time {
+  font-size: 12px;
+  padding: 10px;
+  color: #8f8f8f;
+}
+
+/*학교 소식*/
+.news-bigtitle {
+  margin-top: 8px;
+  font-weight: bold;
+  color: rgb(47, 96, 169);
+  font-size: 17px;
+  border: 1px solid #d2d2d2;
+  padding: 8px;
+}
+
+.news-writing {
+  border: 1px solid #d2d2d2;
+  border-top: none;
+}
+
+.news-title {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 0px 3px 8px;
+  color: black;
+}
+
+.news-text {
+  font-size: 13px;
+  padding: 0px 0px 5px 8px;
+  color: black;
+}
+
+.news-board {
+  font-size: 12px;
+  padding: 0px 0px 8px 8px;
+  color: #8f8f8f;
+  font-weight: bold;
+}
+
+.news-info {
+  display: flex;
+  align-items: center;
+}
+
+.news-comment {
+  display: flex; /* 이미지와 숫자를 가로로 나란히 배열 */
+  align-items: center; /* 세로 중앙 정렬 */
+  margin: 0px 0px 10px 5px; /* 이미지 사이의 간격 조정 */
+}
+
+.news-like-num {
+  font-size: 12px;
+  margin-left: 3px;
+  color: rgb(225, 0, 0);
+}
+
+.news-reply-num {
+  font-size: 12px;
+  margin-left: 3px;
+  color: rgb(0, 165, 190);
+}
+
+.review-writing {
+  border-top: 1px solid #d2d2d2;
+  padding: 8px 0px;
+}
+
+.points {
+  padding: 0px 0px 0px 8px;
+  color: rgb(255, 179, 0);
+}
+
+@media (min-width: 641px) {
+  header {
+    justify-content: center;
+  }
+
+  .burger-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    margin-left: 1rem;
+  }
+
+  .burger-bar p {
+    font-weight: bold;
+  }
+
+  #logo,
+  .nav,
+  #account,
+  .title-wrap,
+  .right-side {
+    display: none;
+  }
+
+  .left-side {
+    margin-top: 1em;
+    width: 90%;
+  }
+
+  .section {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 auto; /* 섹션들이 너비에 맞춰서 줄어들지 않고 원래 크기를 유지하게 설정 */
+  }
+
+  .section:first-child {
+    display: none;
+  }
+
+  nav {
+    overflow-x: auto;
+    min-width: 36em;
+    padding-left: 18em;
+    padding-right: 0;
+  }
+}

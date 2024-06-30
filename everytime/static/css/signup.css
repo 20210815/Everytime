@@ -1,0 +1,50 @@
+body,
+html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form {
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 12px;
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.form-text {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  margin-bottom: 10px;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"] {
+  margin: 10px 0px;
+  background-color: rgba(225, 225, 225, 0.5);
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 340px;
+  font-size: 14px;
+}
+
+.signup-form button {
+  color: white;
+  background-color: gray;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 360px;
+  font-size: 14px;
+}

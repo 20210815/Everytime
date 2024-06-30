@@ -9,11 +9,13 @@ from post.models import Post
 from user.models import User
 
 # Create your views here.
+def main_view(request):
+  return render(request, 'accounts/main.html')
 
 def signup_view(request):
   if request.method == "GET":
     form = SignUpForm()
-    return render(request, 'accounts/signup.html', {'form': form})
+    return render(request, 'accounts/signup.html', {'form': SignUpForm})
   
   form = SignUpForm(request.POST)
 
@@ -21,7 +23,6 @@ def signup_view(request):
     user = form.save()
     return redirect('accounts:login')
   else: return render(request, 'accounts/signup.html', {'form':form})
-
 
 def login_view(request):
   if request.method == "GET":
@@ -34,7 +35,6 @@ def login_view(request):
     return redirect("post:home")
   return render(request, 'accounts/login.html', {'form': form})
 
-
 def logout_view(request):
   if request.user.is_authenticated:
     logout(request)
@@ -43,11 +43,9 @@ def logout_view(request):
 def mypage(request):
   return render(request, 'accounts/mypage.html')
 
-
 def write_list(request):
   posts = request.user.post_user.all()
   return render(request, 'accounts/write_list.html', {'posts': posts})
-
 
 def scrap_list(request):
   posts = request.user.scrap_users.all()

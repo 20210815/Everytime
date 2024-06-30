@@ -1,16 +1,44 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>에브리타임 회원가입</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css'%}" />
 </head>
 <body>
-  <h2>회원가입</h2>
-  <form method="post" action="" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">signup</button>
-  </form>
+    <form class="signup-form">
+        {% csrf_token %} 
+        <div class="form-title">에브리타임 회원가입</div>
+        <div class="form-text">
+            에브리타임 계정으로 <b>캠퍼스픽, 에브리타임</b> 등 <br />
+            다양한 대학생 서비스를 모두 이용하실 수 있습니다.
+        </div>
+        <div class="input-section">
+            이름<br />
+            <input type="text" id="id_username" placeholder="이름을 입력하세요." />
+        </div>
+        <div class="input-section">
+            닉네임<br />
+            <input type="text" id="id_nickname" placeholder="닉네임을 입력하세요." />
+        </div>
+        <div class="input-section">
+            이메일<br />
+            <input type="text" id="id_email" placeholder="이메일을 입력하세요." />
+        </div>
+        <div class="input-section">
+            비밀번호<br />
+            <input type="password" id="id_password" placeholder="숫자/문자 조합, 최소 8자 이상" />
+        </div>
+        <div class="input-section">
+            비밀번호 재입력<br />
+            <input type="password" id="id_passwordConfirm" placeholder="비밀번호를 재입력하세요." />
+        </div>
+        <div class="signup">
+            <button type="submit" id="id_signupButton" style="background-color: gray;">회원가입</button>
+        </div>
+    </form>
+    <script src="{% static 'js/signup.js'%}"></script>
 </body>
 </html>

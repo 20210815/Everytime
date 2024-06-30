@@ -13,7 +13,8 @@ from django.views.generic import ListView
 #   # print(request.user.post_user.all())
 #   #posts = Post.objects.annotate(comment_count=Count('comment')).order_by('-id')
 #   return render(request, 'post/home.html', {'posts': posts})
-
+def start(request):
+    return render(request, 'start.html')
 
 def detail(request, id):
   post = get_object_or_404(Post, pk=id)

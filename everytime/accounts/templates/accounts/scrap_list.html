@@ -6,11 +6,8 @@
   <a href="{% url 'post:detail' post.pk %}"><h1>{{ post.title }}</h1></a>
     <br>
     <h4> {{ post.content }}</h4> <br>
-
     <!-- {{ post.time.total_seconds }} -->
-
     <h4> {{ post.created_at|naturaltime }}</h4>
-
     <!-- <h4> {{ post.time }}</h4> -->
 
     <!-- <h4> 댓글 {{ post.comment_count }}개</h4> -->

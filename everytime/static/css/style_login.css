@@ -28,7 +28,7 @@
   height: 60px;
 }
 
-.form > input {
+form > div.form1 > input {
   display: block;
   box-sizing: border-box;
   margin-top: 4px;
@@ -41,7 +41,7 @@
   width: 100%;
 }
 /* .form > a > input#login */
-.form > input#login {
+input#login {
   background-color: #a6a6a6;
   font-weight: bold;
   color: #fff;

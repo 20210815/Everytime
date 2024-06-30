@@ -1,0 +1,64 @@
+{% load static %}
+<div id="container">
+  <div class="secret">
+    {% include '/Users/choeyun-yeong/Desktop/likelion/Everytime/everytime/accounts/templates/accounts/rightside.html'%}
+    <h1>{{ category.title }}</h1>
+  </div>
+  <div class="wrap bubbles">
+    <div class="bubble question">
+      <img src="{% static 'img/questImg.png' %}" alt="말풍선" />
+      <div class="items">
+        <div class="item"><span>덕성</span></div>
+        <div class="item"><span>12기</span></div>
+        <div class="item"><span>파이팅~</span></div>
+      </div>
+    </div>
+    <div class="bubble hot">
+      <img src="{% static 'img/hotImg.png' %}" alt="핫게" />
+      <div class="items">
+        <div class="item"><span>덕멋최고</span></div>
+        <div class="item"><span>어흥</span></div>
+      </div>
+    </div>
+  </div>
+  <div id="newWrite" onclick="show('container_post')">
+    <span style="display: inline-block">새 글을 작성해주세요!</span>
+    <img alt="pen" src="{% static 'img/pen.png' %}" style="width: 20px; height: 20px; float: right" />
+  </div>
+  <div id="container_post" style="display: none">
+    <form action="{% url 'post:create' category.slug %}" method="post">
+      <input name="title" type="text" placeholder="제목을 입력하세요." style="height: 50px" />
+      <input name="content" type="text" placeholder="내용을 입력하세요." style="height: 300px" />
+    </form>
+    <div id="question" style="display: none">
+      <form>
+        <div>
+          질문 글을 작성하면 게시판 상단에 일정 기간 동안 노출되어, 더욱 빠르게 답변을 얻을 수 있게 됩니다.<br />
+          또한, 다른 학우들이 정성껏 작성한 답변을 유지하기 위해, 댓글이 달린 이후에는 <b>글을 수정 및 삭제할 수 없습니다.</b>
+        </div>
+      </form>
+    </div>
+    <form class="footer">
+      <ul>
+        <li><img src="{% static 'img/container.articles.write.hashtag.png'%}" alt="#" /></li>
+        <li><img src="{% static 'img/container.articles.write.attach.png'%}" alt="클립" /></li>
+      </ul>
+      <ul class="options">
+        <label class="check">
+          <input type="checkbox" style="margin-right: 5px" id="writeRed" onchange="show_qna('question')" />
+          <span id="text">질문</span>
+        </label>
+        <label class="check">
+          <input type="checkbox" style="margin-right: 5px" id="writeRed2" onchange="changeColor()" />
+          <span id="text2">익명</span>
+        </label>
+        <li class="submit"><img src="{% static 'img/container.articles.write.submit.png' %}" alt="write" style="background-color: #f91f15" /></li>
+      </ul>
+    </form>
+  </div>
+  <article class="list">
+    <div class="imgflex">
+      <div class="article"></div>
+    </div>
+  </article>
+</div>

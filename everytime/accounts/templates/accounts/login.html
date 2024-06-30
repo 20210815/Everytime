@@ -12,12 +12,14 @@
         <a href = "{% url 'post:home' %}">
         <div class="logo"><img src="{% static 'img/logo.png'%}"></div></a>
             <form method="post">
-                <div class="form">
-                    <input id = "id_username" name="id" type="text" maxlength="20" placeholder="아이디">
-                    <input id = "id_password" name="password" type="password" maxlength="20" placeholder="비밀번호">
-                    <!-- <a href = "{% url 'post:home' %}"> -->
-                    <input id="login" type="submit" value="에브리타임 로그인">
-                </div>
+                    <div class="form1">
+                        <form method="post" action="{% url 'post:home' %}">
+                            {% csrf_token %}
+                            <input id="id_username" name="username" type="text" maxlength="20" placeholder="아이디">
+                            <input id="id_password" name="password" type="password" maxlength="20" placeholder="비밀번호">
+                            <input id="login" type="submit" value="에브리타임 로그인">
+                        </form>
+                    </div>
                 <div class="optoins">
                     <label class="check">
                         <input type="checkbox">

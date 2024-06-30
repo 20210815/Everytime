@@ -1,28 +1,42 @@
-{% include "post/menu.html" %}
-{% if request.user.is_authenticated %}
-  <p>nickname : {{ request.user.nickname }}</p>
-  <hr>
-  <br>
-  <a href="{% url 'accounts:mypage' %}">마이페이지</a>
-  <a href="{% url 'accounts:logout' %}">로그아웃</a>
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시작 - 에브리타임</title>
+    <link rel="stylesheet" href="{% static './css/start.css' %}" />
+  </head>
+  <body>
+    {% include "post/menu.html" %} {% if request.user.is_authenticated %}
+    <p>nickname : {{ request.user.nickname }}</p>
+    <hr />
+    <br />
+    <a href="{% url 'accounts:mypage' %}">마이페이지</a>
+    <a href="{% url 'accounts:logout' %}">로그아웃</a>
 
-  <hr>
-  <!--내가 작성한 글, 내가 스크랩한 글-->
-  <a href="{% url 'accounts:write_list' %}">내가 작성한 글</a>
-  <a href="{% url 'accounts:scrap_list' %}">내가 스크랩한 글</a>
-{% else %}
-|
-  <a href="{% url 'accounts:signup' %}">회원가입</a>
-  <a href="{% url 'accounts:login' %}">로그인</a>
-{% endif %}
-<p> 
-  {% for category in category_list %}
-  <h1><a href="{% url 'post:category_post_list' category.slug %}">{{category.title}}</a></h1>
-      {% for post in recent_posts %}
-        {% if post.category.title == category.title %}
-          <p><a href="{% url 'post:detail' post.id %}">{{ post.title }}</a></p>
-        {% endif %}
-      {% endfor %}
-    <hr>
-  {% endfor %}
-</p>
+    <hr />
+    <!--내가 작성한 글, 내가 스크랩한 글-->
+    <a href="{% url 'accounts:write_list' %}">내가 작성한 글</a>
+    <a href="{% url 'accounts:scrap_list' %}">내가 스크랩한 글</a>
+    {% else %} {% endif %}
+    <div class="intro">
+      <div class="btnSpace">
+        <div class="btnLogo">
+          <img src="{% static './img/logo.png'%}" alt="에브리타임 로고" />
+        </div>
+        <div class="btnS">
+          <a href="{% url 'accounts:login' %}"> <button class="loginBtn">로그인</button></a>
+          <a href="{% url 'accounts:signup' %}"> <button class="signupBtn">에브리타임 회원가입</button></a>
+          {% for category in category_list %}
+          <a href="{% url 'post:category_post_list' category.slug %}"> <button class="toMainBtn">비밀 게시판</button></a>
+          <hr />
+          {% endfor %}
+        </div>
+      </div>
+      <div class="contentSpace">
+        <img src="{% static './img/start_img.png' %}" alt="대문 이미지" />
+      </div>
+    </div>
+  </body>
+</html>

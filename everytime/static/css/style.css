@@ -1,0 +1,564 @@
+.warp {
+  margin: 0 auto;
+  width: 1180px;
+  height: 100%;
+}
+hr {
+  display: none;
+}
+div,
+nav,
+aside,
+article,
+figure,
+h1,
+h2,
+h3,
+span,
+p {
+  display: block;
+}
+
+* {
+  font-family: "Apple SD Gothic Neo", "맑은 고딕", "돋움", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#logo {
+  float: left;
+  margin-left: 24px;
+  height: 100%;
+  width: 130px;
+  height: 80px;
+}
+
+#logo > img {
+  width: 240px;
+  height: 80px;
+  margin-left: 24px;
+  display: inline-block;
+}
+
+#logo > p > span.everytime text {
+  margin: 20px 0px 0px 3px;
+  line-height: 15px;
+  font-size: 12px;
+}
+
+#logo > p > span {
+  display: block;
+  color: #f91f15;
+}
+
+.dswu text {
+  display: block;
+  color: #292929;
+  font-size: 22px;
+}
+
+#account {
+  float: right;
+  margin-right: 24px;
+  height: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+  font-size: 0;
+}
+
+#account > img {
+  width: 40px;
+  height: 40px;
+  margin: 0px 0px 0px 4px;
+}
+#menu {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  text-align: center;
+}
+
+#menu > li {
+  display: inline-block;
+
+  height: 76px;
+  line-height: 76px;
+  margin: 0px 12px;
+  color: #444444;
+  font-size: 16px;
+  font-weight: bold;
+  align-items: center;
+}
+
+#submenu {
+  border-bottom: 1px solid #d6d6d6;
+  background-color: #f2f2f2;
+  width: auto;
+  overflow: scroll;
+}
+
+#submenu > div.wrap {
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+div.divider {
+  display: inline-block;
+  width: 1px;
+  height: 200px;
+  margin-right: 15px;
+  background-color: #e3e3e3;
+}
+
+#submenu > div.wrap > div.group {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: left;
+  margin-right: 15px;
+  width: 130px;
+  vertical-align: top;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#submenu ul li {
+  color: #444;
+  display: block;
+  line-height: 25px;
+  font-size: 13px;
+}
+
+#submenu ul div li {
+  color: #f91f15;
+  font-weight: bold;
+}
+
+#container {
+  color: #292929;
+  position: relative;
+  margin: 0 auto;
+  width: 1180px;
+  box-sizing: border-box;
+}
+/* 질문 : justify-content: space-around; 적용안됨*/
+@media (max-width: 640px) {
+  #container {
+    width: auto;
+    margin: 0 20px;
+  }
+}
+
+.secret {
+  border: 1px solid #d6d6d6;
+  margin-bottom: 10px;
+  margin-top: 25px;
+  width: 780px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.secret > a > h1 {
+  color: #292929;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#container > div.warp {
+  float: none;
+  position: relative;
+  left: 25px;
+  margin-top: 25px;
+  width: 780px;
+}
+
+#container > div.notification {
+  margin-bottom: -20px;
+  padding: 15px;
+  border: 1px solid #d6d6d6;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #444444;
+  font-size: 12px;
+}
+
+#container > div.bubbles {
+  display: flex;
+  width: 780px;
+  flex-direction: column;
+  margin: 10px 0px 10px;
+  padding: 15px 0px 15px 15px;
+  border: 1px solid #d6d6d6;
+  box-sizing: border-box;
+}
+
+#container > div.bubbles > div.bubble {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 8px;
+}
+
+#container > div.bubbles > div.bubble > div.items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#container > div.bubbles > div.bubble > div.items > div.item {
+  background-color: #edfffe;
+  border-radius: 12px;
+  max-width: 240px;
+}
+
+#container > div.bubbles > div.bubble > img {
+  width: 24px;
+  height: 24px;
+}
+
+#container > div.bubbles > div.bubble > div.items > div.item > span {
+  color: #666666;
+  padding: 10px;
+  font-size: 12px;
+  display: inline-block;
+  line-height: 20px;
+  max-width: 100%;
+  vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#container > div#newWrite {
+  display: block;
+  border: 2px solid #d6d6d6;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  margin-top: 0px;
+  width: 780px;
+  height: 50px;
+  color: #a6a6a6;
+  padding: 0 10px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  background-size: 40px 40px;
+  position: relative;
+}
+#container > div#newWrite > span {
+  margin-top: 15px;
+  display: inline-block;
+}
+#container > div#newWrite > img {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  vertical-align: middle;
+}
+article.list {
+  margin-bottom: -1px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 1px solid #e3e3e3;
+  background-color: #fff;
+  width: 780px;
+}
+.imgflex {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.preview > img {
+  width: 100px;
+  height: auto;
+  justify-items: end;
+  margin-right: 20px;
+  align-content: center;
+}
+
+div.article {
+  padding: 16px 24px;
+  justify-content: space-between;
+  align-content: center;
+}
+div.article > p.bold {
+  line-height: 20px;
+  font-size: 14px;
+  color: #292929;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div.article > p.medium {
+  font-size: 14px;
+  color: #444444;
+  line-height: 20px;
+  max-height: 100px;
+  margin-bottom: 4px;
+}
+
+div.article > div.slist > li {
+  font-size: 12px;
+  color: #666;
+  letter-spacing: -0.5px;
+  list-style: none;
+}
+
+div.rightside {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  height: 400px;
+  display: block;
+  float: right;
+  width: 30%;
+}
+
+.board {
+  margin-bottom: 5px;
+  border: 1px solid #d6d6d6;
+  background-color: #f9f9f9;
+  font-size: 12px;
+  color: #666;
+  letter-spacing: -0.5px;
+}
+
+.board > h3 {
+  padding: 10px;
+  color: #056ab5;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.board > div.list {
+  padding: 10px;
+  display: block;
+  border-top: 1px solid #e3e3e3;
+  color: #666;
+  font-size: 14px;
+}
+
+.board > div.list > time {
+  float: right;
+  margin-left: 10px;
+  height: 17px;
+  color: #a6a6a6;
+  font-size: 11px;
+}
+
+div.card > div.board > #article {
+  display: block;
+  padding: 10px;
+  border-top: 1px solid #e3e3e3;
+  color: #666;
+}
+
+a.post-title {
+  color: #444444;
+  height: 18px;
+  font-size: 12px;
+  font-weight: bolder;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  line-height: 18px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+.article > p {
+  color: #737373;
+  line-height: 16px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+}
+
+.post-content {
+  height: 14px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #a6a6a6;
+  letter-spacing: 0;
+  display: inline-block;
+}
+
+ul.likeAndReply > li > img {
+  float: left;
+  margin-right: 5px;
+  padding-left: 5px;
+  height: 11px;
+  width: 11px;
+  font-size: 14px;
+  list-style: none;
+}
+
+ul.likeAndReply {
+  display: inline-flex;
+  list-style: none;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 12px;
+}
+
+@media all and (max-width: 640px) {
+  #container > div.rightside {
+    display: none;
+  }
+  #container > *,
+  #container > div.bubbles,
+  #container > div#newWrite,
+  #container > div#container_post {
+    width: 100%;
+  }
+  #submenu #submenu > div.wrap {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 640px) {
+  #logo,
+  #account,
+  #menu,
+  .secret {
+    display: none;
+  }
+}
+
+/* 햄버거바 기본적으로는 숨김 */
+.mobile-menu-toggle {
+  display: none;
+}
+
+@media all and (max-width: 640px) {
+  .mobile-menu-toggle {
+    display: flex;
+    margin: 20px;
+  }
+  .mobile-menu-toggle > img {
+    width: 30px;
+    height: auto;
+  }
+  .mobile-menu-toggle > a {
+    font-size: 17px;
+    align-content: center;
+    margin-left: 2%;
+    text-decoration: none;
+    color: #292929;
+  }
+}
+
+/* post.css */
+#container > div#container_post {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid #a6a6a6;
+  color: #292929;
+  font-size: 20px;
+  width: 780px;
+  height: auto;
+}
+
+@media all and (max-width: 640px) {
+  #container > div#container_post {
+    width: 100%;
+  }
+}
+
+.form > input {
+  border-radius: 0px;
+  display: block;
+  box-sizing: border-box;
+  border-color: #fff;
+  border-bottom: 1px solid #a6a6a6;
+  border-left: 0;
+  border-top: 0;
+  width: 100%;
+  /*border-width: 0;*/
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-between;
+  padding-right: 5px;
+}
+
+.footer > ul {
+  display: flex;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.footer > ul > li > img {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+ul.optoins {
+  color: #292929;
+  display: flex;
+  box-sizing: border-box;
+  width: auto;
+  height: 50px;
+}
+.check {
+  color: #a6a6a6;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  float: right;
+  padding-right: 10px;
+  align-items: center;
+}
+
+.optoins > .check > input {
+  font-size: 14px;
+  color: #737373;
+  margin-right: 7px;
+}
+
+.optoins > li.submit > img {
+  background-color: #f91f15;
+  height: 95%;
+  padding-top: 3px;
+}
+
+/* 자바스크립트 클릭 이벤트 시 변경 되는 사항 */
+/* #writeRed, */
+#writeRed2 {
+  -webkit-appearance: none; /* 웹킷 브라우저에서 기본 스타일링 제거 */
+  appearance: none; /* 다른 브라우저에서 기본 스타일링 제거 */
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #ccc;
+}
+
+/* #writeRed:checked, */
+#writeRed2:checked {
+  background-color: #f91f15;
+}
+
+div#question > form {
+  padding: 15px;
+  border-bottom: 1px solid #e3e3e3;
+  background-color: #fff;
+}
+
+div#question > form > * {
+  padding: 8px;
+  border-radius: 8px;
+  color: #05bcbc;
+  font-size: 12px;
+  background-color: #edfffe;
+}

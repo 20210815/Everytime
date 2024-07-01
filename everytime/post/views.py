@@ -20,7 +20,9 @@ def detail(request, id):
   comments = Comment.objects.filter(post = post)
   #해당 순서대로 번호 부여할 수 있도록....
   #com_count = ComCount.objects.filter(post=post)
-  return render(request, "post/detail.html", {'post': post, 'comments': comments})#, 'com_count': com_count})
+  comment_count = comments.count()  # 댓글 개수 계산
+
+  return render(request, "post/detail.html", {'post': post, 'comments': comments, 'comment_count': comment_count, 'category_slug': post.category.slug})
 
 
 @login_required

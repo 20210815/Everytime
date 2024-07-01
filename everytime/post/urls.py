@@ -7,6 +7,7 @@ app_name='post'
 urlpatterns = [
   path('', views.home, name='home'),
 #  path('list/', views.list, name="list"),
+
   path('<int:id>/', views.detail, name="detail"),
   path('create/<slug:slug>/', views.create, name="create"),
   path('update/<int:id>/', views.update, name="update"),
@@ -15,6 +16,6 @@ urlpatterns = [
   path('<int:post_id>/comment_delete/<int:com_id>/', views.com_delete, name="com_delete"),
   path('<int:post_id>/like', views.post_like, name="post_like"),
   path('<int:post_id>/scrap', views.post_scrap, name="post_scrap"),
-  path('<slug:slug>/', views.category_post_list, name="category_post_list"),
+  path('<slug:slug>/', views.category_post_list, name="category_post_list")
 
 ]

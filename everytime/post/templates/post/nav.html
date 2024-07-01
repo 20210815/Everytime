@@ -1,0 +1,279 @@
+{% load static %}
+<!-- 1. nav바 -->
+<nav>
+  <div class="wrap">
+    <div id="logo">
+      <a href="/"><img src="{% static 'img/logo.png'%}" /></a>
+      <p>
+        <span class="name multiple" style="text-align: left">에브리타임</span>
+        <span class="subname">덕성여대</span>
+      </p>
+    </div>
+
+    <div id="account">
+      <a href="/message" title="쪽지함" class="icon message">쪽지함</a>
+      <a href="/my" title="내 정보" class="icon my">내 정보</a>
+    </div>
+
+    <div id="menu">
+      <ul id="menu">
+        <li class="active"><a href="/">게시판</a></li>
+        <li><a href="/timetable">시간표</a></li>
+        <li><a href="/lecture">강의실</a></li>
+        <li><a href="/calculator">학점계산기</a></li>
+        <li><a href="/friend">친구</a></li>
+        <li><a href="https://bookstore.everytime.kr/">책방</a></li>
+        <li><a href="https://www.campuspick.com/">캠퍼스픽</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="submenu">
+  <div class="wrap">
+    <div class="divider"></div>
+    <div class="group">
+      <ul>
+        <li><a href="/255744" data-id="255744">자유게시판</a></li>
+        <li>
+          <a href="/255745" data-id="255745" class="new active">비밀게시판</a>
+        </li>
+        <li>
+          <a href="/259736" data-id="259736" class="new">질문게시판</a>
+        </li>
+        <li>
+          <a href="/385950" data-id="385950" class="new">졸업생게시판</a>
+        </li>
+        <li>
+          <a href="/369476" data-id="369476" class="new">새내기게시판</a>
+        </li>
+        <li>
+          <a href="/482575" data-id="482575" class="new">시사·이슈</a>
+        </li>
+        <li>
+          <a href="/258600" data-id="258600" class="new">정보게시판</a>
+        </li>
+        <li>
+          <a href="/367427" data-id="367427" class="new">홍보게시판</a>
+        </li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <div class="group">
+      <ul>
+        <li>
+          <a href="/386041" data-id="386041" class="new">취업·진로</a>
+        </li>
+        <li>
+          <a href="/415207" data-id="415207" class="new">⭐️👩🏻‍🏫교직이수👩🏻‍🏫⭐️</a>
+        </li>
+        <li>
+          <a href="/369263" data-id="369263" class="new">덕성 예비공무원들♡</a>
+        </li>
+        <li>
+          <a href="/413707" data-id="413707" class="new">대학원 뿌숭뿌슝🔥🔥</a>
+        </li>
+        <li>
+          <a href="/416515" data-id="416515" class="new">미래의 회계사(CPA) 세무</a>
+        </li>
+        <li>
+          <a href="/465392" data-id="465392" class="new">덕성 로스쿨러들 📚</a>
+        </li>
+        <li><a href="{% url 'post:category_post_list' slug='gamza' %}">🥔감자🥔</a></li>
+        <li><a href="{% url 'post:category_post_list' slug='tomato' %}">🍅토마토🍅</a></li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <div class="group">
+      <ul>
+        <li><a href="/532598" data-id="532598">총학생회</a></li>
+        <li><a href="/401597" data-id="401597">신문사</a></li>
+        <li><a href="/373349" data-id="373349">영자신문사</a></li>
+        <li><a href="/369668" data-id="369668">운현방송국</a></li>
+        <li>
+          <a href="/462040" data-id="462040" class="new">대학일자리본부</a>
+        </li>
+        <li><a href="/482346" data-id="482346">교지편집위원회</a></li>
+        <li><a href="/536838" data-id="536838">동아리연합회</a></li>
+        <li><a class="more">더 보기</a></li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <div class="group">
+      <ul>
+        <li>
+          <a href="/409347" data-id="409347" class="new">📑덕성여대 경영학과📑</a>
+        </li>
+        <li>
+          <a href="/408012" data-id="408012" class="new">💰두드리는 회계학과💰</a>
+        </li>
+        <li>
+          <a href="/402510" data-id="402510" class="new">국제통상학과</a>
+        </li>
+        <li>
+          <a href="/532200" data-id="532200" class="new">👩‍💻디지털소프트웨어공학부 게시판👩‍💻</a>
+        </li>
+        <li>
+          <a href="/407689" data-id="407689" class="new">🌕 예대의 밤은 깊어만가고</a>
+        </li>
+        <li>
+          <a href="/408840" data-id="408840" class="new">프리팜/바이오공학과 게시판</a>
+        </li>
+        <li>
+          <a href="/408932" data-id="408932" class="new">🧠심리학과 자게🧠</a>
+        </li>
+        <li><a class="more">더 보기</a></li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <div class="group">
+      <ul>
+        <li>
+          <a href="/490829" data-id="490829" class="new">🌺덕성여대 장터🌺</a>
+        </li>
+        <li>
+          <a href="/257788" data-id="257788" class="new">♡덕성여대 기숙사♡</a>
+        </li>
+        <li>
+          <a href="/536755" data-id="536755" class="new">🌺뻔선뻔후 찾기 프로젝트🌸</a>
+        </li>
+        <li>
+          <a href="/474573" data-id="474573" class="new">덕성 연애방</a>
+        </li>
+        <li>
+          <a href="/368853" data-id="368853" class="new">덕성여대 자취생 모임</a>
+        </li>
+        <li>
+          <a href="/526300" data-id="526300" class="new">주의 없는 게시판</a>
+        </li>
+        <li>
+          <a href="/392391" data-id="392391" class="new">퀴어이기 전에 여성</a>
+        </li>
+        <li>
+          <a href="/381869" data-id="381869" class="new">💘덕성 파견학생💘</a>
+        </li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <div class="group">
+      <ul>
+        <li>
+          <a href="/375536" data-id="375536" class="new">덕성여대~수유역 맛집</a>
+        </li>
+        <li>
+          <a href="/402206" data-id="402206" class="new">덕성의 아이돌 ❤️</a>
+        </li>
+        <li><a href="/260428" data-id="260428" class="new">다이어덕</a></li>
+        <li>
+          <a href="/469445" data-id="469445" class="new">미팅 모집방</a>
+        </li>
+        <li>
+          <a href="/260591" data-id="260591" class="new">덕친소 : 내 덕친은 누구인가</a>
+        </li>
+        <li>
+          <a href="/452739" data-id="452739" class="new">덕성의 국가근로동자들🤦‍♀️</a>
+        </li>
+        <li><a href="/370029" data-id="370029">덕성여대 책 거래장터</a></li>
+        <li><a class="more">더 보기</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br />
+
+<div id="container" class="article">
+  <aside class="none">
+    <div class="title">
+      <a class="hamburger"></a>
+      <h1><a href="/255745">비밀게시판</a></h1>
+    </div>
+  </aside>
+  <!-- 3-1. 본문2 - 우측메뉴 -->
+  <div class="rightside">
+    <div class="card">
+      <div class="board">
+        <h3>
+          <a href="/hotarticle">HOT 게시물<span>더 보기</span></a>
+        </h3>
+        <a class="list" href="/255745/v/338973058"
+          ><time>55분 전</time>
+          <p>학식 마성떡볶이 미친거 아냐...?</p>
+          <hr /></a
+        ><a class="list" href="/255745/v/338969355"
+          ><time>04/11 09:26</time>
+          <p>미추홀구</p>
+          <hr /></a
+        ><a class="list" href="/255745/v/338974387"
+          ><time>38분 전</time>
+          <p>부정선거 끌올</p>
+          <hr /></a
+        ><a class="list" href="/255745/v/338973469"
+          ><time>50분 전</time>
+          <p>나경원 안철수 김은혜 이준석 배현진 외 n명</p>
+          <hr
+        /></a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="board">
+        <h3>
+          <a href="/bestarticle">BEST 게시판<span>더 보기</span></a>
+        </h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="board">
+        <h3><a>학교 소식</a></h3>
+        <a class="article" href="/532598/v/338976893"
+          ><p class="title">🌊2024학년도 제2차 전체학생대표자회의 소집 공고🌊</p>
+          <p class="small">
+            #총학생회_파도<br />안녕하세요, 덕성여자대학교 제40대 총학생회 파도입니다.<br />2024학년도 제2차
+            전체학생대표자회의(이하 전학대회)를 다음과 같
+          </p>
+          <h4>총학생회</h4>
+          <ul class="status">
+            <li class="vote active">0</li>
+            <li class="comment active">0</li>
+          </ul>
+          <hr /></a
+        ><a class="article" href="/462040/v/338908104"
+          ><p class="title">🔹 산업별 기업 &amp; 대외활동 알아보기 - 뷰티산업 편🔹</p>
+          <p class="small">
+            안녕하세요!<br />덕성여자대학교 대학일자리본부 소속 #커리어서포터즈 입니다.<br />이번 학기도 시리즈별
+            카드뉴스로 여러분들 찾아뵙게 되었는데요!<br />매주 수
+          </p>
+          <h4>대학일자리본부</h4>
+          <ul class="status">
+            <li class="vote active">8</li>
+            <li class="comment active">0</li>
+          </ul>
+          <hr
+        /></a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="board">
+        <h3>
+          <a href="/lecture">최근 강의평<span>더 보기</span></a>
+        </h3>
+        <a class="article" href="/lecture/view/2252200"
+          ><span class="star"><span class="on" style="width: 100%"></span></span>
+          <p class="title">국제통상학입문 : 원동환</p>
+          <p class="small">
+            갓 갓 갓<br />진짜 설명을 기가막히게 잘하세요 (주관적 기준이긴해요)<br />타임어택이긴 해도 오픈북이라
+            할만해요<br />이해하기 쉽게 설명해주시고 덕분에 무역에
+          </p>
+          <hr /></a
+        ><a class="article" href="/lecture/view/1940120"
+          ><span class="star"><span class="on" style="width: 60%"></span></span>
+          <p class="title">컴퓨팅사고 : 진동욱</p>
+          <p class="small">
+            강의력은 솔직히 잘 모르겟어요<br />피피티도 옛날꺼 계속 쓰시더라구요<br />그냥 시험은 교안 피피티 달달
+            외우면 됨요
+          </p>
+          <hr
+        /></a>
+      </div>
+    </div>
+  </div>
+</div>

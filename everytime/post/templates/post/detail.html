@@ -1,67 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글 상세</title>
-</head>
-<body>
-  <a href="{% url 'post:category_post_list' post.category.slug%}"> 뒤로가기 </a>
+{% extends 'post/base.html' %} {% load static %} {% block title %} 에브리타임 {% endblock %}
+<!------------>
+{% block style %}<link rel="stylesheet" href="{% static 'css/detail.css' %}" />{% endblock %}
+<!------------>
+{% block body %} {% include "post/nav.html" %}
 
-  <h1>{{ post.title }}</h1> 
-  <h2>{{ post.content }} </h2> 
-  <h2>{{ post.created_at }}</h2> <br><br>
-  {% if post.anonymity == True %}익명
-  {% else %}
-    <h5>{{ post.user.username }}</h5>
-  {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:update' post.id %}">수정하기</a> {% endif %}
-  {% if request.user == post.user %} <a href="{% url 'post:delete' post.id %}">삭제하기</a> {% endif %}
+<div id="container" class="article">
+  <div class="wrap title">
+    <h1>{{category.title}}</h1>
+  </div>
 
+  <div class="wrap articles">
+    <article class="item">
+      <a class="article">
+        <img src="https://cf-fpi.everytime.kr/0.png" class="picture large" />
+        <div class="profile">
+          {% if post.anonymity %}
+          <h3 class="large">익명</h3>
+          {% else %}
+          <h3>{{ post.user.username }}</h3>
+          {% endif %}
+          <time class="large">{{ post.created_at }}</time>
+        </div>
+        <ul class="status">
+          <li class="messagesend">쪽지</li>
+          <li class="abuse">신고</li>
+        </ul>
 
-  <p>공감 {{post.post_like.all.count }}개</p>
-  <p>스크랩 {{post.scrap_users.count }}개</p>
-  <form action="{% url 'post:post_like' post.id %}" method="post">
-    {% csrf_token %}
-    <button>공감</button>
-  </form>
-  
+        <hr />
+        <h2 class="large">{{ post.title }}</h2>
+        <p class="large">{{ post.content }}</p>
+        <ul class="status left">
+          <li title="공감" class="vote">{{ post.post_like.all.count }}</li>
+          <li title="댓글" class="comment">{{ comment_count }}</li>
+          <li title="스크랩" class="scrap">{{ post.scrap_users.count }}</li>
+        </ul>
+        <hr />
 
-  <form action="{% url 'post:post_scrap' post.id %}" method="post">
-    {% csrf_token %}
-    <button>스크랩</button>
-  </form>
+        <div class="buttons">
+          <form action="{% url 'post:post_like' post.id %}" class="like" method="post">
+            {% csrf_token %}
+            <button type="submit" class="like">공감</button>
+          </form>
 
-  <hr>
-  <h4>댓글</h4>
-  {% if comments.exists %} 
-      {% for comment in comments %}
-      <p>
-      <br>
-        {{ comment.content }} -   
-        {% if comment.anonymity == True %}익명
+          <form action="{% url 'post:post_scrap' post.id %}" class="scrap" method="post">
+            {% csrf_token %}
+            <button type="submit" class="scrap">스크랩</button>
+          </form>
+        </div>
+      </a>
 
-        {% else %}
-          {{ comment.user }}
-        {% endif %}
-        - {{ comment.created_at }}
-        <br>
-        {% if request.user == comment.user %} <a href="{% url 'post:com_delete' com_id=comment.id post_id=post.id %}">삭제하기</a> {% endif %}
-      </p>
-        {% endfor %}
-  
-  {% else %}
-  댓글이 없습니다.
-  {% endif %}
-  <hr>
-  <form action="{% url 'post:com_create' post.id %}" method="POST">
-    {% csrf_token %}
-    <input type="text" name="content">
-    <input type="submit" value="작성">
-    <input type="checkbox" name="anonymity" value="annoymity_true" checked>익명
+      <!-- 댓글 -->
+      <div class="comments" style="display: block">
+        {% if comments %} {% for comment in comments %}
+        <article class="parent">
+          <img src="https://cf-fpi.everytime.kr/0.png" class="picture medium" />
+          <h3 class="medium">{% if comment.anonymity %} 익명 {% else %} {{ comment.user }} {% endif %}</h3>
+          <ul class="status">
+            {% if request.user == comment.user %}
+            <li class="delete"><a href="{% url 'post:com_delete' post_id=post.id com_id=comment.id %}">삭제하기</a></li>
+            {% else %}
+            <li class="childcomment">대댓글</li>
+            <li class="commentvote">공감</li>
+            <li class="messagesend">쪽지</li>
+            <li class="abuse">신고</li>
+            {% endif %}
+          </ul>
+          <hr />
+          <p class="large">{{ comment.content }}</p>
+          <time class="medium">{{ comment.created_at }}</time>
+          <ul class="status commentvotestatus">
+            <li class="vote commentvote" style="display: none">0</li>
+          </ul>
+        </article>
+        {% endfor %} {% endif %}
 
-  </form>
+        <!-- 댓글 입력창 -->
+        <form class="writecomment" action="{% url 'post:com_create' post.id %}" method="POST">
+          {% csrf_token %}
+          <input
+            type="text"
+            name="content"
+            maxlength="300"
+            autocomplete="off"
+            placeholder="댓글을 입력하세요."
+            class="text"
+          />
+          <ul class="option">
+            <li title="익명" class="anonym" onclick="toggleAnonymity()"></li>
+            <li title="완료" class="submit" onclick="submitForm(this.closest('form'))"></li>
+          </ul>
+          <input type="hidden" name="anonymity" id="anonymityCheckbox" value="false" />
+        </form>
+      </div>
+    </article>
 
+    <div class="clearBothOnly"></div>
+    <div class="pagination">
+      <form id="searchArticleForm" class="search">
+        <select name="search_type">
+          <option value="4">전체</option>
+          <option value="3">닉네임</option>
+          <option value="2">제목</option>
+          <option value="1">본문</option>
+        </select>
+        <input name="keyword" placeholder="검색어를 입력하세요." class="text" />
+      </form>
+      <a href="/255745/p/2" class="next">다음</a>
+    </div>
+    <hr />
+  </div>
+</div>
 
-</body>
-</html>
+<footer id="bottom">
+  <ul class="links">
+    <li><a href="/page/serviceagreement">이용약관</a></li>
+    <li class="privacy"><a href="/page/privacy">개인정보처리방침</a></li>
+    <li><a href="/page/youthpolicy">청소년보호정책</a></li>
+    <li><a href="/page/rules">커뮤니티이용규칙</a></li>
+    <li><a href="/notice">공지사항</a></li>
+    <li><a href="/page/faq">문의하기</a></li>
+    <li class="copyright"><a href="/">© 에브리타임</a></li>
+  </ul>
+  <span>직업정보제공사업 신고번호 : J1204020230008</span>
+</footer>
+<script src="{% static 'js/detail.js' %}"></script>
+{% endblock %}

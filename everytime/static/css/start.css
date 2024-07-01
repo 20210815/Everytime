@@ -1,0 +1,99 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #292929;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  font-family: "Apple SD Gothic Neo", "맑은 고딕", "돋움", sans-serif;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.btnSpace {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentSpace {
+  width: calc(100vw - 390px);
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentSpace img {
+  width: 95%;
+}
+
+.btnLogo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.btnLogo img {
+  width: 60%;
+}
+
+.btnS {
+  width: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnS button {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 10px 0;
+  background-color: white;
+  border: solid 1px #f2f2f2;
+  font-weight: bold;
+}
+
+.loginBtn,
+.logoutBtn,
+.signupBtn {
+  margin-bottom: 15px;
+}
+
+button.signupBtn {
+  background-color: #f91f15;
+  border: solid 1px #f91f15;
+}
+
+button.signupBtn a {
+  color: white;
+}
+
+@media (width <= 780px) {
+  .btnSpace {
+    width: 100vw;
+  }
+
+  .contentSpace {
+    display: none;
+  }
+}

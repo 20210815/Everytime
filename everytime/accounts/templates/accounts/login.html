@@ -1,16 +1,63 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
+    <title>로그인</title>
+    <link rel="stylesheet" href="{% static './css/login.css' %}" />
+    <link rel="icon" href="{% static './img/logo.png' %}" />
   </head>
   <body>
-    <h2>로그인</h2>
-    <form method="post">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">login</button>
-    </form>
-    <p><a href="{% url 'accounts:signup' %}">회원가입하기</a></p>
+    <div data-v-c80e0668="">
+      <div data-v-c80e0668="" class="container">
+        <a href="{% url 'post:home' %}"><h1 class="logo"></h1></a>
+        <form method="post">
+          {% csrf_token %}
+
+          <div class="input">
+            <input
+              type="text"
+              name="username"
+              autofocus=""
+              autocapitalize="none"
+              autocomplete="username"
+              maxlength="150"
+              required=""
+              placeholder="아이디"
+              id="id_username"
+            />
+
+            <input
+              type="password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="비밀번호"
+              required=""
+              id="id_password"
+            />
+          </div>
+          <button type="submit" id="login_btn" class="login_btn">에브리타임 로그인</button>
+
+          <div class="options">
+            <label class="keep">
+              <input type="checkbox" />
+              <input type="hidden" name="keep" value="false" />
+              로그인 유지
+            </label>
+            <a href="/forgot">아이디/비밀번호 찾기</a>
+          </div>
+        </form>
+        <p class="register">
+          <a href="{% url 'accounts:signup' %}">회원가입</a>
+        </p>
+        <footer>
+          <a href="">이용약관</a>
+          <a href="" class="privacy" style="font-weight: bold">개인정보처리방침</a>
+          <a href="">문의하기</a>
+          <a href="" class="copyright" style="font-weight: bold">© 에브리타임</a>
+        </footer>
+      </div>
+    </div>
+    <script src="{% static 'js/login.js' %}"></script>
   </body>
 </html>

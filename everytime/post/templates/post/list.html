@@ -1,0 +1,86 @@
+{% load static %} {% block body %} {% load humanize %}
+
+<div class="wrap title">
+  <h1><a href="{% url 'post:category_post_list' category.slug %}">{{category.title}}</a></h1>
+</div>
+
+<div class="wrap bubbles">
+  <div class="bubble question">
+    <div class="group"></div>
+    <div class="items">
+      <div class="item">
+        <a href="/255745/v/342061964"><span>멋사덕성 12기</span></a>
+      </div>
+      <div class="item">
+        <a href="/255745/v/342183217"><span>화이팅 화이팅!!!</span></a>
+      </div>
+      <div class="item">
+        <a href="/255745/v/342210851"><span>!!</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bubble popular">
+    <div class="group"></div>
+    <div class="item">
+      <a href="/255745/v/342146355">
+        <span>어흥어흥</span>
+        <div class="posvote">124</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap articles">
+  <a id="writeArticleButton">새 글을 작성해주세요!</a>
+
+  <!--글 작성란-->
+  <!--
+  <form>
+    <input type="text" placeholder="제목 입력" name="title" />
+    <br />
+    <textarea name="content" placeholder="본문 입력"></textarea>
+    <input type="checkbox" name="anonymity" value="annoymity_true" />익명
+    <input type="hidden" name="anonymity" value="annoymity_false" checked>
+    <input type="submit" value="작성 완료" />
+  </form>
+  -->
+
+  <!--포스트 목록-->
+  {% if posts.exists %} {% for post in posts %}
+  <article class="list">
+    <a class="article" href="{% url 'post:detail' post.pk %}">
+      <div class="desc">
+        <h2 class="medium bold">{{ post.title }}</h2>
+        <p class="medium">{{ post.content }}</p>
+        <div class="info">
+          <time class="small">{{ post.created_at|naturaltime }}</time>
+          {% if post.anonymity %}
+          <h3 class="small">익명</h3>
+          {% else %}
+          <h3 class="small">{{ post.user.username }}</h3>
+          {% endif %}
+        </div>
+        <hr />
+      </div>
+    </a>
+    <div class="comments"></div>
+  </article>
+  {% endfor %} {% endif %}
+  <div class="clearBothOnly"></div>
+  <div class="pagination">
+    <form id="searchArticleForm" class="search">
+      <select name="search_type">
+        <option value="4">전체</option>
+        <option value="3">닉네임</option>
+        <option value="2">제목</option>
+        <option value="1">본문</option>
+      </select>
+      <input name="keyword" placeholder="검색어를 입력하세요." class="text" />
+    </form>
+    <a href="/255745/p/2" class="next">다음</a>
+  </div>
+  <hr />
+</div>
+
+{% endblock %}

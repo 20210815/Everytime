@@ -1,0 +1,1095 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Apple SD Gothic Neo", "맑은 고딕", "돋움", sans-serif;
+  -webkit-touch-callout: none;
+}
+
+body,
+div,
+nav,
+aside,
+article,
+h1,
+h2,
+h3,
+h4,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+p,
+span,
+form,
+th,
+td,
+input,
+textarea,
+select,
+pre,
+address {
+  color: #666;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+}
+
+img,
+input,
+select,
+textarea {
+  vertical-align: middle;
+}
+
+img {
+  border: 0;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+dl,
+ul,
+ol,
+menu,
+li {
+  list-style: none;
+}
+
+@media only screen and (min-width: 641px) {
+  aside.none {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  aside > div.title > a.hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #container > div.title {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  #bottom {
+    margin: 0 auto 25px auto;
+    width: 1180px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  aside.none {
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  aside {
+    position: fixed;
+    z-index: 90;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #d6d6d6;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  aside > div.title {
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  aside > div.title > a.hamburger {
+    position: absolute;
+    z-index: 91;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 56px;
+    height: 50px;
+    background: #fff url("{% static 'img/aside.title.hamburger.png' %}") no-repeat center center;
+    background-size: 24px 24px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  aside > div.title > h1 {
+    padding-left: 56px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #submenu > div.wrap {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  nav {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  nav > div.wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 75%;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #logo {
+    padding-left: 24px;
+  }
+}
+
+#logo > a {
+  float: left;
+  display: block;
+  margin: 20px 16px 20px 0;
+  width: 40px;
+  height: 40px;
+}
+
+#logo > a > img {
+  width: 100%;
+  height: 100%;
+}
+
+#logo > p {
+  float: left;
+}
+
+#logo > p > span.name.multiple {
+  margin-top: 20px;
+  margin-left: 3px;
+  line-height: 15px;
+  font-size: 12px;
+}
+
+#logo > p > span.name {
+  display: block;
+  color: #f91f15;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#logo > p > span.subname {
+  display: block;
+  line-height: 25px;
+  color: #292929;
+  font-size: 22px;
+}
+
+@media only screen and (max-width: 640px) {
+  #account {
+    position: absolute;
+    z-index: 101;
+    left: 0;
+    bottom: 0;
+    padding-left: 24px;
+    height: 80px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #menu {
+    clear: left;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #menu > li > a:hover,
+  #menu > li.active > a {
+    background-color: #f8f8f8;
+  }
+}
+#menu > li > a:hover,
+#menu > li.active > a {
+  color: #f91f15;
+}
+@media only screen and (max-width: 640px) {
+  #menu > li > a {
+    display: block;
+    padding: 12px 24px;
+    line-height: 24px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #submenu {
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  aside > div.title > h1 {
+    padding-left: 56px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+#menu > li > a {
+  color: #444444;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#account {
+  padding: 20px 0;
+  box-sizing: border-box;
+  font-size: 0;
+}
+
+#account a.icon.message {
+  background-image: url("{% static 'img/icn_m_chat_gray800_light.png' %}");
+  background-size: 24px 24px;
+}
+
+#account a.icon.my {
+  background-image: url("{% static 'img/icn_m_account_gray800_light.png' %}");
+  background-size: 24px 24px;
+}
+
+#account a.icon {
+  width: 40px;
+  color: transparent;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#account a {
+  position: relative;
+  display: inline-block;
+  margin-left: 4px;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #d6d6d6;
+  border-radius: 12px;
+  vertical-align: top;
+}
+
+aside > div.title > h1 {
+  color: #262626;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+aside > div.title > h1 > a {
+  color: inherit;
+}
+
+#bottom {
+  text-align: center;
+}
+
+#bottom ul.links li {
+  display: inline-block;
+}
+
+#bottom > ul.links > li > a {
+  display: inline-block;
+  margin: 0 4px 4px 4px;
+  line-height: 20px;
+  color: #737373;
+  font-size: 12px;
+}
+
+#bottom > ul.links > li.copyright > a,
+#bottom > ul.links > li.privacy > a {
+  font-weight: bold;
+}
+
+div.container form div.input input[type="password"][data-v-c80e0668],
+div.container form div.input input[type="text"][data-v-c80e0668] {
+  display: block;
+  box-sizing: border-box;
+  margin-top: 4px;
+  padding: 10px;
+  border-radius: 12px;
+  width: 100%;
+  line-height: 24px;
+  color: #292929;
+  font-size: 16px;
+  background-color: #f2f2f2;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 24px 24px;
+}
+
+@media only screen and (min-width: 641px) {
+  nav {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #d6d6d6;
+    background-color: #fff;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  #logo {
+    float: left;
+    margin-left: 24px;
+    height: 100%;
+  }
+}
+
+#logo > a {
+  float: left;
+  display: block;
+  margin: 20px 16px 20px 0;
+  width: 40px;
+  height: 40px;
+}
+
+#logo > a > img {
+  width: 100%;
+  height: 100%;
+}
+
+#logo > p {
+  float: left;
+}
+
+#logo > p > span.name {
+  display: block;
+  color: #f91f15;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#logo > p > span.name.multiple {
+  margin-top: 20px;
+  margin-left: 3px;
+  line-height: 15px;
+  font-size: 12px;
+}
+
+#logo > p > span.subname {
+  display: block;
+  line-height: 25px;
+  color: #292929;
+  font-size: 22px;
+}
+
+@media only screen and (min-width: 641px) {
+  #account {
+    float: right;
+    margin-right: 24px;
+    height: 100%;
+  }
+}
+
+#account {
+  padding: 20px 0;
+  box-sizing: border-box;
+  font-size: 0;
+}
+
+#account a {
+  position: relative;
+  display: inline-block;
+  margin-left: 4px;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #d6d6d6;
+  border-radius: 12px;
+  vertical-align: top;
+}
+
+#account a.icon {
+  width: 40px;
+  color: transparent;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@media only screen and (min-width: 641px) {
+  nav > div.wrap {
+    margin: 0 auto;
+    width: 1180px;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  #menu {
+    margin: 0 auto;
+    width: 600px;
+    height: 100%;
+    font-size: 0;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  #menu > li.active {
+    border-bottom: 4px solid #f91f15;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  #menu > li {
+    display: inline-block;
+    margin: 0 12px;
+    height: 76px;
+    line-height: 76px;
+  }
+}
+
+#menu > li > a {
+  color: #444444;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 641px) {
+  #submenu {
+    margin-top: 80px;
+  }
+}
+
+#submenu {
+  border-bottom: 1px solid #d6d6d6;
+  background-color: #f2f2f2;
+}
+
+@media only screen and (min-width: 641px) {
+  #submenu > div.wrap {
+    padding: 15px;
+  }
+}
+
+#submenu > div.wrap {
+  box-sizing: border-box;
+  font-size: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+@media only screen and (min-width: 641px) {
+  #submenu > div.wrap > div.divider {
+    margin-right: 15px;
+  }
+}
+
+#submenu > div.wrap > div.divider {
+  display: inline-block;
+  width: 1px;
+  height: 200px;
+  background-color: #e3e3e3;
+}
+
+@media only screen and (min-width: 641px) {
+  #submenu > div.wrap > div.group {
+    margin-right: 15px;
+    width: 130px;
+  }
+}
+
+#submenu > div.wrap > div.group {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+@media only screen and (min-width: 641px) {
+  #submenu > div.wrap > div.group > h3,
+  #submenu > div.wrap > div.group > ul > li > a {
+    font-size: 13px;
+  }
+}
+
+#submenu > div.wrap > div.group > ul > li > a {
+  display: block;
+  line-height: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#submenu > div.wrap ul > li > a {
+  color: #444444;
+}
+
+#submenu > div.wrap > div.group > ul > li > a.more {
+  color: #f91f15;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 641px) {
+  #bottom {
+    margin: 0 auto 25px auto;
+    width: 1180px;
+  }
+}
+
+#bottom {
+  text-align: center;
+}
+
+#bottom ul.links li {
+  display: inline-block;
+}
+
+#bottom > span {
+  display: inline-block;
+  line-height: 20px;
+  color: #a6a6a6;
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 641px) {
+  #container {
+    margin: 80px auto 0 auto;
+    width: 1180px;
+    box-sizing: border-box;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  #container > div.wrap {
+    float: none;
+    position: relative;
+    left: 25px;
+    margin-top: 25px;
+    width: 780px;
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  #container.article,
+  #container.community {
+    position: relative;
+    margin: 0 auto 25px auto;
+  }
+}
+
+#container > div.articles > article {
+  margin-bottom: -1px;
+  box-sizing: border-box;
+  border: 1px solid #e3e3e3;
+  background-color: #fff;
+}
+
+#container > div.articles > article.item > a.article {
+  display: block;
+  padding: 15px;
+}
+
+#container > div.articles > article.item img.picture.large {
+  margin: 0 10px 15px 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+#container > div.articles > article.item img.picture {
+  float: left;
+}
+
+#container > div.articles > article.item > div.comments article.parent {
+  padding: 15px 15px 0 15px;
+  border-top: 1px solid #e3e3e3;
+}
+
+#container > div.articles > article.item > div.comments article {
+  margin: 0;
+  border: 0;
+  background-color: #fff;
+}
+
+#container > div.articles > article.item > div.comments article::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#container > div.articles > article.item img.picture.medium {
+  margin: 0 5px 5px 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+#container > div.articles > article.item img.picture {
+  float: left;
+}
+
+#container > div.articles > article.item h3.medium {
+  float: left;
+  max-width: 90px;
+  margin: 0 10px 5px 0;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+#container > div.articles > article.item h3 {
+  color: #292929;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#container > div.articles > article.item h2.large {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#container > div.articles > article h2 {
+  color: #292929;
+}
+
+#container > div.articles > article.item p.large {
+  padding-bottom: 15px;
+  line-height: 20px;
+  color: #444444;
+  font-size: 14px;
+}
+
+#container > div.articles > article p {
+  word-break: break-all;
+}
+
+#container > div.articles > article.item ul.status.left {
+  float: left;
+}
+
+#container > div.articles > article.item ul.status {
+  display: inline-block;
+  float: right;
+}
+
+#container > div.articles > article.item ul.status li {
+  float: left;
+  margin-left: 8px;
+  padding: 0 2px;
+  height: 20px;
+  line-height: 20px;
+  color: #a6a6a6;
+  font-size: 12px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 11px 11px;
+  cursor: pointer;
+}
+
+#container > div.articles > article.item div.attaches.multiple {
+  margin: 0 -15px 0 -15px;
+  padding: 0 10px 10px 15px;
+}
+
+#container > div.articles > article.item div.attaches.multiple > figure.attach {
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  width: 183px;
+  height: 183px;
+}
+
+#container > div.articles > article.item div.attaches.multiple > figure.attach > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#container > div.articles > article.item div.attaches > figure.attach {
+  position: relative;
+  display: block;
+}
+
+#container > div.articles > article.item div.attaches > figure.attach > img {
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+#container > div.articles > article ul.status.left li {
+  margin-left: 0;
+  margin-right: 8px;
+  cursor: auto;
+}
+
+#container > div.articles > article ul.status li.vote {
+  padding-left: 15px;
+  color: #f91f15;
+  background-image: url("{% static 'img/container.articles.vote.png'%}");
+}
+
+#container > div.articles > article ul.status li.comment {
+  padding-left: 15px;
+  color: #05bcbc;
+  background-image: url("{% static 'img/container.articles.comment.png'%}");
+}
+
+#container > div.articles > article.item ul.status li.scrap {
+  padding-left: 15px;
+  color: #ffc900;
+  background-image: url("{% static 'img/container.articles.scrap.png'%}");
+}
+
+#container > div.articles > article div.buttons {
+  display: flex;
+  padding-top: 16px;
+}
+
+#container > div.articles > article div.buttons span {
+  margin-right: 4px;
+  padding: 0 12px 0 27px;
+  line-height: 30px;
+  border-radius: 8px;
+  color: #737373;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  background-repeat: no-repeat;
+  background-position: left 12px center;
+  background-size: 11px 11px;
+}
+
+#container > div.articles > article div.buttons span.posvote {
+  background-image: url("{% static 'img/container.articles.buttons.posvote.png' %}");
+}
+
+#container > div.articles > article div.buttons span.scrap {
+  background-image: url("{% static 'img/container.articles.buttons.scrap.png' %}");
+}
+
+#container > div.articles > article.item > div.comments article.parent {
+  padding: 15px 15px 0 15px;
+  border-top: 1px solid #e3e3e3;
+}
+
+#container > div.articles > article.item > div.comments article {
+  margin: 0;
+  border: 0;
+  background-color: #fff;
+}
+
+#container > div.articles > article.item form.writecomment {
+  position: relative;
+  border-top: 1px solid #e3e3e3;
+  background-color: #f8f8f8;
+}
+
+#container > div.articles > article.item form.writecomment input.text {
+  margin: 0;
+  padding: 10px 85px 10px 10px;
+  border: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 20px;
+  box-sizing: border-box;
+  color: #262626;
+  font-size: 13px;
+  overflow: hidden;
+  resize: none;
+  background-color: transparent;
+}
+
+#container > div.articles > article.item form.writecomment ul.option {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 40px;
+  font-size: 0;
+}
+
+#container > div.articles > article.item form.writecomment ul.option li {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40px 40px;
+  cursor: pointer;
+}
+
+#container > div.articles > article.item > div.comments article time {
+  padding-bottom: 5px;
+}
+#container > div.articles > article time.medium {
+  float: left;
+  margin-bottom: 5px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+#container > div.articles > article time {
+  color: #a6a6a6;
+  letter-spacing: 0;
+}
+
+#container > div.articles > article.item form.writecomment ul.option li.anonym {
+  margin-right: 5px;
+  background-image: url("{% static 'img/post_anony.png'%}");
+}
+
+#container > div.articles > article.item form.writecomment ul.option li.anonym.active {
+  background-image: url(../img/container.articles.write.anonym.active.png);
+}
+
+#container > div.articles > article.item form.writecomment ul.option li.submit {
+  background-image: url("{% static  'img/post_submit.png' %}");
+}
+
+#container > div.articles > form.write {
+  border: 2px solid #d6d6d6;
+}
+
+#container > div.articles > form.write ul.option li {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40px 40px;
+
+  cursor: pointer;
+}
+
+#container > div.articles > div.pagination > a {
+  display: block;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 0 10px 0 25px;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid #f91f15;
+  border-radius: 3px;
+  color: #f91f15;
+  font-size: 14px;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 10px 10px;
+  cursor: pointer;
+}
+
+#container > div.articles > div.pagination > a.list {
+  float: left;
+  background-image: url("{% static 'img/container.articles.pagination.list.png'%}");
+}
+
+.left {
+  text-align: left !important;
+}
+
+#container hr {
+  clear: both;
+  width: 100%;
+  height: 0;
+  border: 0;
+}
+
+#container > div.title {
+  margin-bottom: -20px;
+  padding: 15px;
+  border: 1px solid #d6d6d6;
+  box-sizing: border-box;
+}
+
+#container > div.title > h1 > a {
+  color: #292929;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#container > div.articles > article.item > a.article {
+  display: block;
+  padding: 15px;
+}
+
+@media only screen and (min-width: 641px) {
+  #container > div.rightside {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 325px;
+    height: 400px;
+  }
+}
+
+#container > div.rightside div.card,
+#container > div.leftside div.card {
+  margin-bottom: 5px;
+  border: 1px solid #d6d6d6;
+  background-color: #f9f9f9;
+}
+
+#container div.card h3 {
+  padding: 10px;
+}
+
+#container > div.rightside div.card h3 > a {
+  color: #056ab5;
+}
+
+#container div.card h3 > a > span {
+  float: right;
+  line-height: 20px;
+  color: #a6a6a6;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+#container div.card h3 > a {
+  line-height: 20px;
+  color: #f91f15;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#container div.card > div.board > a {
+  display: block;
+  padding: 10px;
+  border-top: 1px solid #e3e3e3;
+}
+
+#container div.card > div.board > a.list > time {
+  float: right;
+  margin-left: 10px;
+  height: 17px;
+  line-height: 18px;
+  color: #a6a6a6;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+#container div.card > div.board > a.list > p {
+  height: 17px;
+  line-height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #444444;
+  font-size: 14px;
+}
+
+#container hr {
+  clear: both;
+  width: 100%;
+  height: 0;
+  border: 0;
+}
+
+#container div.card > div.board > a.article > p {
+  margin-bottom: 5px;
+  height: 36px;
+  line-height: 18px;
+  white-space: normal;
+  overflow: hidden;
+  color: #444444;
+  font-size: 13px;
+}
+
+#container div.card > div.board > a.article > p.title {
+  height: 18px;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#container div.card > div.board > a.article > p.small {
+  height: 32px;
+  line-height: 16px;
+  color: #737373;
+  font-size: 12px;
+}
+
+#container div.card > div.board > a.article > h4 {
+  float: left;
+  margin-right: 10px;
+  height: 14px;
+  line-height: 14px;
+  color: #a6a6a6;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+#container div.card > div.board > a.article > ul.status > li {
+  float: left;
+  margin-right: 5px;
+  padding-left: 15px;
+  height: 14px;
+  line-height: 14px;
+  color: #a6a6a6;
+  font-size: 11px;
+  letter-spacing: 0;
+  background-repeat: no-repeat;
+  background-size: 11px 11px;
+  background-position: left center;
+}
+
+#container div.card > div.board > a.article > ul.status {
+  float: left;
+}
+
+#container div.card > div.board > a.article > ul.status > li.vote.active {
+  color: #f91f15;
+  background-image: url("{% static 'img/container.articles.vote.png'%}");
+}
+
+#container div.card > div.board > a.article > ul.status > li.comment.active {
+  color: #05bcbc;
+  background-image: url("{% static 'img/container.articles.comment.png'%}");
+}
+
+#writeArticleButton {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0 10px;
+  height: 50px;
+  line-height: 46px;
+  border: 2px solid #d6d6d6;
+  box-sizing: border-box;
+  cursor: text;
+  color: #a6a6a6;
+  font-size: 14px;
+  background: #f9f9f9 url(/images/new/container.write.background.png) no-repeat right center;
+  background-size: 40px 40px;
+}

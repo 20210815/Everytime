@@ -24,21 +24,25 @@ def signup_view(request):
 
 
 def login_view(request):
-  if request.method == "GET":
-    return render(request, 'accounts/login.html', {'form': AuthenticationForm})
-  
-  form = AuthenticationForm(request, data=request.POST)
-
-  if form.is_valid():
-    login(request, form.user_cache)
-    return redirect("post:home")
-  return render(request, 'accounts/login.html', {'form': form})
+    if request.method == "GET":
+        return render(request, 'accounts/login.html', {'form': AuthenticationForm()})
+    
+    form = AuthenticationForm(request, data=request.POST)
+    
+    if form.is_valid():
+        login(request, form.get_user())
+        next_url = request.GET.get('next')  # next 파라미터 값 가져오기
+        if next_url:
+            return redirect(next_url)
+        else:
+            return redirect("post:home")  # 로그인 후 메인 홈페이지로 이동
+    return render(request, 'accounts/login.html', {'form': form})
 
 
 def logout_view(request):
   if request.user.is_authenticated:
     logout(request)
-  return redirect("post:list")
+  return redirect("post:home")
 
 def mypage(request):
   return render(request, 'accounts/mypage.html')

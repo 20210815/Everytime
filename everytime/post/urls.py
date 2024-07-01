@@ -6,7 +6,7 @@ app_name='post'
 
 urlpatterns = [
   path('', views.home, name='home'),
-#  path('list/', views.list, name="list"),
+#  path('list/', views.list, name="list"),,
 
   path('<int:id>/', views.detail, name="detail"),
   path('create/<slug:slug>/', views.create, name="create"),
